@@ -227,7 +227,8 @@ def construct_HardWiredGenome_B_Matrix(A_Matrix_path=HARD_WIRED_GENOME_A_MATRIX_
 
     print(f"Total present genes in A matrix: {len(present_genes)}")
     print(f"Total missing TFs in A matrix: {len(present_genes) - len(TF_set)}")
-    B_matrix = A_matrix.loc[present_genes, present_genes]
+    B_matrix = A_matrix[present_genes]
+    # B_matrix = A_matrix.loc[present_genes, present_genes]
 
     print(B_matrix.head())
     B_matrix.to_csv(HARD_WIRED_GENOME_B_MATRIX_PATH, index=True)

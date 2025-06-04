@@ -47,3 +47,8 @@ data
 <b>Human TF</b>
 2766 lines
 - HTF/DatabaseExtract_v_1.01.csv  - 2765 lines + header - Ensembl ID, Is TF?
+
+
+Total TFs: 2765
+Total present genes in A matrix: 2752
+Total missing TFs in A matrix: -13
