@@ -1,9 +1,10 @@
 from biomart import BiomartServer
 from constants import DATA_DIRECTORY,  STRING_ALIAS_PATH, STRING_URL_PATH, ENSEMBL_PROTEIN_GENE_PATH, STRING_EXTRACTED_ALIAS_PATH, STRING_EXTRACTED_URL_PATH, ENSEMBL_MAPPING_PATH, UNIQUE_GENE_SET, \
     HURI_URL_PATH, HI_UNION_PATH, LIT_BM_PATH, HUMAN_TF_PATH, HARD_WIRED_GENOME_A_MATRIX_PATH, STRING_PROTEIN_GENE_PATH, STRING_UNIQUE_GENE_SET, HURI_UNIQUE_GENE_SET, HUMAN_TF_SET_PATH, \
-    HARD_WIRED_GENOME_B_MATRIX_PATH
+    HARD_WIRED_GENOME_B_MATRIX_PATH, HWG_BASE_PATH, ENSEMBL_BASE_PATH
 
 import re
+import os
 import numpy as np
 import pandas as pd
 
@@ -17,6 +18,9 @@ def fetch_ensembl_mapping():
     server = BiomartServer( "http://useast.ensembl.org/biomart" )
     #server = BiomartServer("http://www.biomart.org/biomart")
     hge = server.datasets['hsapiens_gene_ensembl']
+
+    if not os.path.exists(ENSEMBL_BASE_PATH):
+        os.makedirs(ENSEMBL_BASE_PATH)
 
 #   Uncomment to get all avaliable biomart attributes. Not really a good way to get mapping data. 
 #     from pprint import pprint
@@ -35,6 +39,8 @@ def generate_string_mappings():
      """
      We Consider ENSEMBL ids as primary identifiers and convert every other identifier to ensembl
      """
+
+     # Takes a long time and is not really useful. Same thing is done by fetch_ensembl_mapping()
      
      # Find Unique Protein interaction identifiers in STRING
      stringfile = STRING_EXTRACTED_URL_PATH
@@ -143,6 +149,9 @@ def construct_HardWiredGenome_A_Matrix(threshold=600):
     """
     Construct the full A matrix of the Hard Wired Genome from the STRING and HURI datasets
     """
+    if not os.path.exists(HWG_BASE_PATH):
+        os.makedirs(HWG_BASE_PATH)
+    print("Constructing Hard Wired Genome A Matrix")
 
     nodes = get_unique_genes()
 
@@ -240,11 +249,10 @@ def construct_HardWiredGenome_B_Matrix(A_Matrix_path=HARD_WIRED_GENOME_A_MATRIX_
     # transcription_factors = set()
 
 if __name__ == "__main__":
-#     fetch_ensembl_mapping()
-    # generate_string_mappings()
+    # fetch_ensembl_mapping()
     # generate_protein_gene_mappings()
     # generate_protein_gene_mapping_STRING()
     # generate_unique_gene_set_Huri()
     # generate_human_tf_set()
     # construct_HardWiredGenome_A_Matrix()
-    construct_HardWiredGenome_B_Matrix()
+    # construct_HardWiredGenome_B_Matrix()
