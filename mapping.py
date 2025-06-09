@@ -70,7 +70,7 @@ def generate_protein_gene_mappings():
                 unique_genes.add(gene)
                 outfile.write(' '.join(matches) + '\n')
 
-    print(f"Total unique genes: {len(unique_genes)}")
+    print(f"Total unique genes from Ensembl: {len(unique_genes)}")
     with open(UNIQUE_GENE_SET, "w") as gene_file:
         for item in unique_genes:
             gene_file.write(f"{item}\n")
@@ -85,7 +85,6 @@ def generate_protein_gene_mapping_STRING():
         for line in aliasfile:
             if "Ensembl_gene" in line:
                 matches = re.findall(r"\b(ENSP\w+|ENSG\w+)", line)
-                print(matches)
                 gene = matches[1]
                 unique_genes.add(gene)
                 outfile.write(' '.join(matches) + '\n')
@@ -103,15 +102,23 @@ def generate_unique_gene_set_Huri():
             g1, g2 = link.strip().split()
             unique_genes.add(g1)
             unique_genes.add(g2)
+            
+        print(f"Unique Genes from HI-Union: {len(unique_genes)}")
 
+        unique_litbm_genes = set()
         for link in litbm_links:
             g1, g2 = link.strip().split()
-            unique_genes.add(g1)
-            unique_genes.add(g2)
-        print(f"Total unique genes HURI: {len(unique_genes)}")
-
+            unique_litbm_genes.add(g1)
+            unique_litbm_genes.add(g2)
+            
+        print(f"Unique Genes from LIT-BM: {len(unique_litbm_genes)}")
+        
+        
+        unique_genes = unique_genes | unique_litbm_genes
+        print(f"Total unique genes HURI ( union of HI-Union + LIT-BM ): {len(unique_genes)}")
         for item in unique_genes:
             gene_file.write(f"{item}\n")
+    return unique_genes
 
 
 def get_unique_genes():
@@ -126,7 +133,9 @@ def get_unique_genes():
         huri_nodes = set(line.strip() for line in f)
 
     nodes = string_nodes | ensemble_nodes | huri_nodes
-    print("Total unique nodes:", len(nodes))
+    print(f"Unique genes from STRING: {len(string_nodes)}")
+    print(f"Unique genes from HURI: {len(huri_nodes)}")
+    print("Total unique genes:", len(nodes))
     nodes = sorted(nodes)
     return nodes
 
@@ -144,6 +153,13 @@ def generate_human_tf_set():
 
     subset.to_csv(HUMAN_TF_SET_PATH, index=False)
 
+def get_string_protein_gene_map():
+    with open(STRING_PROTEIN_GENE_PATH, "r") as protein_gene_file:
+        string_protein_gene_map = {}
+        for line in protein_gene_file:
+            protein, gene = line.split()
+            string_protein_gene_map[protein] = gene
+    return string_protein_gene_map
 
 def construct_HardWiredGenome_A_Matrix(threshold=600):
     """
@@ -161,11 +177,7 @@ def construct_HardWiredGenome_A_Matrix(threshold=600):
     #         gene, protein = line.split()
     #         protein_gene_map[protein] = gene
 
-    with open(STRING_PROTEIN_GENE_PATH, "r") as protein_gene_file:
-        string_protein_gene_map = {}
-        for line in protein_gene_file:
-            protein, gene = line.split()
-            string_protein_gene_map[protein] = gene
+    string_protein_gene_map = get_string_protein_gene_map()
 
     n = len(nodes)
 
@@ -256,3 +268,5 @@ if __name__ == "__main__":
     # generate_human_tf_set()
     # construct_HardWiredGenome_A_Matrix()
     # construct_HardWiredGenome_B_Matrix()
+
+    get_unique_genes()

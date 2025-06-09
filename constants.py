@@ -1,6 +1,5 @@
 
-# DATA_DIRECTORY = '/scratch/indikar_root/indikar1/shared_data/HWG/data'
-DATA_DIRECTORY = '/scratch/indikar_root/indikar1/shared_data/HWG/test'
+DATA_DIRECTORY = '/scratch/indikar_root/indikar1/shared_data/HWG/data'
 
 # STRING data URL
 STRING_BASE_PATH = f"{DATA_DIRECTORY}/STRING"
