@@ -1,5 +1,6 @@
 
-DATA_DIRECTORY = '/scratch/indikar_root/indikar1/shared_data/HWG/data'
+# DATA_DIRECTORY = '/scratch/indikar_root/indikar1/shared_data/HWG/data'
+DATA_DIRECTORY = '/Users/ramprakash/development/lab_projects/Rajapakse_lab/data/HWG'
 
 # STRING data URL
 STRING_BASE_PATH = f"{DATA_DIRECTORY}/STRING"
@@ -17,7 +18,9 @@ STRING_PROTEIN_LIST_URL_PATH = f'{DATA_DIRECTORY}/STRING/9606.protein.info.v12.0
 STRING_EXTRACTED_PROTEIN_LIST_URL_PATH = f'{DATA_DIRECTORY}/STRING/9606.protein.info.v12.0.txt'
 
 
+STRING_PROTEIN_SET_FROM_LINKS = f"{DATA_DIRECTORY}/STRING/protein_set_from_links.txt"
 STRING_PROTEIN_GENE_PATH = f"{DATA_DIRECTORY}/STRING/protein_gene_map.txt"
+STRING_UNIQUE_PROTEIN_SET = f"{DATA_DIRECTORY}/STRING/unique_protein_set.txt"
 STRING_UNIQUE_GENE_SET = f"{DATA_DIRECTORY}/STRING/unique_gene_set.txt"
 
 
@@ -50,5 +53,15 @@ UNIQUE_GENE_SET = f"{DATA_DIRECTORY}/ENSEMBL/unique_gene_set.txt"
 
 
 HWG_BASE_PATH = f"{DATA_DIRECTORY}/HWG"
+HARD_WIRED_GENOME_A_EDGELIST = f"{DATA_DIRECTORY}/HWG/A_Matrix_edgelist.csv"
+HARD_WIRED_GENOME_B_EDGELIST = f"{DATA_DIRECTORY}/HWG/B_Matrix_edgelist.csv"
+HARD_WIRED_GENOME_C_EDGELIST = f"{DATA_DIRECTORY}/HWG/C_Matrix_edgelist.csv"
 HARD_WIRED_GENOME_A_MATRIX_PATH = f"{DATA_DIRECTORY}/HWG/A_Matrix.csv"
 HARD_WIRED_GENOME_B_MATRIX_PATH = f"{DATA_DIRECTORY}/HWG/B_Matrix.csv"
+HARD_WIRED_GENOME_C_MATRIX_PATH = f"{DATA_DIRECTORY}/HWG/C_Matrix.csv"
+
+
+def modify_HWG_path(suffix):
+    save_path = HARD_WIRED_GENOME_A_MATRIX_PATH.strip('.csv') + f"_{suffix}.csv"
+    return save_path
+

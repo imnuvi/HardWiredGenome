@@ -44,7 +44,7 @@ class Downloader():
             print(f"Downloaded {filename} to {self.destination}. It is a gzipped file.")
 
 
-if __name__ == "__main__":
+def setup_db():
 
     downloader = Downloader(url=STRING_ALIAS, destination=STRING_BASE_PATH, extractpath=STRING_EXTRACTED_ALIAS_PATH)
     downloader.download()
@@ -60,3 +60,8 @@ if __name__ == "__main__":
     downloader.download()
     downloader = Downloader(url=HUMAN_TF, destination=HUMAN_TF_BASE_PATH)
     downloader.download()
+
+
+
+if __name__ == "__main__":
+    setup_db()

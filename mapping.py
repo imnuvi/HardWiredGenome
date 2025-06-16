@@ -1,7 +1,7 @@
 from biomart import BiomartServer
 from constants import DATA_DIRECTORY,  STRING_ALIAS_PATH, STRING_URL_PATH, ENSEMBL_PROTEIN_GENE_PATH, STRING_EXTRACTED_ALIAS_PATH, STRING_EXTRACTED_URL_PATH, ENSEMBL_MAPPING_PATH, UNIQUE_GENE_SET, \
     HURI_URL_PATH, HI_UNION_PATH, LIT_BM_PATH, HUMAN_TF_PATH, HARD_WIRED_GENOME_A_MATRIX_PATH, STRING_PROTEIN_GENE_PATH, STRING_UNIQUE_GENE_SET, HURI_UNIQUE_GENE_SET, HUMAN_TF_SET_PATH, \
-    HARD_WIRED_GENOME_B_MATRIX_PATH, HWG_BASE_PATH, ENSEMBL_BASE_PATH
+    HARD_WIRED_GENOME_B_MATRIX_PATH, HWG_BASE_PATH, ENSEMBL_BASE_PATH, STRING_PROTEIN_SET_FROM_LINKS, STRING_UNIQUE_PROTEIN_SET, modify_HWG_path
 
 import re
 import os
@@ -36,26 +36,27 @@ def fetch_ensembl_mapping():
         print(f"Ensembl mapping data saved to {ENSEMBL_MAPPING_PATH}")
 
 def generate_string_mappings():
-     """
-     We Consider ENSEMBL ids as primary identifiers and convert every other identifier to ensembl
-     """
+    """
+    We Consider ENSEMBL ids as primary identifiers and convert every other identifier to ensembl
+    """
 
-     # Takes a long time and is not really useful. Same thing is done by fetch_ensembl_mapping()
-     
-     # Find Unique Protein interaction identifiers in STRING
-     stringfile = STRING_EXTRACTED_URL_PATH
-     lineset = set()
-     with open(stringfile, 'r') as f:
+    # Takes a long time and is not really useful. Same thing is done by fetch_ensembl_mapping()
+    
+    # Find Unique Protein interaction identifiers in STRING
+    stringfile = STRING_EXTRACTED_URL_PATH
+    lineset = set()
+    with open(stringfile, 'r') as f:
         count = 0
         for line in f:
             count += 1
-            print(f'running line {count}')
+            # print(f'running line {count}')
             p1, p2, score = line.strip().split(' ')
             lineset = lineset | {p1, p2}
 
-     with open(ENSEMBL_PROTEIN_GENE_PATH, "w") as f:
+    with open(STRING_PROTEIN_SET_FROM_LINKS, "w") as f:
         for item in lineset:
             f.write(f"{item}\n")
+    return lineset
         
 def generate_protein_gene_mappings():
     """
@@ -86,6 +87,8 @@ def generate_protein_gene_mapping_STRING():
             if "Ensembl_gene" in line:
                 matches = re.findall(r"\b(ENSP\w+|ENSG\w+)", line)
                 gene = matches[1]
+                protein = matches[0]
+                protein_gene_map[protein] = gene
                 unique_genes.add(gene)
                 outfile.write(' '.join(matches) + '\n')
 
@@ -93,6 +96,8 @@ def generate_protein_gene_mapping_STRING():
     with open(STRING_UNIQUE_GENE_SET, "w") as gene_file:
         for item in unique_genes:
             gene_file.write(f"{item}\n")
+
+    return protein_gene_map
 
         
 def generate_unique_gene_set_Huri():
@@ -123,16 +128,27 @@ def generate_unique_gene_set_Huri():
 
 def get_unique_genes():
 
-    with open(STRING_UNIQUE_GENE_SET, "r") as f:
-        string_nodes = set(line.strip() for line in f)
+    string_protein_gene_map = get_string_protein_gene_map()
 
-    with open(UNIQUE_GENE_SET, "r") as f:
-        ensemble_nodes = set(line.strip() for line in f)
+    with open(f'{DATA_DIRECTORY}/STRING/unique_protein_set.txt', "r") as f:
+        # print("Unique Proteins from STRING:", f.readlines()[:10])
+        lines =f.readlines()[1:]
+
+        prots = [ ]
+        for line in lines:
+            protid = line.strip().split('.')
+            if len(protid) > 1:
+                prots.append(protid[1])
+        proteins = [string_protein_gene_map.get(i) for i in prots]
+        print(proteins[:10])
+        string_nodes = set(proteins)
+    print(list(string_nodes)[:5], len(string_nodes))
+
 
     with open(HURI_UNIQUE_GENE_SET, "r") as f:
         huri_nodes = set(line.strip() for line in f)
 
-    nodes = string_nodes | ensemble_nodes | huri_nodes
+    nodes = string_nodes | huri_nodes
     print(f"Unique genes from STRING: {len(string_nodes)}")
     print(f"Unique genes from HURI: {len(huri_nodes)}")
     print("Total unique genes:", len(nodes))
@@ -161,7 +177,7 @@ def get_string_protein_gene_map():
             string_protein_gene_map[protein] = gene
     return string_protein_gene_map
 
-def construct_HardWiredGenome_A_Matrix(threshold=600):
+def construct_HardWiredGenome_A_Matrix(threshold=600, nodes=None):
     """
     Construct the full A matrix of the Hard Wired Genome from the STRING and HURI datasets
     """
@@ -169,7 +185,8 @@ def construct_HardWiredGenome_A_Matrix(threshold=600):
         os.makedirs(HWG_BASE_PATH)
     print("Constructing Hard Wired Genome A Matrix")
 
-    nodes = get_unique_genes()
+    if nodes is None:
+        nodes = get_unique_genes()
 
     # with open(ENSEMBL_PROTEIN_GENE_PATH, "r") as protein_gene_file:
     #     protein_gene_map = {}
@@ -202,20 +219,20 @@ def construct_HardWiredGenome_A_Matrix(threshold=600):
             g2 = string_protein_gene_map[p2]
             if score >= threshold:
                 edges.add((g1, g2))
-    print("STRING interactions processed")
+    print("STRING interactions processed: ", len(edges))
 
 
     with open(HI_UNION_PATH, "r") as huri_links:
         for link in huri_links:
             g1, g2 = link.strip().split()
             edges.add((g1, g2))
-    print("HI-UNION interactions processed")
+    print("HI-UNION interactions processed: ", len(edges))
 
     with open(LIT_BM_PATH, "r") as lit_links:
         for link in lit_links:
             g1, g2 = link.strip().split()
             edges.add((g1, g2))
-    print("LIT-BM interactions processed")
+    print("LIT-BM interactions processed: ", len(edges))
     
     for g1, g2 in edges:
         if g1 in node_idx and g2 in node_idx:
@@ -224,13 +241,12 @@ def construct_HardWiredGenome_A_Matrix(threshold=600):
     
     adj_df = pd.DataFrame(adj, index=nodes, columns=nodes)
 
-    adj_df.to_csv(HARD_WIRED_GENOME_A_MATRIX_PATH)
+    new_path = modify_HWG_path(str(threshold))
+    adj_df.to_csv(new_path)
 
-    print(f"Saved Hard Wired Genome to {HARD_WIRED_GENOME_A_MATRIX_PATH}")
+    print(f"Saved Hard Wired Genome to {new_path}")
 
-
-def construct_HardWiredGenome_B_Matrix(A_Matrix_path=HARD_WIRED_GENOME_A_MATRIX_PATH):
-
+def get_TF_set():
     TF_set = set()
     with open(HUMAN_TF_SET_PATH, "r") as f:
         lines = f.readlines()
@@ -240,6 +256,11 @@ def construct_HardWiredGenome_B_Matrix(A_Matrix_path=HARD_WIRED_GENOME_A_MATRIX_
                 TF_set.add(gene)
 
     print(f"Total TFs: {len(TF_set)}")
+    return TF_set
+
+def construct_HardWiredGenome_B_Matrix(A_Matrix_path=HARD_WIRED_GENOME_A_MATRIX_PATH):
+
+    TF_set = get_TF_set()
 
 
     A_matrix = pd.read_csv(A_Matrix_path, index_col=0)
@@ -260,13 +281,16 @@ def construct_HardWiredGenome_B_Matrix(A_Matrix_path=HARD_WIRED_GENOME_A_MATRIX_
 
     # transcription_factors = set()
 
-if __name__ == "__main__":
-    # fetch_ensembl_mapping()
-    # generate_protein_gene_mappings()
-    # generate_protein_gene_mapping_STRING()
-    # generate_unique_gene_set_Huri()
-    # generate_human_tf_set()
-    # construct_HardWiredGenome_A_Matrix()
-    # construct_HardWiredGenome_B_Matrix()
+def setup():
+    fetch_ensembl_mapping()
+    generate_protein_gene_mappings()
+    generate_protein_gene_mapping_STRING()
+    generate_unique_gene_set_Huri()
+    generate_human_tf_set()
+    construct_HardWiredGenome_A_Matrix()
+    construct_HardWiredGenome_B_Matrix()
 
-    get_unique_genes()
+
+if __name__ == "__main__":
+    setup()
+    # get_unique_genes()

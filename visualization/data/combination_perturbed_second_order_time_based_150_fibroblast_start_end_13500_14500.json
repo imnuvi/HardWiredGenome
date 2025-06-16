@@ -1,0 +1,8927 @@
+{
+  "nodes": [
+    {
+      "data": {
+        "id": "ENSG00000005339",
+        "genename": "ENSG00000005339"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166164",
+        "genename": "ENSG00000166164"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323",
+        "genename": "ENSG00000134323",
+        "x": 2000,
+        "y": 2000,
+        "color": "#f83e56",
+        "size": 50,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179361",
+        "genename": "ENSG00000179361",
+        "color": "#a345f0",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000039068",
+        "genename": "ENSG00000039068",
+        "color": "#d77132",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140992",
+        "genename": "ENSG00000140992"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102978",
+        "genename": "ENSG00000102978"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169018",
+        "genename": "ENSG00000169018"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205250",
+        "genename": "ENSG00000205250"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103197",
+        "genename": "ENSG00000103197",
+        "color": "#a345f0",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000186260",
+        "genename": "ENSG00000186260"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167978",
+        "genename": "ENSG00000167978"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103266",
+        "genename": "ENSG00000103266",
+        "color": "#d77132",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102996",
+        "genename": "ENSG00000102996",
+        "color": "#d77132",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000255302",
+        "genename": "ENSG00000255302"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185338",
+        "genename": "ENSG00000185338"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102882",
+        "genename": "ENSG00000102882",
+        "color": "#a345f0",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149922",
+        "genename": "ENSG00000149922"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526",
+        "genename": "ENSG00000167526",
+        "color": "#d77132",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102974",
+        "genename": "ENSG00000102974"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000099364",
+        "genename": "ENSG00000099364"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182054",
+        "genename": "ENSG00000182054",
+        "color": "#d77132",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172183",
+        "genename": "ENSG00000172183"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169926",
+        "genename": "ENSG00000169926"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162104",
+        "genename": "ENSG00000162104"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140968",
+        "genename": "ENSG00000140968"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103275",
+        "genename": "ENSG00000103275"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000067955",
+        "genename": "ENSG00000067955"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000187555",
+        "genename": "ENSG00000187555",
+        "color": "#a345f0",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000118900",
+        "genename": "ENSG00000118900",
+        "color": "#a345f0",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179583",
+        "genename": "ENSG00000179583"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000130656",
+        "genename": "ENSG00000130656"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103510",
+        "genename": "ENSG00000103510"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000177200",
+        "genename": "ENSG00000177200"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166851",
+        "genename": "ENSG00000166851",
+        "color": "#d77132",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000126602",
+        "genename": "ENSG00000126602"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169032",
+        "genename": "ENSG00000169032",
+        "color": "#d77132",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179776",
+        "genename": "ENSG00000179776",
+        "color": "#d77132",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000090905",
+        "genename": "ENSG00000090905"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019",
+        "genename": "ENSG00000181019"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103449",
+        "genename": "ENSG00000103449",
+        "color": "#a345f0",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000150281",
+        "genename": "ENSG00000150281"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087263",
+        "genename": "ENSG00000087263",
+        "color": "#d77132",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000099381",
+        "genename": "ENSG00000099381"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103034",
+        "genename": "ENSG00000103034",
+        "color": "#d77132",
+        "level": 4,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169375",
+        "genename": "ENSG00000169375"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178573",
+        "genename": "ENSG00000178573"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103479",
+        "genename": "ENSG00000103479"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185551",
+        "genename": "ENSG00000185551"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000153066",
+        "genename": "ENSG00000153066"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167522",
+        "genename": "ENSG00000167522"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171016",
+        "genename": "ENSG00000171016"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000070770",
+        "genename": "ENSG00000070770"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000080603",
+        "genename": "ENSG00000080603"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169856",
+        "genename": "ENSG00000169856"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131149",
+        "genename": "ENSG00000131149"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103126",
+        "genename": "ENSG00000103126"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176046",
+        "genename": "ENSG00000176046"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952",
+        "genename": "ENSG00000178952"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925",
+        "genename": "ENSG00000149925"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103145",
+        "genename": "ENSG00000103145"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990",
+        "genename": "ENSG00000140990"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103363",
+        "genename": "ENSG00000103363"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035",
+        "genename": "ENSG00000103035"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427",
+        "genename": "ENSG00000065427"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713",
+        "genename": "ENSG00000034713"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883",
+        "genename": "ENSG00000185883"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169715",
+        "genename": "ENSG00000169715"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103502",
+        "genename": "ENSG00000103502"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198931",
+        "genename": "ENSG00000198931"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898",
+        "genename": "ENSG00000102898"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988",
+        "genename": "ENSG00000140988"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202",
+        "genename": "ENSG00000103202"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103152",
+        "genename": "ENSG00000103152"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168140",
+        "genename": "ENSG00000168140"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000132613",
+        "genename": "ENSG00000132613"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103495",
+        "genename": "ENSG00000103495"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134419",
+        "genename": "ENSG00000134419"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000051108",
+        "genename": "ENSG00000051108"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166595",
+        "genename": "ENSG00000166595"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000125148",
+        "genename": "ENSG00000125148"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087245",
+        "genename": "ENSG00000087245"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131143",
+        "genename": "ENSG00000131143"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174444",
+        "genename": "ENSG00000174444"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178741",
+        "genename": "ENSG00000178741"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183426",
+        "genename": "ENSG00000183426"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185088",
+        "genename": "ENSG00000185088"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182117",
+        "genename": "ENSG00000182117"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000141002",
+        "genename": "ENSG00000141002"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000090861",
+        "genename": "ENSG00000090861"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182718",
+        "genename": "ENSG00000182718"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000013364",
+        "genename": "ENSG00000013364"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185787",
+        "genename": "ENSG00000185787"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149923",
+        "genename": "ENSG00000149923"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000189067",
+        "genename": "ENSG00000189067"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167397",
+        "genename": "ENSG00000167397"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185043",
+        "genename": "ENSG00000185043"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103187",
+        "genename": "ENSG00000103187"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140740",
+        "genename": "ENSG00000140740"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140682",
+        "genename": "ENSG00000140682"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000051523",
+        "genename": "ENSG00000051523"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000006327",
+        "genename": "ENSG00000006327"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149932",
+        "genename": "ENSG00000149932"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140937",
+        "genename": "ENSG00000140937"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103196",
+        "genename": "ENSG00000103196"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169105",
+        "genename": "ENSG00000169105"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169118",
+        "genename": "ENSG00000169118"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169330",
+        "genename": "ENSG00000169330"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169371",
+        "genename": "ENSG00000169371"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169410",
+        "genename": "ENSG00000169410"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169594",
+        "genename": "ENSG00000169594"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169609",
+        "genename": "ENSG00000169609"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169612",
+        "genename": "ENSG00000169612"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169684",
+        "genename": "ENSG00000169684"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169752",
+        "genename": "ENSG00000169752"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169758",
+        "genename": "ENSG00000169758"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169783",
+        "genename": "ENSG00000169783"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169857",
+        "genename": "ENSG00000169857"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169918",
+        "genename": "ENSG00000169918"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000170113",
+        "genename": "ENSG00000170113"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000170236",
+        "genename": "ENSG00000170236"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000170776",
+        "genename": "ENSG00000170776"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171262",
+        "genename": "ENSG00000171262"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171763",
+        "genename": "ENSG00000171763"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171766",
+        "genename": "ENSG00000171766"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171877",
+        "genename": "ENSG00000171877"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171914",
+        "genename": "ENSG00000171914"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171956",
+        "genename": "ENSG00000171956"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171989",
+        "genename": "ENSG00000171989"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172345",
+        "genename": "ENSG00000172345"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172349",
+        "genename": "ENSG00000172349"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172379",
+        "genename": "ENSG00000172379"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172575",
+        "genename": "ENSG00000172575"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000173517",
+        "genename": "ENSG00000173517"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000173546",
+        "genename": "ENSG00000173546"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000173548",
+        "genename": "ENSG00000173548"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000173575",
+        "genename": "ENSG00000173575"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000173867",
+        "genename": "ENSG00000173867"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174197",
+        "genename": "ENSG00000174197"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174442",
+        "genename": "ENSG00000174442"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174446",
+        "genename": "ENSG00000174446"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174450",
+        "genename": "ENSG00000174450"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174485",
+        "genename": "ENSG00000174485"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174498",
+        "genename": "ENSG00000174498"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000175202",
+        "genename": "ENSG00000175202"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000175265",
+        "genename": "ENSG00000175265"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000175318",
+        "genename": "ENSG00000175318"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000175344",
+        "genename": "ENSG00000175344"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176371",
+        "genename": "ENSG00000176371"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176454",
+        "genename": "ENSG00000176454"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176463",
+        "genename": "ENSG00000176463"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000177082",
+        "genename": "ENSG00000177082"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000177693",
+        "genename": "ENSG00000177693"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000177971",
+        "genename": "ENSG00000177971"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178115",
+        "genename": "ENSG00000178115"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178718",
+        "genename": "ENSG00000178718"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178761",
+        "genename": "ENSG00000178761"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178802",
+        "genename": "ENSG00000178802"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178997",
+        "genename": "ENSG00000178997"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179151",
+        "genename": "ENSG00000179151"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179335",
+        "genename": "ENSG00000179335"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179455",
+        "genename": "ENSG00000179455"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179938",
+        "genename": "ENSG00000179938"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000180304",
+        "genename": "ENSG00000180304"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000180357",
+        "genename": "ENSG00000180357"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000180979",
+        "genename": "ENSG00000180979"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181026",
+        "genename": "ENSG00000181026"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181827",
+        "genename": "ENSG00000181827"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181991",
+        "genename": "ENSG00000181991"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182175",
+        "genename": "ENSG00000182175"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182253",
+        "genename": "ENSG00000182253"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182256",
+        "genename": "ENSG00000182256"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182405",
+        "genename": "ENSG00000182405"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182511",
+        "genename": "ENSG00000182511"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182636",
+        "genename": "ENSG00000182636"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182768",
+        "genename": "ENSG00000182768"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182774",
+        "genename": "ENSG00000182774"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182854",
+        "genename": "ENSG00000182854"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182950",
+        "genename": "ENSG00000182950"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182974",
+        "genename": "ENSG00000182974"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183060",
+        "genename": "ENSG00000183060"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183208",
+        "genename": "ENSG00000183208"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183324",
+        "genename": "ENSG00000183324"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183475",
+        "genename": "ENSG00000183475"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183476",
+        "genename": "ENSG00000183476"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183496",
+        "genename": "ENSG00000183496"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183571",
+        "genename": "ENSG00000183571"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183578",
+        "genename": "ENSG00000183578"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183629",
+        "genename": "ENSG00000183629"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183655",
+        "genename": "ENSG00000183655"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183706",
+        "genename": "ENSG00000183706"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184056",
+        "genename": "ENSG00000184056"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184140",
+        "genename": "ENSG00000184140"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184206",
+        "genename": "ENSG00000184206"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184254",
+        "genename": "ENSG00000184254"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184277",
+        "genename": "ENSG00000184277"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184507",
+        "genename": "ENSG00000184507"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184508",
+        "genename": "ENSG00000184508"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184716",
+        "genename": "ENSG00000184716"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184984",
+        "genename": "ENSG00000184984"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185033",
+        "genename": "ENSG00000185033"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185115",
+        "genename": "ENSG00000185115"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185418",
+        "genename": "ENSG00000185418"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185442",
+        "genename": "ENSG00000185442"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185518",
+        "genename": "ENSG00000185518"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185634",
+        "genename": "ENSG00000185634"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185823",
+        "genename": "ENSG00000185823"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185880",
+        "genename": "ENSG00000185880"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000186073",
+        "genename": "ENSG00000186073"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000186198",
+        "genename": "ENSG00000186198"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000186297",
+        "genename": "ENSG00000186297"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000186399",
+        "genename": "ENSG00000186399"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000186417",
+        "genename": "ENSG00000186417"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000186628",
+        "genename": "ENSG00000186628"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000187446",
+        "genename": "ENSG00000187446"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000187720",
+        "genename": "ENSG00000187720"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000187806",
+        "genename": "ENSG00000187806"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188089",
+        "genename": "ENSG00000188089"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188095",
+        "genename": "ENSG00000188095"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188266",
+        "genename": "ENSG00000188266"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188277",
+        "genename": "ENSG00000188277"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188467",
+        "genename": "ENSG00000188467"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188501",
+        "genename": "ENSG00000188501"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188549",
+        "genename": "ENSG00000188549"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188626",
+        "genename": "ENSG00000188626"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188659",
+        "genename": "ENSG00000188659"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188779",
+        "genename": "ENSG00000188779"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188869",
+        "genename": "ENSG00000188869"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000189227",
+        "genename": "ENSG00000189227"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196391",
+        "genename": "ENSG00000196391"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196547",
+        "genename": "ENSG00000196547"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197299",
+        "genename": "ENSG00000197299"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197361",
+        "genename": "ENSG00000197361"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197535",
+        "genename": "ENSG00000197535"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197696",
+        "genename": "ENSG00000197696"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197978",
+        "genename": "ENSG00000197978"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198146",
+        "genename": "ENSG00000198146"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198535",
+        "genename": "ENSG00000198535"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198690",
+        "genename": "ENSG00000198690"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198794",
+        "genename": "ENSG00000198794"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198826",
+        "genename": "ENSG00000198826"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198838",
+        "genename": "ENSG00000198838"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198901",
+        "genename": "ENSG00000198901"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205363",
+        "genename": "ENSG00000205363"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205502",
+        "genename": "ENSG00000205502"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000206127",
+        "genename": "ENSG00000206127"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000206190",
+        "genename": "ENSG00000206190"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000213471",
+        "genename": "ENSG00000213471"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000213578",
+        "genename": "ENSG00000213578"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000213614",
+        "genename": "ENSG00000213614"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000214013",
+        "genename": "ENSG00000214013"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000214575",
+        "genename": "ENSG00000214575"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000215186",
+        "genename": "ENSG00000215186"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000215252",
+        "genename": "ENSG00000215252"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000223572",
+        "genename": "ENSG00000223572"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000225973",
+        "genename": "ENSG00000225973"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000229474",
+        "genename": "ENSG00000229474"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000230031",
+        "genename": "ENSG00000230031"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000230778",
+        "genename": "ENSG00000230778"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000232653",
+        "genename": "ENSG00000232653"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000233041",
+        "genename": "ENSG00000233041"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000233917",
+        "genename": "ENSG00000233917"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000233932",
+        "genename": "ENSG00000233932"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000234438",
+        "genename": "ENSG00000234438"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000235711",
+        "genename": "ENSG00000235711"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000237289",
+        "genename": "ENSG00000237289"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000241839",
+        "genename": "ENSG00000241839"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000242028",
+        "genename": "ENSG00000242028"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000242498",
+        "genename": "ENSG00000242498"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000242866",
+        "genename": "ENSG00000242866"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000243708",
+        "genename": "ENSG00000243708"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000243789",
+        "genename": "ENSG00000243789"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000246922",
+        "genename": "ENSG00000246922"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000248905",
+        "genename": "ENSG00000248905"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000249240",
+        "genename": "ENSG00000249240"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000249931",
+        "genename": "ENSG00000249931"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000250021",
+        "genename": "ENSG00000250021"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000254585",
+        "genename": "ENSG00000254585"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000255192",
+        "genename": "ENSG00000255192"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000255346",
+        "genename": "ENSG00000255346"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000255529",
+        "genename": "ENSG00000255529"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000256061",
+        "genename": "ENSG00000256061"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000258484",
+        "genename": "ENSG00000258484"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000259288",
+        "genename": "ENSG00000259288"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000259316",
+        "genename": "ENSG00000259316"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000259330",
+        "genename": "ENSG00000259330"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000259332",
+        "genename": "ENSG00000259332"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000259417",
+        "genename": "ENSG00000259417"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000259494",
+        "genename": "ENSG00000259494"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000260170",
+        "genename": "ENSG00000260170"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000260836",
+        "genename": "ENSG00000260836"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000260916",
+        "genename": "ENSG00000260916"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000261247",
+        "genename": "ENSG00000261247"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000261649",
+        "genename": "ENSG00000261649"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000261652",
+        "genename": "ENSG00000261652"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000261739",
+        "genename": "ENSG00000261739"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000261794",
+        "genename": "ENSG00000261794"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000263155",
+        "genename": "ENSG00000263155"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000273173",
+        "genename": "ENSG00000273173"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000273540",
+        "genename": "ENSG00000273540"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000273749",
+        "genename": "ENSG00000273749"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000273976",
+        "genename": "ENSG00000273976"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000274102",
+        "genename": "ENSG00000274102"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000275674",
+        "genename": "ENSG00000275674"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000275835",
+        "genename": "ENSG00000275835"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000277322",
+        "genename": "ENSG00000277322"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000277865",
+        "genename": "ENSG00000277865"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000278522",
+        "genename": "ENSG00000278522"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000278570",
+        "genename": "ENSG00000278570"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000278662",
+        "genename": "ENSG00000278662"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000279408",
+        "genename": "ENSG00000279408"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000280709",
+        "genename": "ENSG00000280709"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000284906",
+        "genename": "ENSG00000284906"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000285077",
+        "genename": "ENSG00000285077"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000285253",
+        "genename": "ENSG00000285253"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000285472",
+        "genename": "ENSG00000285472"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000285920",
+        "genename": "ENSG00000285920"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000003249",
+        "genename": "ENSG00000003249"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000004779",
+        "genename": "ENSG00000004779"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005001",
+        "genename": "ENSG00000005001"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005187",
+        "genename": "ENSG00000005187"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005189",
+        "genename": "ENSG00000005189"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005194",
+        "genename": "ENSG00000005194"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005513",
+        "genename": "ENSG00000005513"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005844",
+        "genename": "ENSG00000005844"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000006007",
+        "genename": "ENSG00000006007"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000006116",
+        "genename": "ENSG00000006116"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000006194",
+        "genename": "ENSG00000006194"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000006210",
+        "genename": "ENSG00000006210"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000007038",
+        "genename": "ENSG00000007038"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000007376",
+        "genename": "ENSG00000007376"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000007384",
+        "genename": "ENSG00000007384"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000007392",
+        "genename": "ENSG00000007392"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000007516",
+        "genename": "ENSG00000007516"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000007520",
+        "genename": "ENSG00000007520"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000007541",
+        "genename": "ENSG00000007541"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000007545",
+        "genename": "ENSG00000007545"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000008516",
+        "genename": "ENSG00000008516"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000008517",
+        "genename": "ENSG00000008517"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000008710",
+        "genename": "ENSG00000008710"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000010539",
+        "genename": "ENSG00000010539"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000011638",
+        "genename": "ENSG00000011638"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000015413",
+        "genename": "ENSG00000015413"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000033011",
+        "genename": "ENSG00000033011"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000038358",
+        "genename": "ENSG00000038358"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000038532",
+        "genename": "ENSG00000038532"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000039523",
+        "genename": "ENSG00000039523"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000040199",
+        "genename": "ENSG00000040199"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000047578",
+        "genename": "ENSG00000047578"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000048462",
+        "genename": "ENSG00000048462"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000048471",
+        "genename": "ENSG00000048471"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000050820",
+        "genename": "ENSG00000050820"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000052344",
+        "genename": "ENSG00000052344"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000058600",
+        "genename": "ENSG00000058600"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000059122",
+        "genename": "ENSG00000059122"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000059145",
+        "genename": "ENSG00000059145"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000062038",
+        "genename": "ENSG00000062038"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000063854",
+        "genename": "ENSG00000063854"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000064270",
+        "genename": "ENSG00000064270"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065054",
+        "genename": "ENSG00000065054"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065057",
+        "genename": "ENSG00000065057"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065457",
+        "genename": "ENSG00000065457"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000066654",
+        "genename": "ENSG00000066654"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000066813",
+        "genename": "ENSG00000066813"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000067365",
+        "genename": "ENSG00000067365"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000067836",
+        "genename": "ENSG00000067836"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000069329",
+        "genename": "ENSG00000069329"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000069345",
+        "genename": "ENSG00000069345"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000069764",
+        "genename": "ENSG00000069764"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000070729",
+        "genename": "ENSG00000070729"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000070761",
+        "genename": "ENSG00000070761"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000070915",
+        "genename": "ENSG00000070915"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000072736",
+        "genename": "ENSG00000072736"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000072864",
+        "genename": "ENSG00000072864"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000074071",
+        "genename": "ENSG00000074071"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000075399",
+        "genename": "ENSG00000075399"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000076344",
+        "genename": "ENSG00000076344"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000077235",
+        "genename": "ENSG00000077235"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000077238",
+        "genename": "ENSG00000077238"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000078328",
+        "genename": "ENSG00000078328"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000079616",
+        "genename": "ENSG00000079616"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000083093",
+        "genename": "ENSG00000083093"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000083799",
+        "genename": "ENSG00000083799"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000085644",
+        "genename": "ENSG00000085644"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000085721",
+        "genename": "ENSG00000085721"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000086504",
+        "genename": "ENSG00000086504"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000086506",
+        "genename": "ENSG00000086506"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000086696",
+        "genename": "ENSG00000086696"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087237",
+        "genename": "ENSG00000087237"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087250",
+        "genename": "ENSG00000087250"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087253",
+        "genename": "ENSG00000087253"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087258",
+        "genename": "ENSG00000087258"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000088682",
+        "genename": "ENSG00000088682"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000089280",
+        "genename": "ENSG00000089280"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000089486",
+        "genename": "ENSG00000089486"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000089505",
+        "genename": "ENSG00000089505"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000090238",
+        "genename": "ENSG00000090238"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000090447",
+        "genename": "ENSG00000090447"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000090565",
+        "genename": "ENSG00000090565"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000090581",
+        "genename": "ENSG00000090581"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000090857",
+        "genename": "ENSG00000090857"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000090863",
+        "genename": "ENSG00000090863"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000091262",
+        "genename": "ENSG00000091262"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000091651",
+        "genename": "ENSG00000091651"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000095906",
+        "genename": "ENSG00000095906"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000095917",
+        "genename": "ENSG00000095917"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000099365",
+        "genename": "ENSG00000099365"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000099377",
+        "genename": "ENSG00000099377"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000099385",
+        "genename": "ENSG00000099385"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000099769",
+        "genename": "ENSG00000099769"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000100726",
+        "genename": "ENSG00000100726"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102854",
+        "genename": "ENSG00000102854"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102858",
+        "genename": "ENSG00000102858"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102870",
+        "genename": "ENSG00000102870"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102871",
+        "genename": "ENSG00000102871"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102878",
+        "genename": "ENSG00000102878"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102879",
+        "genename": "ENSG00000102879"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102886",
+        "genename": "ENSG00000102886"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102890",
+        "genename": "ENSG00000102890"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102891",
+        "genename": "ENSG00000102891"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102893",
+        "genename": "ENSG00000102893"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102897",
+        "genename": "ENSG00000102897"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102900",
+        "genename": "ENSG00000102900"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102901",
+        "genename": "ENSG00000102901"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102904",
+        "genename": "ENSG00000102904"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102908",
+        "genename": "ENSG00000102908"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102910",
+        "genename": "ENSG00000102910"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102921",
+        "genename": "ENSG00000102921"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102924",
+        "genename": "ENSG00000102924"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102931",
+        "genename": "ENSG00000102931"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102934",
+        "genename": "ENSG00000102934"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102935",
+        "genename": "ENSG00000102935"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102962",
+        "genename": "ENSG00000102962"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102967",
+        "genename": "ENSG00000102967"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102970",
+        "genename": "ENSG00000102970"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102977",
+        "genename": "ENSG00000102977"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102981",
+        "genename": "ENSG00000102981"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102984",
+        "genename": "ENSG00000102984"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103005",
+        "genename": "ENSG00000103005"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103018",
+        "genename": "ENSG00000103018"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103021",
+        "genename": "ENSG00000103021"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103023",
+        "genename": "ENSG00000103023"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103024",
+        "genename": "ENSG00000103024"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103037",
+        "genename": "ENSG00000103037"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103042",
+        "genename": "ENSG00000103042"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103043",
+        "genename": "ENSG00000103043"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103044",
+        "genename": "ENSG00000103044"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103047",
+        "genename": "ENSG00000103047"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103051",
+        "genename": "ENSG00000103051"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103056",
+        "genename": "ENSG00000103056"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103061",
+        "genename": "ENSG00000103061"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103064",
+        "genename": "ENSG00000103064"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103066",
+        "genename": "ENSG00000103066"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103067",
+        "genename": "ENSG00000103067"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103089",
+        "genename": "ENSG00000103089"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103091",
+        "genename": "ENSG00000103091"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103111",
+        "genename": "ENSG00000103111"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103121",
+        "genename": "ENSG00000103121"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103148",
+        "genename": "ENSG00000103148"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103150",
+        "genename": "ENSG00000103150"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103154",
+        "genename": "ENSG00000103154"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103160",
+        "genename": "ENSG00000103160"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103168",
+        "genename": "ENSG00000103168"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103174",
+        "genename": "ENSG00000103174"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103175",
+        "genename": "ENSG00000103175"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103184",
+        "genename": "ENSG00000103184"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103194",
+        "genename": "ENSG00000103194"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103199",
+        "genename": "ENSG00000103199"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103222",
+        "genename": "ENSG00000103222"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103226",
+        "genename": "ENSG00000103226"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103227",
+        "genename": "ENSG00000103227"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103241",
+        "genename": "ENSG00000103241"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103245",
+        "genename": "ENSG00000103245"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103248",
+        "genename": "ENSG00000103248"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103249",
+        "genename": "ENSG00000103249"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103253",
+        "genename": "ENSG00000103253"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103254",
+        "genename": "ENSG00000103254"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103257",
+        "genename": "ENSG00000103257"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103260",
+        "genename": "ENSG00000103260"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103264",
+        "genename": "ENSG00000103264"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103269",
+        "genename": "ENSG00000103269"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103274",
+        "genename": "ENSG00000103274"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103310",
+        "genename": "ENSG00000103310"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103313",
+        "genename": "ENSG00000103313"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103316",
+        "genename": "ENSG00000103316"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103319",
+        "genename": "ENSG00000103319"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103326",
+        "genename": "ENSG00000103326"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103335",
+        "genename": "ENSG00000103335"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103342",
+        "genename": "ENSG00000103342"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103343",
+        "genename": "ENSG00000103343"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103351",
+        "genename": "ENSG00000103351"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103353",
+        "genename": "ENSG00000103353"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103355",
+        "genename": "ENSG00000103355"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103356",
+        "genename": "ENSG00000103356"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103365",
+        "genename": "ENSG00000103365"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103375",
+        "genename": "ENSG00000103375"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103381",
+        "genename": "ENSG00000103381"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103404",
+        "genename": "ENSG00000103404"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103415",
+        "genename": "ENSG00000103415"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103423",
+        "genename": "ENSG00000103423"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103426",
+        "genename": "ENSG00000103426"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103429",
+        "genename": "ENSG00000103429"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103460",
+        "genename": "ENSG00000103460"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103485",
+        "genename": "ENSG00000103485"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103489",
+        "genename": "ENSG00000103489"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103490",
+        "genename": "ENSG00000103490"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103494",
+        "genename": "ENSG00000103494"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103496",
+        "genename": "ENSG00000103496"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103507",
+        "genename": "ENSG00000103507"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103512",
+        "genename": "ENSG00000103512"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103522",
+        "genename": "ENSG00000103522"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103528",
+        "genename": "ENSG00000103528"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103534",
+        "genename": "ENSG00000103534"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103540",
+        "genename": "ENSG00000103540"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103544",
+        "genename": "ENSG00000103544"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103546",
+        "genename": "ENSG00000103546"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103549",
+        "genename": "ENSG00000103549"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103550",
+        "genename": "ENSG00000103550"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000104731",
+        "genename": "ENSG00000104731"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000116176",
+        "genename": "ENSG00000116176"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000118557",
+        "genename": "ENSG00000118557"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000118894",
+        "genename": "ENSG00000118894"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000118898",
+        "genename": "ENSG00000118898"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000121270",
+        "genename": "ENSG00000121270"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000121274",
+        "genename": "ENSG00000121274"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000121281",
+        "genename": "ENSG00000121281"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000122254",
+        "genename": "ENSG00000122254"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000122257",
+        "genename": "ENSG00000122257"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000122299",
+        "genename": "ENSG00000122299"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000122304",
+        "genename": "ENSG00000122304"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000122386",
+        "genename": "ENSG00000122386"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000122390",
+        "genename": "ENSG00000122390"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000124067",
+        "genename": "ENSG00000124067"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000124074",
+        "genename": "ENSG00000124074"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000124391",
+        "genename": "ENSG00000124391"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000125107",
+        "genename": "ENSG00000125107"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000125124",
+        "genename": "ENSG00000125124"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000125144",
+        "genename": "ENSG00000125144"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000125149",
+        "genename": "ENSG00000125149"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000125166",
+        "genename": "ENSG00000125166"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000125170",
+        "genename": "ENSG00000125170"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000126603",
+        "genename": "ENSG00000126603"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000126856",
+        "genename": "ENSG00000126856"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000127554",
+        "genename": "ENSG00000127554"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000127561",
+        "genename": "ENSG00000127561"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000127564",
+        "genename": "ENSG00000127564"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000127578",
+        "genename": "ENSG00000127578"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000127580",
+        "genename": "ENSG00000127580"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000127585",
+        "genename": "ENSG00000127585"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000127586",
+        "genename": "ENSG00000127586"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000127588",
+        "genename": "ENSG00000127588"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000129636",
+        "genename": "ENSG00000129636"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000129910",
+        "genename": "ENSG00000129910"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000129925",
+        "genename": "ENSG00000129925"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000129993",
+        "genename": "ENSG00000129993"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000130182",
+        "genename": "ENSG00000130182"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000130731",
+        "genename": "ENSG00000130731"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131148",
+        "genename": "ENSG00000131148"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131152",
+        "genename": "ENSG00000131152"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131153",
+        "genename": "ENSG00000131153"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131165",
+        "genename": "ENSG00000131165"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131634",
+        "genename": "ENSG00000131634"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131650",
+        "genename": "ENSG00000131650"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131652",
+        "genename": "ENSG00000131652"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131653",
+        "genename": "ENSG00000131653"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000132207",
+        "genename": "ENSG00000132207"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000132600",
+        "genename": "ENSG00000132600"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000132603",
+        "genename": "ENSG00000132603"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000132604",
+        "genename": "ENSG00000132604"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000132612",
+        "genename": "ENSG00000132612"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000133392",
+        "genename": "ENSG00000133392"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000133393",
+        "genename": "ENSG00000133393"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134398",
+        "genename": "ENSG00000134398"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000135686",
+        "genename": "ENSG00000135686"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000135697",
+        "genename": "ENSG00000135697"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000135698",
+        "genename": "ENSG00000135698"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000135702",
+        "genename": "ENSG00000135702"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000135709",
+        "genename": "ENSG00000135709"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000135720",
+        "genename": "ENSG00000135720"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000135722",
+        "genename": "ENSG00000135722"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000135723",
+        "genename": "ENSG00000135723"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000135736",
+        "genename": "ENSG00000135736"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000135740",
+        "genename": "ENSG00000135740"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000138834",
+        "genename": "ENSG00000138834"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140623",
+        "genename": "ENSG00000140623"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140632",
+        "genename": "ENSG00000140632"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140650",
+        "genename": "ENSG00000140650"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140675",
+        "genename": "ENSG00000140675"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140678",
+        "genename": "ENSG00000140678"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140688",
+        "genename": "ENSG00000140688"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140691",
+        "genename": "ENSG00000140691"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140694",
+        "genename": "ENSG00000140694"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140718",
+        "genename": "ENSG00000140718"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140743",
+        "genename": "ENSG00000140743"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140749",
+        "genename": "ENSG00000140749"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140750",
+        "genename": "ENSG00000140750"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140795",
+        "genename": "ENSG00000140795"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140798",
+        "genename": "ENSG00000140798"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140807",
+        "genename": "ENSG00000140807"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140829",
+        "genename": "ENSG00000140829"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140830",
+        "genename": "ENSG00000140830"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140832",
+        "genename": "ENSG00000140832"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140835",
+        "genename": "ENSG00000140835"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140836",
+        "genename": "ENSG00000140836"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140839",
+        "genename": "ENSG00000140839"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140848",
+        "genename": "ENSG00000140848"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140853",
+        "genename": "ENSG00000140853"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140854",
+        "genename": "ENSG00000140854"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140859",
+        "genename": "ENSG00000140859"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140873",
+        "genename": "ENSG00000140873"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140876",
+        "genename": "ENSG00000140876"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140905",
+        "genename": "ENSG00000140905"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140931",
+        "genename": "ENSG00000140931"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140932",
+        "genename": "ENSG00000140932"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140939",
+        "genename": "ENSG00000140939"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140941",
+        "genename": "ENSG00000140941"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140943",
+        "genename": "ENSG00000140943"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140945",
+        "genename": "ENSG00000140945"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140948",
+        "genename": "ENSG00000140948"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140950",
+        "genename": "ENSG00000140950"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140955",
+        "genename": "ENSG00000140955"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140961",
+        "genename": "ENSG00000140961"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140983",
+        "genename": "ENSG00000140983"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140986",
+        "genename": "ENSG00000140986"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140987",
+        "genename": "ENSG00000140987"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140993",
+        "genename": "ENSG00000140993"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140995",
+        "genename": "ENSG00000140995"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000141012",
+        "genename": "ENSG00000141012"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000141013",
+        "genename": "ENSG00000141013"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000141076",
+        "genename": "ENSG00000141076"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000141084",
+        "genename": "ENSG00000141084"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000141086",
+        "genename": "ENSG00000141086"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000141096",
+        "genename": "ENSG00000141096"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000141098",
+        "genename": "ENSG00000141098"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000141101",
+        "genename": "ENSG00000141101"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149926",
+        "genename": "ENSG00000149926"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149927",
+        "genename": "ENSG00000149927"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149929",
+        "genename": "ENSG00000149929"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149930",
+        "genename": "ENSG00000149930"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000150394",
+        "genename": "ENSG00000150394"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000151006",
+        "genename": "ENSG00000151006"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000152910",
+        "genename": "ENSG00000152910"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000153048",
+        "genename": "ENSG00000153048"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000153060",
+        "genename": "ENSG00000153060"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000153406",
+        "genename": "ENSG00000153406"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000153443",
+        "genename": "ENSG00000153443"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000153446",
+        "genename": "ENSG00000153446"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000153774",
+        "genename": "ENSG00000153774"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000153786",
+        "genename": "ENSG00000153786"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000153789",
+        "genename": "ENSG00000153789"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000153815",
+        "genename": "ENSG00000153815"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000154099",
+        "genename": "ENSG00000154099"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000154102",
+        "genename": "ENSG00000154102"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000154118",
+        "genename": "ENSG00000154118"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000155330",
+        "genename": "ENSG00000155330"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000155393",
+        "genename": "ENSG00000155393"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000155592",
+        "genename": "ENSG00000155592"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000155666",
+        "genename": "ENSG00000155666"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000155714",
+        "genename": "ENSG00000155714"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000155719",
+        "genename": "ENSG00000155719"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000156853",
+        "genename": "ENSG00000156853"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000156858",
+        "genename": "ENSG00000156858"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000156860",
+        "genename": "ENSG00000156860"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000156873",
+        "genename": "ENSG00000156873"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000156885",
+        "genename": "ENSG00000156885"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000156886",
+        "genename": "ENSG00000156886"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000156968",
+        "genename": "ENSG00000156968"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157045",
+        "genename": "ENSG00000157045"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157106",
+        "genename": "ENSG00000157106"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157315",
+        "genename": "ENSG00000157315"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157322",
+        "genename": "ENSG00000157322"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157335",
+        "genename": "ENSG00000157335"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157349",
+        "genename": "ENSG00000157349"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157350",
+        "genename": "ENSG00000157350"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157353",
+        "genename": "ENSG00000157353"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157368",
+        "genename": "ENSG00000157368"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157423",
+        "genename": "ENSG00000157423"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000157429",
+        "genename": "ENSG00000157429"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000158486",
+        "genename": "ENSG00000158486"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000158545",
+        "genename": "ENSG00000158545"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000158717",
+        "genename": "ENSG00000158717"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000158792",
+        "genename": "ENSG00000158792"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000158805",
+        "genename": "ENSG00000158805"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000158865",
+        "genename": "ENSG00000158865"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159387",
+        "genename": "ENSG00000159387"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159398",
+        "genename": "ENSG00000159398"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159461",
+        "genename": "ENSG00000159461"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159579",
+        "genename": "ENSG00000159579"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159593",
+        "genename": "ENSG00000159593"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159618",
+        "genename": "ENSG00000159618"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159625",
+        "genename": "ENSG00000159625"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159648",
+        "genename": "ENSG00000159648"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159708",
+        "genename": "ENSG00000159708"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159713",
+        "genename": "ENSG00000159713"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159714",
+        "genename": "ENSG00000159714"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159720",
+        "genename": "ENSG00000159720"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159723",
+        "genename": "ENSG00000159723"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159753",
+        "genename": "ENSG00000159753"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159761",
+        "genename": "ENSG00000159761"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000159792",
+        "genename": "ENSG00000159792"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000161980",
+        "genename": "ENSG00000161980"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000161981",
+        "genename": "ENSG00000161981"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000161992",
+        "genename": "ENSG00000161992"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000161996",
+        "genename": "ENSG00000161996"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000161999",
+        "genename": "ENSG00000161999"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162004",
+        "genename": "ENSG00000162004"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162006",
+        "genename": "ENSG00000162006"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162009",
+        "genename": "ENSG00000162009"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162032",
+        "genename": "ENSG00000162032"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162039",
+        "genename": "ENSG00000162039"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162040",
+        "genename": "ENSG00000162040"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162062",
+        "genename": "ENSG00000162062"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162063",
+        "genename": "ENSG00000162063"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162065",
+        "genename": "ENSG00000162065"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162066",
+        "genename": "ENSG00000162066"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162068",
+        "genename": "ENSG00000162068"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162069",
+        "genename": "ENSG00000162069"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162073",
+        "genename": "ENSG00000162073"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162076",
+        "genename": "ENSG00000162076"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162078",
+        "genename": "ENSG00000162078"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000162086",
+        "genename": "ENSG00000162086"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166123",
+        "genename": "ENSG00000166123"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166152",
+        "genename": "ENSG00000166152"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166188",
+        "genename": "ENSG00000166188"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166246",
+        "genename": "ENSG00000166246"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166446",
+        "genename": "ENSG00000166446"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166451",
+        "genename": "ENSG00000166451"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166454",
+        "genename": "ENSG00000166454"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166455",
+        "genename": "ENSG00000166455"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166501",
+        "genename": "ENSG00000166501"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166509",
+        "genename": "ENSG00000166509"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166546",
+        "genename": "ENSG00000166546"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166548",
+        "genename": "ENSG00000166548"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166558",
+        "genename": "ENSG00000166558"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166589",
+        "genename": "ENSG00000166589"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166592",
+        "genename": "ENSG00000166592"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166669",
+        "genename": "ENSG00000166669"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166676",
+        "genename": "ENSG00000166676"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166743",
+        "genename": "ENSG00000166743"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166747",
+        "genename": "ENSG00000166747"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166780",
+        "genename": "ENSG00000166780"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166783",
+        "genename": "ENSG00000166783"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166816",
+        "genename": "ENSG00000166816"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166822",
+        "genename": "ENSG00000166822"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166828",
+        "genename": "ENSG00000166828"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166847",
+        "genename": "ENSG00000166847"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166848",
+        "genename": "ENSG00000166848"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166869",
+        "genename": "ENSG00000166869"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166971",
+        "genename": "ENSG00000166971"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167005",
+        "genename": "ENSG00000167005"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167186",
+        "genename": "ENSG00000167186"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167191",
+        "genename": "ENSG00000167191"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167194",
+        "genename": "ENSG00000167194"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167207",
+        "genename": "ENSG00000167207"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167208",
+        "genename": "ENSG00000167208"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167261",
+        "genename": "ENSG00000167261"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167264",
+        "genename": "ENSG00000167264"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167371",
+        "genename": "ENSG00000167371"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167377",
+        "genename": "ENSG00000167377"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167394",
+        "genename": "ENSG00000167394"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167395",
+        "genename": "ENSG00000167395"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167508",
+        "genename": "ENSG00000167508"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167513",
+        "genename": "ENSG00000167513"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167515",
+        "genename": "ENSG00000167515"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167523",
+        "genename": "ENSG00000167523"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167930",
+        "genename": "ENSG00000167930"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167962",
+        "genename": "ENSG00000167962"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167964",
+        "genename": "ENSG00000167964"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167965",
+        "genename": "ENSG00000167965"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167967",
+        "genename": "ENSG00000167967"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167968",
+        "genename": "ENSG00000167968"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167969",
+        "genename": "ENSG00000167969"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167971",
+        "genename": "ENSG00000167971"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167972",
+        "genename": "ENSG00000167972"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167977",
+        "genename": "ENSG00000167977"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167981",
+        "genename": "ENSG00000167981"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167984",
+        "genename": "ENSG00000167984"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168096",
+        "genename": "ENSG00000168096"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168101",
+        "genename": "ENSG00000168101"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168124",
+        "genename": "ENSG00000168124"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168158",
+        "genename": "ENSG00000168158"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168286",
+        "genename": "ENSG00000168286"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168404",
+        "genename": "ENSG00000168404"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168411",
+        "genename": "ENSG00000168411"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168418",
+        "genename": "ENSG00000168418"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168434",
+        "genename": "ENSG00000168434"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168447",
+        "genename": "ENSG00000168447"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168488",
+        "genename": "ENSG00000168488"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168589",
+        "genename": "ENSG00000168589"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168676",
+        "genename": "ENSG00000168676"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168701",
+        "genename": "ENSG00000168701"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168748",
+        "genename": "ENSG00000168748"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168802",
+        "genename": "ENSG00000168802"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168807",
+        "genename": "ENSG00000168807"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168872",
+        "genename": "ENSG00000168872"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168925",
+        "genename": "ENSG00000168925"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168928",
+        "genename": "ENSG00000168928"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169180",
+        "genename": "ENSG00000169180"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169181",
+        "genename": "ENSG00000169181"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169189",
+        "genename": "ENSG00000169189"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169203",
+        "genename": "ENSG00000169203"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169217",
+        "genename": "ENSG00000169217"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169221",
+        "genename": "ENSG00000169221"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169246",
+        "genename": "ENSG00000169246"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169340",
+        "genename": "ENSG00000169340"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169344",
+        "genename": "ENSG00000169344"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169347",
+        "genename": "ENSG00000169347"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169592",
+        "genename": "ENSG00000169592"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169627",
+        "genename": "ENSG00000169627"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169682",
+        "genename": "ENSG00000169682"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169688",
+        "genename": "ENSG00000169688"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169877",
+        "genename": "ENSG00000169877"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169896",
+        "genename": "ENSG00000169896"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169900",
+        "genename": "ENSG00000169900"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169951",
+        "genename": "ENSG00000169951"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169955",
+        "genename": "ENSG00000169955"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169957",
+        "genename": "ENSG00000169957"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000170100",
+        "genename": "ENSG00000170100"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000170537",
+        "genename": "ENSG00000170537"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000170540",
+        "genename": "ENSG00000170540"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171208",
+        "genename": "ENSG00000171208"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171241",
+        "genename": "ENSG00000171241"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171490",
+        "genename": "ENSG00000171490"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000171724",
+        "genename": "ENSG00000171724"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172137",
+        "genename": "ENSG00000172137"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172236",
+        "genename": "ENSG00000172236"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172366",
+        "genename": "ENSG00000172366"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172382",
+        "genename": "ENSG00000172382"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172530",
+        "genename": "ENSG00000172530"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172775",
+        "genename": "ENSG00000172775"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172824",
+        "genename": "ENSG00000172824"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172828",
+        "genename": "ENSG00000172828"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172831",
+        "genename": "ENSG00000172831"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000172840",
+        "genename": "ENSG00000172840"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174109",
+        "genename": "ENSG00000174109"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174177",
+        "genename": "ENSG00000174177"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174628",
+        "genename": "ENSG00000174628"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174938",
+        "genename": "ENSG00000174938"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174939",
+        "genename": "ENSG00000174939"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174943",
+        "genename": "ENSG00000174943"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174990",
+        "genename": "ENSG00000174990"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174992",
+        "genename": "ENSG00000174992"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000175267",
+        "genename": "ENSG00000175267"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000175311",
+        "genename": "ENSG00000175311"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000175595",
+        "genename": "ENSG00000175595"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000175643",
+        "genename": "ENSG00000175643"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000175646",
+        "genename": "ENSG00000175646"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000175938",
+        "genename": "ENSG00000175938"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176387",
+        "genename": "ENSG00000176387"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176476",
+        "genename": "ENSG00000176476"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176678",
+        "genename": "ENSG00000176678"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176692",
+        "genename": "ENSG00000176692"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176715",
+        "genename": "ENSG00000176715"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176723",
+        "genename": "ENSG00000176723"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176842",
+        "genename": "ENSG00000176842"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176953",
+        "genename": "ENSG00000176953"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000177238",
+        "genename": "ENSG00000177238"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000177455",
+        "genename": "ENSG00000177455"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000177508",
+        "genename": "ENSG00000177508"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000177548",
+        "genename": "ENSG00000177548"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178188",
+        "genename": "ENSG00000178188"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178226",
+        "genename": "ENSG00000178226"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178257",
+        "genename": "ENSG00000178257"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178279",
+        "genename": "ENSG00000178279"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178773",
+        "genename": "ENSG00000178773"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179044",
+        "genename": "ENSG00000179044"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179580",
+        "genename": "ENSG00000179580"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179588",
+        "genename": "ENSG00000179588"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179889",
+        "genename": "ENSG00000179889"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179918",
+        "genename": "ENSG00000179918"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179958",
+        "genename": "ENSG00000179958"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000179965",
+        "genename": "ENSG00000179965"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000180035",
+        "genename": "ENSG00000180035"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000180096",
+        "genename": "ENSG00000180096"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000180185",
+        "genename": "ENSG00000180185"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000180209",
+        "genename": "ENSG00000180209"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000180269",
+        "genename": "ENSG00000180269"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000180917",
+        "genename": "ENSG00000180917"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181625",
+        "genename": "ENSG00000181625"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181938",
+        "genename": "ENSG00000181938"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182108",
+        "genename": "ENSG00000182108"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182149",
+        "genename": "ENSG00000182149"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182601",
+        "genename": "ENSG00000182601"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182685",
+        "genename": "ENSG00000182685"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182810",
+        "genename": "ENSG00000182810"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182831",
+        "genename": "ENSG00000182831"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182885",
+        "genename": "ENSG00000182885"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183044",
+        "genename": "ENSG00000183044"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183196",
+        "genename": "ENSG00000183196"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183336",
+        "genename": "ENSG00000183336"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183454",
+        "genename": "ENSG00000183454"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183549",
+        "genename": "ENSG00000183549"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183632",
+        "genename": "ENSG00000183632"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183723",
+        "genename": "ENSG00000183723"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183747",
+        "genename": "ENSG00000183747"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183751",
+        "genename": "ENSG00000183751"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183793",
+        "genename": "ENSG00000183793"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183889",
+        "genename": "ENSG00000183889"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183921",
+        "genename": "ENSG00000183921"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000183971",
+        "genename": "ENSG00000183971"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184110",
+        "genename": "ENSG00000184110"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184207",
+        "genename": "ENSG00000184207"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184471",
+        "genename": "ENSG00000184471"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184517",
+        "genename": "ENSG00000184517"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184602",
+        "genename": "ENSG00000184602"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184697",
+        "genename": "ENSG00000184697"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184730",
+        "genename": "ENSG00000184730"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184857",
+        "genename": "ENSG00000184857"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184860",
+        "genename": "ENSG00000184860"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000184939",
+        "genename": "ENSG00000184939"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185164",
+        "genename": "ENSG00000185164"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185324",
+        "genename": "ENSG00000185324"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185615",
+        "genename": "ENSG00000185615"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185669",
+        "genename": "ENSG00000185669"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185716",
+        "genename": "ENSG00000185716"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185739",
+        "genename": "ENSG00000185739"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185864",
+        "genename": "ENSG00000185864"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185905",
+        "genename": "ENSG00000185905"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185947",
+        "genename": "ENSG00000185947"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000186153",
+        "genename": "ENSG00000186153"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000186187",
+        "genename": "ENSG00000186187"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000187193",
+        "genename": "ENSG00000187193"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000187535",
+        "genename": "ENSG00000187535"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000187741",
+        "genename": "ENSG00000187741"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188038",
+        "genename": "ENSG00000188038"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188215",
+        "genename": "ENSG00000188215"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188322",
+        "genename": "ENSG00000188322"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188536",
+        "genename": "ENSG00000188536"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188603",
+        "genename": "ENSG00000188603"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188827",
+        "genename": "ENSG00000188827"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000188897",
+        "genename": "ENSG00000188897"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000189091",
+        "genename": "ENSG00000189091"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196118",
+        "genename": "ENSG00000196118"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196123",
+        "genename": "ENSG00000196123"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196155",
+        "genename": "ENSG00000196155"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196296",
+        "genename": "ENSG00000196296"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196408",
+        "genename": "ENSG00000196408"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196436",
+        "genename": "ENSG00000196436"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196470",
+        "genename": "ENSG00000196470"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196502",
+        "genename": "ENSG00000196502"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196557",
+        "genename": "ENSG00000196557"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196678",
+        "genename": "ENSG00000196678"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000196993",
+        "genename": "ENSG00000196993"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197006",
+        "genename": "ENSG00000197006"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197162",
+        "genename": "ENSG00000197162"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197165",
+        "genename": "ENSG00000197165"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197253",
+        "genename": "ENSG00000197253"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197272",
+        "genename": "ENSG00000197272"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197302",
+        "genename": "ENSG00000197302"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197471",
+        "genename": "ENSG00000197471"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197562",
+        "genename": "ENSG00000197562"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197599",
+        "genename": "ENSG00000197599"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197774",
+        "genename": "ENSG00000197774"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197912",
+        "genename": "ENSG00000197912"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000197943",
+        "genename": "ENSG00000197943"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198064",
+        "genename": "ENSG00000198064"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198156",
+        "genename": "ENSG00000198156"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198211",
+        "genename": "ENSG00000198211"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198373",
+        "genename": "ENSG00000198373"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198417",
+        "genename": "ENSG00000198417"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198650",
+        "genename": "ENSG00000198650"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198736",
+        "genename": "ENSG00000198736"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198848",
+        "genename": "ENSG00000198848"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000204991",
+        "genename": "ENSG00000204991"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205022",
+        "genename": "ENSG00000205022"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205078",
+        "genename": "ENSG00000205078"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205084",
+        "genename": "ENSG00000205084"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205220",
+        "genename": "ENSG00000205220"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205336",
+        "genename": "ENSG00000205336"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205358",
+        "genename": "ENSG00000205358"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205362",
+        "genename": "ENSG00000205362"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205364",
+        "genename": "ENSG00000205364"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205423",
+        "genename": "ENSG00000205423"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205456",
+        "genename": "ENSG00000205456"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205457",
+        "genename": "ENSG00000205457"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205609",
+        "genename": "ENSG00000205609"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205629",
+        "genename": "ENSG00000205629"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205730",
+        "genename": "ENSG00000205730"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205832",
+        "genename": "ENSG00000205832"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205923",
+        "genename": "ENSG00000205923"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000205937",
+        "genename": "ENSG00000205937"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000206053",
+        "genename": "ENSG00000206053"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000206172",
+        "genename": "ENSG00000206172"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000206177",
+        "genename": "ENSG00000206177"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000213380",
+        "genename": "ENSG00000213380"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000213398",
+        "genename": "ENSG00000213398"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000213648",
+        "genename": "ENSG00000213648"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000213658",
+        "genename": "ENSG00000213658"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000213853",
+        "genename": "ENSG00000213853"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000213918",
+        "genename": "ENSG00000213918"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000213937",
+        "genename": "ENSG00000213937"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000214940",
+        "genename": "ENSG00000214940"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000214967",
+        "genename": "ENSG00000214967"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000215131",
+        "genename": "ENSG00000215131"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000215148",
+        "genename": "ENSG00000215148"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000217555",
+        "genename": "ENSG00000217555"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000217930",
+        "genename": "ENSG00000217930"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000223496",
+        "genename": "ENSG00000223496"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000224470",
+        "genename": "ENSG00000224470"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000224578",
+        "genename": "ENSG00000224578"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000224712",
+        "genename": "ENSG00000224712"
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000111704",
+        "genename": "ENSG00000111704",
+        "x": 2010,
+        "y": 2010,
+        "color": "#f83e56",
+        "size": 50,
+        "perturbed": true
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000204531",
+        "genename": "ENSG00000204531",
+        "x": 2020,
+        "y": 2020,
+        "color": "#f83e56",
+        "size": 50,
+        "perturbed": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000166164",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000166164",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000039068",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000039068",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000140992",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000140992",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000102978",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000102978",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000169018",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000169018",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000103197",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000103197",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000186260",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000186260",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000167978",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000167978",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000103266",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000103266",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000255302",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000255302",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000134323",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000134323",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000185338",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000185338",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000149922",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000149922",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000099364",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000099364",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000172183",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000172183",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000169926",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000169926",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000162104",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000162104",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000182054",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000182054",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000140968",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000140968",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000103275",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000103275",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000067955",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000067955",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000179583",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000179583",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000130656",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000130656",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000103510",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000103510",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000102882",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000102882",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000177200",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000177200",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000102974",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000102974",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000126602",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000126602",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000090905",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000090905",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000181019",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000181019",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000150281",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000150281",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000099381",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000099381",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000187555",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000187555",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000169375",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000169375",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000178573",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000178573",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000185551",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000185551",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000169032",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000169032",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000153066",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000153066",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000167522",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000167522",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000171016",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000171016",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000070770",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000070770",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000080603",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000080603",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000169856",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000169856",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000103479",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000103479",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000131149",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000131149",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000005339-ENSG00000103126",
+        "source": "ENSG00000005339",
+        "target": "ENSG00000103126",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000179361",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000179361",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000205250",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000205250",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000102996",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000102996",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000102882",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000102882",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000167526",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000167526",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000102974",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000102974",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000182054",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000182054",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000187555",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000187555",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000118900",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000118900",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000166851",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000166851",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000169032",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000169032",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000179776",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000179776",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000103449",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000103449",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000087263",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000087263",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000103034",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000103034",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000103479",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000103479",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000039068",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000039068",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000103197",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000103197",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134323-ENSG00000103266",
+        "source": "ENSG00000134323",
+        "target": "ENSG00000103266",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167978-ENSG00000176046",
+        "source": "ENSG00000167978",
+        "target": "ENSG00000176046",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167978-ENSG00000168140",
+        "source": "ENSG00000167978",
+        "target": "ENSG00000168140",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167978-ENSG00000149923",
+        "source": "ENSG00000167978",
+        "target": "ENSG00000149923",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167978-ENSG00000103145",
+        "source": "ENSG00000167978",
+        "target": "ENSG00000103145",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167978-ENSG00000034713",
+        "source": "ENSG00000167978",
+        "target": "ENSG00000034713",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167978-ENSG00000103363",
+        "source": "ENSG00000167978",
+        "target": "ENSG00000103363",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167978-ENSG00000141002",
+        "source": "ENSG00000167978",
+        "target": "ENSG00000141002",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167978-ENSG00000183426",
+        "source": "ENSG00000167978",
+        "target": "ENSG00000183426",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000255302-ENSG00000185787",
+        "source": "ENSG00000255302",
+        "target": "ENSG00000185787",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000149925",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000149925",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000140990",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000140990",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000103363",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000103363",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000103035",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000103035",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000065427",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000065427",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000198931",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000198931",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000034713",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000034713",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000185088",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000182117",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000174444",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000134419",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000178741",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000103202",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000102898",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000102898",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000131143",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000140988",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167526-ENSG00000178952",
+        "source": "ENSG00000167526",
+        "target": "ENSG00000178952",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000051108",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000051108",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000131143",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000087245",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000087245",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000140988",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000169715",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000169715",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000149925",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000149925",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000034713",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000034713",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000051523",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000051523",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000125148",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000125148",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000198931",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000198931",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000167397",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000167397",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000181019",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000181019",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000181019-ENSG00000182718",
+        "source": "ENSG00000181019",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176046-ENSG00000178952",
+        "source": "ENSG00000176046",
+        "target": "ENSG00000178952",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176046-ENSG00000169715",
+        "source": "ENSG00000176046",
+        "target": "ENSG00000169715",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176046-ENSG00000185787",
+        "source": "ENSG00000176046",
+        "target": "ENSG00000185787",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176046-ENSG00000185043",
+        "source": "ENSG00000176046",
+        "target": "ENSG00000185043",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176046-ENSG00000087245",
+        "source": "ENSG00000176046",
+        "target": "ENSG00000087245",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000176046-ENSG00000051108",
+        "source": "ENSG00000176046",
+        "target": "ENSG00000051108",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000178741",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000140988",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000174444",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000182718",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000103502",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000103502",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000149923",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000149923",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000134419",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000185088",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000103202",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000034713",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000034713",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000149925",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000149925",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000185883",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000185883",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000131143",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000140740",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000065427",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000065427",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000140990",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000140990",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000198931",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000198931",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000103035",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000103035",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178952-ENSG00000090861",
+        "source": "ENSG00000178952",
+        "target": "ENSG00000090861",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000198931",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000198931",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000166595",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000166595",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000182117",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000182718",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000174444",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000140988",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000149923",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000149923",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000178741",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000149925",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000149925",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000103202",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000125148",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000125148",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000103495",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000103495",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000103502",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000103502",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000185883",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000185883",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000149932",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000149932",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000103187",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000103187",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000140740",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000131143",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000103363",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000103363",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149925-ENSG00000140990",
+        "source": "ENSG00000149925",
+        "target": "ENSG00000140990",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103145-ENSG00000140990",
+        "source": "ENSG00000103145",
+        "target": "ENSG00000140990",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103145-ENSG00000167397",
+        "source": "ENSG00000103145",
+        "target": "ENSG00000167397",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103145-ENSG00000182117",
+        "source": "ENSG00000103145",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103145-ENSG00000006327",
+        "source": "ENSG00000103145",
+        "target": "ENSG00000006327",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103145-ENSG00000103202",
+        "source": "ENSG00000103145",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103145-ENSG00000103363",
+        "source": "ENSG00000103145",
+        "target": "ENSG00000103363",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990-ENSG00000174444",
+        "source": "ENSG00000140990",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990-ENSG00000178741",
+        "source": "ENSG00000140990",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990-ENSG00000185883",
+        "source": "ENSG00000140990",
+        "target": "ENSG00000185883",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990-ENSG00000103035",
+        "source": "ENSG00000140990",
+        "target": "ENSG00000103035",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990-ENSG00000183426",
+        "source": "ENSG00000140990",
+        "target": "ENSG00000183426",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990-ENSG00000140740",
+        "source": "ENSG00000140990",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990-ENSG00000103363",
+        "source": "ENSG00000140990",
+        "target": "ENSG00000103363",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990-ENSG00000131143",
+        "source": "ENSG00000140990",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990-ENSG00000103187",
+        "source": "ENSG00000140990",
+        "target": "ENSG00000103187",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140990-ENSG00000140988",
+        "source": "ENSG00000140990",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103363-ENSG00000103035",
+        "source": "ENSG00000103363",
+        "target": "ENSG00000103035",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103363-ENSG00000065427",
+        "source": "ENSG00000103363",
+        "target": "ENSG00000065427",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103363-ENSG00000174444",
+        "source": "ENSG00000103363",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103363-ENSG00000131143",
+        "source": "ENSG00000103363",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103363-ENSG00000140988",
+        "source": "ENSG00000103363",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103363-ENSG00000178741",
+        "source": "ENSG00000103363",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103363-ENSG00000166595",
+        "source": "ENSG00000103363",
+        "target": "ENSG00000166595",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000065427",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000065427",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000185088",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000182117",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000174444",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000103187",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000103187",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000140740",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000178741",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000034713",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000034713",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000198931",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000198931",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000090861",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000090861",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000103502",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000103502",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000006327",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000006327",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000102898",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000102898",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000134419",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000131143",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103035-ENSG00000140988",
+        "source": "ENSG00000103035",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000103502",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000103502",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000065427",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000065427",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000185787",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000185787",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000034713",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000034713",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000198931",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000198931",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000174444",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000189067",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000189067",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000140740",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000134419",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000090861",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000090861",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000131143",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000103202",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000065427-ENSG00000140988",
+        "source": "ENSG00000065427",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000185883",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000185883",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000103502",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000103502",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000132613",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000132613",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000174444",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000185043",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000185043",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000103202",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000182718",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000134419",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000140740",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000131143",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000034713-ENSG00000140988",
+        "source": "ENSG00000034713",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000131143",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000134419",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000090861",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000090861",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000185043",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000185043",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000103502",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000103502",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000185088",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000174444",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000132613",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000132613",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000140988",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000103202",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000102898",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000102898",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000178741",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185883-ENSG00000140740",
+        "source": "ENSG00000185883",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169715-ENSG00000125148",
+        "source": "ENSG00000169715",
+        "target": "ENSG00000125148",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169715-ENSG00000087245",
+        "source": "ENSG00000169715",
+        "target": "ENSG00000087245",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169715-ENSG00000182718",
+        "source": "ENSG00000169715",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169715-ENSG00000198931",
+        "source": "ENSG00000169715",
+        "target": "ENSG00000198931",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169715-ENSG00000103187",
+        "source": "ENSG00000169715",
+        "target": "ENSG00000103187",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169715-ENSG00000051523",
+        "source": "ENSG00000169715",
+        "target": "ENSG00000051523",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000169715-ENSG00000013364",
+        "source": "ENSG00000169715",
+        "target": "ENSG00000013364",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103502-ENSG00000198931",
+        "source": "ENSG00000103502",
+        "target": "ENSG00000198931",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103502-ENSG00000090861",
+        "source": "ENSG00000103502",
+        "target": "ENSG00000090861",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103502-ENSG00000149923",
+        "source": "ENSG00000103502",
+        "target": "ENSG00000149923",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103502-ENSG00000103202",
+        "source": "ENSG00000103502",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103502-ENSG00000149932",
+        "source": "ENSG00000103502",
+        "target": "ENSG00000149932",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103502-ENSG00000103495",
+        "source": "ENSG00000103502",
+        "target": "ENSG00000103495",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103502-ENSG00000140740",
+        "source": "ENSG00000103502",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198931-ENSG00000125148",
+        "source": "ENSG00000198931",
+        "target": "ENSG00000125148",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198931-ENSG00000174444",
+        "source": "ENSG00000198931",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198931-ENSG00000090861",
+        "source": "ENSG00000198931",
+        "target": "ENSG00000090861",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198931-ENSG00000103202",
+        "source": "ENSG00000198931",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198931-ENSG00000134419",
+        "source": "ENSG00000198931",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198931-ENSG00000149932",
+        "source": "ENSG00000198931",
+        "target": "ENSG00000149932",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198931-ENSG00000051523",
+        "source": "ENSG00000198931",
+        "target": "ENSG00000051523",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000198931-ENSG00000140988",
+        "source": "ENSG00000198931",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898-ENSG00000140988",
+        "source": "ENSG00000102898",
+        "target": "ENSG00000140988",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898-ENSG00000141002",
+        "source": "ENSG00000102898",
+        "target": "ENSG00000141002",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898-ENSG00000182117",
+        "source": "ENSG00000102898",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898-ENSG00000166595",
+        "source": "ENSG00000102898",
+        "target": "ENSG00000166595",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898-ENSG00000185088",
+        "source": "ENSG00000102898",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898-ENSG00000134419",
+        "source": "ENSG00000102898",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898-ENSG00000103202",
+        "source": "ENSG00000102898",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898-ENSG00000174444",
+        "source": "ENSG00000102898",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898-ENSG00000178741",
+        "source": "ENSG00000102898",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000102898-ENSG00000102898",
+        "source": "ENSG00000102898",
+        "target": "ENSG00000102898",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000103495",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000103495",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000134419",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000185088",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000141002",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000141002",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000182718",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000103202",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000140740",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000185787",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000185787",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000131143",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000174444",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000178741",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000090861",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000090861",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140988-ENSG00000182117",
+        "source": "ENSG00000140988",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000103152",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000103152",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000183426",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000183426",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000090861",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000090861",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000132613",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000132613",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000178741",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000103495",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000103495",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000185043",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000185043",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000174444",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000185088",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000134419",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000140740",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000103202",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000103202",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103202-ENSG00000131143",
+        "source": "ENSG00000103202",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168140-ENSG00000132613",
+        "source": "ENSG00000168140",
+        "target": "ENSG00000132613",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168140-ENSG00000087245",
+        "source": "ENSG00000168140",
+        "target": "ENSG00000087245",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000168140-ENSG00000140682",
+        "source": "ENSG00000168140",
+        "target": "ENSG00000140682",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000132613-ENSG00000134419",
+        "source": "ENSG00000132613",
+        "target": "ENSG00000134419",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103495-ENSG00000174444",
+        "source": "ENSG00000103495",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103495-ENSG00000185787",
+        "source": "ENSG00000103495",
+        "target": "ENSG00000185787",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103495-ENSG00000149923",
+        "source": "ENSG00000103495",
+        "target": "ENSG00000149923",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103495-ENSG00000149932",
+        "source": "ENSG00000103495",
+        "target": "ENSG00000149932",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134419-ENSG00000166595",
+        "source": "ENSG00000134419",
+        "target": "ENSG00000166595",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134419-ENSG00000131143",
+        "source": "ENSG00000134419",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134419-ENSG00000185088",
+        "source": "ENSG00000134419",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134419-ENSG00000182117",
+        "source": "ENSG00000134419",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000134419-ENSG00000174444",
+        "source": "ENSG00000134419",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166595-ENSG00000141002",
+        "source": "ENSG00000166595",
+        "target": "ENSG00000141002",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166595-ENSG00000182117",
+        "source": "ENSG00000166595",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000166595-ENSG00000131143",
+        "source": "ENSG00000166595",
+        "target": "ENSG00000131143",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000125148-ENSG00000087245",
+        "source": "ENSG00000125148",
+        "target": "ENSG00000087245",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000125148-ENSG00000006327",
+        "source": "ENSG00000125148",
+        "target": "ENSG00000006327",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000125148-ENSG00000182718",
+        "source": "ENSG00000125148",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087245-ENSG00000140682",
+        "source": "ENSG00000087245",
+        "target": "ENSG00000140682",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087245-ENSG00000103187",
+        "source": "ENSG00000087245",
+        "target": "ENSG00000103187",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087245-ENSG00000013364",
+        "source": "ENSG00000087245",
+        "target": "ENSG00000013364",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087245-ENSG00000103196",
+        "source": "ENSG00000087245",
+        "target": "ENSG00000103196",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087245-ENSG00000140937",
+        "source": "ENSG00000087245",
+        "target": "ENSG00000140937",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087245-ENSG00000006327",
+        "source": "ENSG00000087245",
+        "target": "ENSG00000006327",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087245-ENSG00000182718",
+        "source": "ENSG00000087245",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000087245-ENSG00000051523",
+        "source": "ENSG00000087245",
+        "target": "ENSG00000051523",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131143-ENSG00000141002",
+        "source": "ENSG00000131143",
+        "target": "ENSG00000141002",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131143-ENSG00000182718",
+        "source": "ENSG00000131143",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131143-ENSG00000140740",
+        "source": "ENSG00000131143",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131143-ENSG00000051523",
+        "source": "ENSG00000131143",
+        "target": "ENSG00000051523",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131143-ENSG00000103187",
+        "source": "ENSG00000131143",
+        "target": "ENSG00000103187",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131143-ENSG00000185043",
+        "source": "ENSG00000131143",
+        "target": "ENSG00000185043",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131143-ENSG00000185088",
+        "source": "ENSG00000131143",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131143-ENSG00000174444",
+        "source": "ENSG00000131143",
+        "target": "ENSG00000174444",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000131143-ENSG00000178741",
+        "source": "ENSG00000131143",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174444-ENSG00000141002",
+        "source": "ENSG00000174444",
+        "target": "ENSG00000141002",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174444-ENSG00000185787",
+        "source": "ENSG00000174444",
+        "target": "ENSG00000185787",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174444-ENSG00000178741",
+        "source": "ENSG00000174444",
+        "target": "ENSG00000178741",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174444-ENSG00000182718",
+        "source": "ENSG00000174444",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174444-ENSG00000185088",
+        "source": "ENSG00000174444",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174444-ENSG00000182117",
+        "source": "ENSG00000174444",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174444-ENSG00000140740",
+        "source": "ENSG00000174444",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000174444-ENSG00000090861",
+        "source": "ENSG00000174444",
+        "target": "ENSG00000090861",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178741-ENSG00000182117",
+        "source": "ENSG00000178741",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178741-ENSG00000182718",
+        "source": "ENSG00000178741",
+        "target": "ENSG00000182718",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178741-ENSG00000185088",
+        "source": "ENSG00000178741",
+        "target": "ENSG00000185088",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178741-ENSG00000103187",
+        "source": "ENSG00000178741",
+        "target": "ENSG00000103187",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000178741-ENSG00000140740",
+        "source": "ENSG00000178741",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185088-ENSG00000182117",
+        "source": "ENSG00000185088",
+        "target": "ENSG00000182117",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185088-ENSG00000140740",
+        "source": "ENSG00000185088",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000090861-ENSG00000189067",
+        "source": "ENSG00000090861",
+        "target": "ENSG00000189067",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000090861-ENSG00000140740",
+        "source": "ENSG00000090861",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182718-ENSG00000013364",
+        "source": "ENSG00000182718",
+        "target": "ENSG00000013364",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182718-ENSG00000103187",
+        "source": "ENSG00000182718",
+        "target": "ENSG00000103187",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182718-ENSG00000140740",
+        "source": "ENSG00000182718",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182718-ENSG00000140682",
+        "source": "ENSG00000182718",
+        "target": "ENSG00000140682",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000182718-ENSG00000006327",
+        "source": "ENSG00000182718",
+        "target": "ENSG00000006327",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000013364-ENSG00000149932",
+        "source": "ENSG00000013364",
+        "target": "ENSG00000149932",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000013364-ENSG00000149923",
+        "source": "ENSG00000013364",
+        "target": "ENSG00000149923",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000013364-ENSG00000103187",
+        "source": "ENSG00000013364",
+        "target": "ENSG00000103187",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000013364-ENSG00000013364",
+        "source": "ENSG00000013364",
+        "target": "ENSG00000013364",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185787-ENSG00000140740",
+        "source": "ENSG00000185787",
+        "target": "ENSG00000140740",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185787-ENSG00000149923",
+        "source": "ENSG00000185787",
+        "target": "ENSG00000149923",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185787-ENSG00000185787",
+        "source": "ENSG00000185787",
+        "target": "ENSG00000185787",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149923-ENSG00000149932",
+        "source": "ENSG00000149923",
+        "target": "ENSG00000149932",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000149923-ENSG00000185043",
+        "source": "ENSG00000149923",
+        "target": "ENSG00000185043",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000167397-ENSG00000167397",
+        "source": "ENSG00000167397",
+        "target": "ENSG00000167397",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000185043-ENSG00000140682",
+        "source": "ENSG00000185043",
+        "target": "ENSG00000140682",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000103187-ENSG00000051523",
+        "source": "ENSG00000103187",
+        "target": "ENSG00000051523",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140682-ENSG00000051523",
+        "source": "ENSG00000140682",
+        "target": "ENSG00000051523",
+        "weight": 1
+      }
+    },
+    {
+      "data": {
+        "id": "ENSG00000140682-ENSG00000140937",
+        "source": "ENSG00000140682",
+        "target": "ENSG00000140937",
+        "weight": 1
+      }
+    }
+  ]
+}

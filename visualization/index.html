@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NetworkX Graph in Cytoscape.js</title>
+
+  <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/elkjs@0.7.1/lib/elk.bundled.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape-elk/cytoscape-elk.min.js"></script>
+
+  <script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
+  <script src="https://unpkg.com/cytoscape-dagre@2.5.0/cytoscape-dagre.js"></script>
+
+  <!-- <script type="text/javascript" src="layout.js"></script> -->
+  <style>
+    #cy {
+      width: 100%;
+      height: 95vh;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="cy"></div>
+
+  <script>
+    
+  // cytoscape.use(cytoscapeElk);
+  // cytoscape.use(cytoscapeDagre);
+  // cytoscape.use(dagre);
+  // fetchpath = 'data/combination_perturbed_third_order_time_based_150_esc_start_end_13500_14500.json'
+  fetchpath = 'data/combination_perturbed_second_order_time_based_150_fibroblast_start_end_10000_11000.json'
+  savepath ='data/combination_perturbed_second_order_time_based_150_fibroblast_start_end_10000_11000.png' 
+  // savepath = 'data/combination_perturbed_third_order_time_based_150_esc_start_end_13500_14500.png'
+
+  fetch(fetchpath)
+  // fetch('data/combination_perturbed_third_order_time_based_150_fibroblast_start_end_12000_13000.json')
+      .then(res => res.json())
+      .then(data => {
+        data.edges.forEach(edge => {
+          const sourceNode = data.nodes.find(n => n.data.id === edge.data.source);
+          const targetNode = data.nodes.find(n => n.data.id === edge.data.target);
+          edge.data.color = sourceNode.data.color;  // or target node color
+          if (sourceNode.data.perturbed || targetNode.data.perturbed){
+            edge.data.thickness = 4
+          }
+          else {
+            edge.data.thickness = 0.5
+          }
+        });
+        const processedElements = data.nodes.map(node => {
+            return {
+              data: node.data,
+              position: {
+                x: node.data.x,
+                y: node.data.y
+              }
+            };
+          }).concat(data.edges || []);
+      const cy = cytoscape({
+          container: document.getElementById('cy'),
+          elements: processedElements,
+          // layout: {
+          //     name: 'breadthfirst',
+          //     directed: true,
+          //     padding: 10,
+          //     spacingFactor: 1.5,
+          //     animate: false,
+          //     nodeDimensionsIncludeLabels: true,
+
+          //     // Group nodes by your custom attribute
+          //     sort: function(a, b) {
+          //       return a.data('level') - b.data('level');  // sort by `level`
+          //     }
+          //   },
+          layout: {
+              name: 'preset'
+          },
+          // layout: { name: 'cose' },
+          // layout: {
+          //   name: 'dagre',  // or 'elk' if using the plugin
+          //   rankDir: 'LR'
+          // },
+          // layout: {
+          // name: 'elk',
+          // elk: {
+          //     algorithm: 'layered'
+          // },
+          // },
+          // layout: {
+          //   name: 'concentric',
+          //   concentric: function( node ){
+          //     return node.degree();
+          //   },
+          //   levelWidth: function( nodes ){
+          //     return 2;
+          //   }
+          // },
+          // layout:{
+          //   name: 'grid',
+          //   columns: 6
+          // },
+          style: [
+          {
+              selector: 'node',
+              style: {
+              'label': 'data(label)',
+              'shape': 'ellipse',
+              'background-color': '#0074D9',
+              'width': 'data(size)',   // width from node attribute 'size'
+              'height': 'data(size)',
+              }
+          },
+          {
+              selector: 'edge',
+              style: {
+                "curve-style": "round-taxi",
+                'width': 'data(thickness)',
+                // "taxi-direction": "downward",
+                "taxi-turn": 20,
+                "taxi-turn-min-distance": 5,
+                "taxi-radius": 10,
+                'line-color': 'data(color)',
+                'target-arrow-color': 'data(color)'
+              }
+              // style: {
+              // 'label': 'data(interaction)',
+              // 'width': 'mapData(weight, 1, 10, 1, 5)',
+              // 'line-color': '#aaa'
+              // }
+          },
+          {
+            selector: 'node[color]',  // only apply when color exists
+            style: {
+              'background-color': 'data(color)',
+              'label': 'data(genename)',     // optional: label the node
+              'text-valign': 'center',
+              'color': '#fff',               // text color
+              'font-size': 10,
+              'text-outline-width': 1,
+              'text-outline-color': '#333'
+            }
+          }
+          ]
+      });
+      
+      // const pngData = cy.png({ full: true, scale: 2 });
+      // const a = document.createElement('a');
+      // a.href = pngData;
+      // a.download = savepath;
+      // document.body.appendChild(a);  // Needed for Firefox
+      // a.click();
+      // a.remove();
+      });
+
+
+  </script>
+</body>
+</html>
