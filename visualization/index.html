@@ -29,12 +29,43 @@
   // cytoscape.use(cytoscapeDagre);
   // cytoscape.use(dagre);
   // fetchpath = 'data/combination_perturbed_third_order_time_based_150_esc_start_end_13500_14500.json'
-  fetchpath = 'data/combination_perturbed_second_order_time_based_150_fibroblast_start_end_10000_11000.json'
-  savepath ='data/combination_perturbed_second_order_time_based_150_fibroblast_start_end_10000_11000.png' 
-  // savepath = 'data/combination_perturbed_third_order_time_based_150_esc_start_end_13500_14500.png'
+
+    activated = "#a345f0"
+    repressed = "#d77132"
+    initiator = "#f83e56"
+
+
+    colormap = {
+    'Activated' : "#a345f0",
+    'Repressed' : "#d77132",
+    'nitiator' : "#f83e56"
+    }
+
+    g1_color = "#6b7fa6"
+    g2_color = "#86c9d7"
+    g3_color = "#c6d6d8"
+
+    class_color = {
+    'g1_color' : "#6b7fa6",
+    'g2_color' : "#86c9d7",
+    'g3_color' : "#c6d6d8"
+    }
+
+  start = 6000
+  end = 7000
+  celltype = 'fibroblast'
+  // celltype = 'myotube'
+  // order = 'base'
+  order = 'second_order'
+
+  // fetchpath = `graphs/fibroblast_network.json`
+  fetchpath = `graphs/fibroblast_perturbed_order_1_network.json`
+
 
   fetch(fetchpath)
   // fetch('data/combination_perturbed_third_order_time_based_150_fibroblast_start_end_12000_13000.json')
+  // fetch('data/combination_perturbed_third_order_time_based_150_fibroblast_start_end_12000_13000.json')
+  // fetch('combination_perturbed_first_order_time_based_150_fibroblast_start_end_6000_7000.json')
       .then(res => res.json())
       .then(data => {
         data.edges.forEach(edge => {
@@ -49,6 +80,7 @@
           }
         });
         const processedElements = data.nodes.map(node => {
+            node.data.color = '#ff6666'
             return {
               data: node.data,
               position: {
@@ -57,6 +89,7 @@
               }
             };
           }).concat(data.edges || []);
+
       const cy = cytoscape({
           container: document.getElementById('cy'),
           elements: processedElements,
@@ -73,9 +106,9 @@
           //       return a.data('level') - b.data('level');  // sort by `level`
           //     }
           //   },
-          layout: {
-              name: 'preset'
-          },
+          //layout: {
+              //name: 'preset'
+          //},
           // layout: { name: 'cose' },
           // layout: {
           //   name: 'dagre',  // or 'elk' if using the plugin
@@ -87,15 +120,15 @@
           //     algorithm: 'layered'
           // },
           // },
-          // layout: {
-          //   name: 'concentric',
-          //   concentric: function( node ){
-          //     return node.degree();
-          //   },
-          //   levelWidth: function( nodes ){
-          //     return 2;
-          //   }
-          // },
+           layout: {
+             name: 'concentric',
+             concentric: function( node ){
+               return node.degree();
+             },
+             levelWidth: function( nodes ){
+               return 2;
+             }
+           },
           // layout:{
           //   name: 'grid',
           //   columns: 6
@@ -104,10 +137,9 @@
           {
               selector: 'node',
               style: {
-              'label': 'data(label)',
               'shape': 'ellipse',
               'background-color': '#0074D9',
-              'width': 'data(size)',   // width from node attribute 'size'
+              'width': 'data(size)',
               'height': 'data(size)',
               }
           },
@@ -144,13 +176,13 @@
           ]
       });
       
-      // const pngData = cy.png({ full: true, scale: 2 });
-      // const a = document.createElement('a');
-      // a.href = pngData;
-      // a.download = savepath;
-      // document.body.appendChild(a);  // Needed for Firefox
-      // a.click();
-      // a.remove();
+       const pngData = cy.png({ full: true, scale: 2 });
+       const a = document.createElement('a');
+       a.href = pngData;
+       a.download = savepath;
+       document.body.appendChild(a);  // Needed for Firefox
+       a.click();
+       a.remove();
       });
 
 

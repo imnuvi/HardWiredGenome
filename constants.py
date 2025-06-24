@@ -1,6 +1,9 @@
 
-# DATA_DIRECTORY = '/scratch/indikar_root/indikar1/shared_data/HWG/data'
-DATA_DIRECTORY = '/Users/ramprakash/development/lab_projects/Rajapakse_lab/data/HWG'
+BASEDIR = '/scratch/indikar_root/indikar1/shared_data/HWG'
+# BASEDIR = '/Users/ramprakash/development/lab_projects/Rajapakse_lab/data/HWG'
+
+DATA_DIRECTORY = f'{BASEDIR}/data'
+OPERATIONS_DIRECTORY = f'{BASEDIR}/operations'
 
 # STRING data URL
 STRING_BASE_PATH = f"{DATA_DIRECTORY}/STRING"
@@ -42,6 +45,10 @@ HUMAN_TF_BASE_PATH = f"{DATA_DIRECTORY}/HTF"
 HUMAN_TF = 'https://humantfs.ccbr.utoronto.ca/download/v_1.01/DatabaseExtract_v_1.01.csv'
 HUMAN_TF_PATH = f"{DATA_DIRECTORY}/HTF/DatabaseExtract_v_1.01.csv"
 
+HUMAN_TF_IDLIST_URL = 'https://humantfs.ccbr.utoronto.ca/download/v_1.01/TFs_Ensembl_v_1.01.txt'
+HUMAN_TF_IDLIST_PATH = f"{DATA_DIRECTORY}/HTF/TFs_Ensembl_v_1.01.txt"
+
+
 HUMAN_TF_SET_PATH = f"{DATA_DIRECTORY}/HTF/human_tf_set.txt"
 
 
@@ -59,7 +66,15 @@ HARD_WIRED_GENOME_C_EDGELIST = f"{DATA_DIRECTORY}/HWG/C_Matrix_edgelist.csv"
 HARD_WIRED_GENOME_A_MATRIX_PATH = f"{DATA_DIRECTORY}/HWG/A_Matrix.csv"
 HARD_WIRED_GENOME_B_MATRIX_PATH = f"{DATA_DIRECTORY}/HWG/B_Matrix.csv"
 HARD_WIRED_GENOME_C_MATRIX_PATH = f"{DATA_DIRECTORY}/HWG/C_Matrix.csv"
+HARD_WIRED_GENOME_BP_MATRIX = f"{DATA_DIRECTORY}/HWG/BP_Matrix.csv"
 
+
+HWG_A_MATRICES = f"{HWG_BASE_PATH}/A_matrix.h5ad"
+HWG_B_MATRICES = f'{OPERATIONS_DIRECTORY}/B_matrices.h5ad'
+
+RNASEQ_PATH = f'{DATA_DIRECTORY}/RNAseq'
+
+OPERATIONS_PATH = f'{DATA_DIRECTORY}/operations'
 
 def modify_HWG_path(suffix):
     save_path = HARD_WIRED_GENOME_A_MATRIX_PATH.strip('.csv') + f"_{suffix}.csv"
