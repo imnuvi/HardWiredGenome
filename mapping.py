@@ -1,4 +1,3 @@
-from biomart import BiomartServer
 from constants import DATA_DIRECTORY,  STRING_ALIAS_PATH, STRING_URL_PATH, ENSEMBL_PROTEIN_GENE_PATH, STRING_EXTRACTED_ALIAS_PATH, STRING_EXTRACTED_URL_PATH, ENSEMBL_MAPPING_PATH, UNIQUE_GENE_SET, \
     HURI_URL_PATH, HI_UNION_PATH, LIT_BM_PATH, HUMAN_TF_PATH, HARD_WIRED_GENOME_A_MATRIX_PATH, STRING_PROTEIN_GENE_PATH, STRING_UNIQUE_GENE_SET, HURI_UNIQUE_GENE_SET, HUMAN_TF_SET_PATH, \
     HARD_WIRED_GENOME_B_MATRIX_PATH, HWG_BASE_PATH, ENSEMBL_BASE_PATH, STRING_PROTEIN_SET_FROM_LINKS, STRING_UNIQUE_PROTEIN_SET, modify_HWG_path, HUMAN_TF_SET_PATH, HUMAN_TF_IDLIST_PATH
@@ -13,6 +12,7 @@ import scipy.sparse as sp
 from anndata import AnnData
 
 def fetch_ensembl_mapping():
+    from biomart import BiomartServer
     """ 
     Gets The Full Ensembl mapping data from biomart
     """
@@ -444,7 +444,6 @@ def get_a_matrix_threshold(threshold):
 
     b_matrix_true = a_matrix_adata[a_matrix_adata.obs_names.isin(tf_list)]
     return a_matrix_adata, b_matrix_true
-    
 
 
 def setup():

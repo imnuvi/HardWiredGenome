@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sparse Matrix Viewer</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    canvas { border: 1px solid #444; display: block; margin: auto; cursor: grab; }
+    form, #info { text-align: center; margin: 10px; font-size: 14px; }
+    input { width: 60px; }
+  </style>
+</head>
+<body>
+  <form id="matrixForm">
+    View:
+    Row <input type="number" id="startRow" value="0"> to <input type="number" id="endRow" value="500">, 
+    Col <input type="number" id="startCol" value="0"> to <input type="number" id="endCol" value="500">
+    <button type="submit">Go</button>
+    <button type="button" id="submitView">Visualize Network</button>
+  </form>
+
+  <canvas id="matrixCanvas" width="1000" height="800"></canvas>
+  <div id="info">Hover over matrix to view row/column</div>
+
+  <script>
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+    const info = document.getElementById('info');
+
+    let M = 20000, N = 20000;
+
+    let binaryMatrix = [];
+    let rowLabels = [];
+    let colLabels = [];
+    let binaryMatrixSet;
+
+
+    fetch("http://localhost:5000/fetch_matrix")
+    .then(r => r.json())
+    .then(data => {
+        binaryMatrix = data.entries;          // [[row,col], …]
+        rowLabels    = data.rowLabels;
+        // colLabels    = data.colLabels;
+        binaryMatrixSet = new Set(data.entries.map(([r, c]) => `${r},${c}`)); // <= HERE
+
+        // optional sanity: ensure viewer canvas knows matrix size
+        M = data.nRows;
+        N = data.nCols;
+
+        drawMatrix();                         // initial render
+    })
+    .catch(console.error);
+
+
+    // Dummy labels
+
+    // // Dummy sparse data
+    // const binaryMatrix = [];
+    // for (let i = 0; i < 100000; i++) {
+    //   binaryMatrix.push([
+    //     Math.floor(Math.random() * M),
+    //     Math.floor(Math.random() * N)
+    //   ]);
+    // }
+
+    let view = { startRow: 0, endRow: 500, startCol: 0, endCol: 500 };
+    let hover = null;
+
+    const formElements = {
+      startRow: document.getElementById('startRow'),
+      endRow: document.getElementById('endRow'),
+      startCol: document.getElementById('startCol'),
+      endCol: document.getElementById('endCol')
+    };
+
+    function drawMatrix() {
+      const { startRow, endRow, startCol, endCol } = view;
+      const numRows = endRow - startRow;
+      const numCols = endCol - startCol;
+      const cellW = canvas.width / numCols;
+      const cellH = canvas.height / numRows;
+      const minCellSize = 2;
+      const binned = cellW < minCellSize || cellH < minCellSize;
+      const binRow = Math.ceil(minCellSize / cellH);
+      const binCol = Math.ceil(minCellSize / cellW);
+      const bins = new Set();
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Draw hover row/col highlight
+        if (hover) {
+            const { startRow, endRow, startCol, endCol } = view;
+            const numRows = endRow - startRow;
+            const numCols = endCol - startCol;
+
+            const cellW = canvas.width / numCols;
+            const cellH = canvas.height / numRows;
+
+            const hoverRowY = (hover.row - startRow) * cellH;
+            const hoverColX = (hover.col - startCol) * cellW;
+
+            ctx.fillStyle = 'rgba(255, 40, 0, 0.3)';  // light yellow
+            // Highlight the row
+            ctx.fillRect(0, hoverRowY, canvas.width, cellH);
+            // Highlight the column
+            ctx.fillRect(hoverColX, 0, cellW, canvas.height);
+        }
+
+
+      for (const [r, c] of binaryMatrix) {
+        if (r >= startRow && r < endRow && c >= startCol && c < endCol) {
+          if (binned) {
+            const bRow = Math.floor((r - startRow) / binRow);
+            const bCol = Math.floor((c - startCol) / binCol);
+            bins.add(`${bRow},${bCol}`);
+          } else {
+            const x = (c - startCol) * cellW;
+            const y = (r - startRow) * cellH;
+            ctx.fillStyle = 'black';
+            ctx.fillRect(x, y, cellW, cellH);
+          }
+        }
+      }
+
+      if (binned) {
+        for (const bin of bins) {
+          const [bRow, bCol] = bin.split(',').map(Number);
+          const x = bCol * binCol * cellW;
+          const y = bRow * binRow * cellH;
+          ctx.fillStyle = 'black';
+          ctx.fillRect(x, y, binCol * cellW, binRow * cellH);
+        }
+      }
+
+      // Draw axis labels
+      ctx.font = '12px sans-serif';
+      ctx.textBaseline = 'top';
+
+      for (let i = 0; i <= 10; i++) {
+        const rowIdx = startRow + Math.floor(i / 10 * numRows);
+        const y = i * canvas.height / 10;
+        ctx.fillStyle = hover?.row === rowIdx ? 'red' : 'gray';
+        ctx.fillText(rowLabels[rowIdx], 20, y + 2);
+      }
+
+      ctx.textAlign = 'center';
+      for (let i = 0; i <= 10; i++) {
+        const colIdx = startCol + Math.floor(i / 10 * numCols);
+        const x = i * canvas.width / 10;
+        ctx.fillStyle = hover?.col === colIdx ? 'red' : 'gray';
+        // ctx.fillText(colLabels[colIdx], x, 2);
+        ctx.fillText(rowLabels[colIdx], x, 2);
+      }
+
+      updateForm();
+    }
+
+    function updateForm() {
+      formElements.startRow.value = view.startRow;
+      formElements.endRow.value = view.endRow;
+      formElements.startCol.value = view.startCol;
+      formElements.endCol.value = view.endCol;
+    }
+
+    document.getElementById('matrixForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      view.startRow = parseInt(formElements.startRow.value);
+      view.endRow = parseInt(formElements.endRow.value);
+      view.startCol = parseInt(formElements.startCol.value);
+      view.endCol = parseInt(formElements.endCol.value);
+      drawMatrix();
+    });
+
+    document.getElementById('submitView').addEventListener('click', () => {
+      start_index_y = parseInt(document.getElementById('startRow').value);
+      end_index_y = parseInt(document.getElementById('endRow').value);
+      start_index_x = parseInt(document.getElementById('startCol').value);
+      end_index_x = parseInt(document.getElementById('endCol').value);
+      redirect_url = `/network?start_index_x=${start_index_x}&start_index_y=${start_index_y}&end_index_x=${end_index_x}&end_index_y=${end_index_y}`;
+
+      window.location.href = redirect_url;
+      // fetch("http://localhost:5000/network", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json"
+      //   },
+      //   body: JSON.stringify(payload)
+      // })
+      // .then(r => r.json())
+      // .then(data => {
+      //   if (data.redirect_url) {
+      //     window.location.href = data.redirect_url;
+      //   } else {
+      //     alert("No redirect URL returned.");
+      //   }
+      // })
+      // .catch(err => {
+      //   console.error(err);
+      //   alert("Submission failed.");
+      // });
+    });
+
+
+    let isDragging = false, lastMouse = null;
+
+    canvas.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      lastMouse = { x: e.offsetX, y: e.offsetY };
+      canvas.style.cursor = 'grabbing';
+    });
+
+    canvas.addEventListener('mouseup', () => {
+      isDragging = false;
+      canvas.style.cursor = 'grab';
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+      isDragging = false;
+      canvas.style.cursor = 'grab';
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+      const x = e.offsetX, y = e.offsetY;
+      const { startRow, endRow, startCol, endCol } = view;
+      const numRows = endRow - startRow, numCols = endCol - startCol;
+
+      const row = startRow + Math.floor(y / canvas.height * numRows);
+      const col = startCol + Math.floor(x / canvas.width * numCols);
+      hover = { row, col };
+
+      const hasValue = binaryMatrixSet.has(`${row},${col}`);
+
+      // Using rows since rows and cols are the same
+      info.innerText = `GeneX: ${rowLabels[row]}, GeneY: ${rowLabels[col]}, Interaction: ${hasValue}`;
+
+      if (isDragging && lastMouse) {
+        const dx = x - lastMouse.x;
+        const dy = y - lastMouse.y;
+
+        const dRow = Math.round(dy / canvas.height * numRows);
+        const dCol = Math.round(dx / canvas.width * numCols);
+
+        view.startRow = Math.max(0, view.startRow - dRow);
+        view.endRow = Math.min(M, view.endRow - dRow);
+        view.startCol = Math.max(0, view.startCol - dCol);
+        view.endCol = Math.min(N, view.endCol - dCol);
+
+        lastMouse = { x, y };
+      }
+
+      drawMatrix();
+    });
+
+    canvas.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const zoom = e.deltaY < 0 ? 0.9 : 1.1;
+
+      const x = e.offsetX;
+      const y = e.offsetY;
+      const { startRow, endRow, startCol, endCol } = view;
+      const rowCount = endRow - startRow;
+      const colCount = endCol - startCol;
+      const rowCenter = startRow + (y / canvas.height) * rowCount;
+      const colCenter = startCol + (x / canvas.width) * colCount;
+
+      const newRowCount = Math.max(10, Math.floor(rowCount * zoom));
+      const newColCount = Math.max(10, Math.floor(colCount * zoom));
+
+      view.startRow = Math.max(0, Math.floor(rowCenter - newRowCount / 2));
+      view.endRow = Math.min(M, view.startRow + newRowCount);
+      view.startCol = Math.max(0, Math.floor(colCenter - newColCount / 2));
+      view.endCol = Math.min(N, view.startCol + newColCount);
+
+      drawMatrix();
+    }, { passive: false });
+
+    drawMatrix();
+  </script>
+</body>
+</html>

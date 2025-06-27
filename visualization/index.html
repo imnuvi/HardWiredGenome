@@ -29,70 +29,109 @@
   // cytoscape.use(cytoscapeDagre);
   // cytoscape.use(dagre);
   // fetchpath = 'data/combination_perturbed_third_order_time_based_150_esc_start_end_13500_14500.json'
+  // fetchpath = 'data/combination_perturbed_first_order_time_based_150_fibroblast_start_end_10000_11000.json'
+  // savepath ='data/combination_perturbed_second_order_time_based_150_fibroblast_start_end_10000_11000.png' 
+  // savepath = 'data/combination_perturbed_third_order_time_based_150_esc_start_end_13500_14500.png'
+  start = 15000
+  end = 16000
+  type = 'size'
+  // type = 'size'
+  // fetchpath =  `graphs/HWG_network${start}_${end}_${type}.json`
 
-    activated = "#a345f0"
-    repressed = "#d77132"
-    initiator = "#f83e56"
+  // fetchpath =  `graphs/fibroblast_network${start}_${end}_${type}.json`
+
+  fetchpath =  `graphs/fibroblast_perturbed_network${start}_${end}_${type}.json`
+  //save_layout = true;
+
+  if (type == 'base'){
+    save_layout = true;
+  }
+  else if (type == 'size'){
+    save_layout = false;
+  }
+
+  const layout_dictionary = {};
+  if (!save_layout) {
+    console.log('yeh')
+      const savedLayout = localStorage.getItem('savedlayout');
+
+      const loaded_layout = JSON.parse(savedLayout);
+      console.log(loaded_layout);
 
 
-    colormap = {
-    'Activated' : "#a345f0",
-    'Repressed' : "#d77132",
-    'nitiator' : "#f83e56"
+      loaded_layout.forEach((eleme, index) => {
+        layout_dictionary[eleme.id] = {'x': eleme.x, 'y': eleme.y}; // Use index as key, element as value
+      });
     }
-
-    g1_color = "#6b7fa6"
-    g2_color = "#86c9d7"
-    g3_color = "#c6d6d8"
-
-    class_color = {
-    'g1_color' : "#6b7fa6",
-    'g2_color' : "#86c9d7",
-    'g3_color' : "#c6d6d8"
-    }
-
-  start = 6000
-  end = 7000
-  celltype = 'fibroblast'
-  // celltype = 'myotube'
-  // order = 'base'
-  order = 'second_order'
-
-  // fetchpath = `graphs/fibroblast_network.json`
-  fetchpath = `graphs/fibroblast_perturbed_order_1_network.json`
-
+  
 
   fetch(fetchpath)
   // fetch('data/combination_perturbed_third_order_time_based_150_fibroblast_start_end_12000_13000.json')
-  // fetch('data/combination_perturbed_third_order_time_based_150_fibroblast_start_end_12000_13000.json')
-  // fetch('combination_perturbed_first_order_time_based_150_fibroblast_start_end_6000_7000.json')
       .then(res => res.json())
       .then(data => {
         data.edges.forEach(edge => {
           const sourceNode = data.nodes.find(n => n.data.id === edge.data.source);
           const targetNode = data.nodes.find(n => n.data.id === edge.data.target);
+
           edge.data.color = sourceNode.data.color;  // or target node color
-          if (sourceNode.data.perturbed || targetNode.data.perturbed){
-            edge.data.thickness = 4
+          if (sourceNode.data.state == 'Activated' || targetNode.data.state == 'Activated'){
+            // edge.data.color = "#fc7ebd";  // or target node color
+            edge.data.color = "#e7d1ff";
+            edge.data.thickness = 40
           }
-          else {
-            edge.data.thickness = 0.5
+          else{
+            edge.data.thickness = 3
           }
         });
         const processedElements = data.nodes.map(node => {
-            node.data.color = '#ff6666'
+          if (!save_layout){
+            if (layout_dictionary[node.data.id] === undefined){
+              layout_dictionary[node.data.id] = {'x': -1000, 'y': -1000}
+            }
+            var ndata = node.data
+            ndata.size = node.data.size + 400
+            return {
+              //data: data.data,
+              data: ndata,
+              position: {
+                x: layout_dictionary[node.data.id].x,
+                y: layout_dictionary[node.data.id].y
+              }
+            };
+
+          }
+          else {
             return {
               data: node.data,
               position: {
-                x: node.data.x,
-                y: node.data.y
+                x: node.data.id,
+                y: node.data.id
               }
             };
+          }
           }).concat(data.edges || []);
 
+      if (!save_layout){
+        layout = {
+          name: 'preset'
+        }
+      }
+      else {
+        layout =  {
+          name: 'concentric',
+          concentric: function( node ){
+            return node.degree();
+          },
+          levelWidth: function( nodes ){
+            return 2;
+          }
+        }
+
+      }
       const cy = cytoscape({
           container: document.getElementById('cy'),
           elements: processedElements,
+          layout: layout,
           // layout: {
           //     name: 'breadthfirst',
           //     directed: true,
@@ -106,9 +145,9 @@
           //       return a.data('level') - b.data('level');  // sort by `level`
           //     }
           //   },
-          //layout: {
-              //name: 'preset'
-          //},
+          // layout: {
+          //     name: 'preset'
+          // },
           // layout: { name: 'cose' },
           // layout: {
           //   name: 'dagre',  // or 'elk' if using the plugin
@@ -120,15 +159,15 @@
           //     algorithm: 'layered'
           // },
           // },
-           layout: {
-             name: 'concentric',
-             concentric: function( node ){
-               return node.degree();
-             },
-             levelWidth: function( nodes ){
-               return 2;
-             }
-           },
+          //layout: {
+            //name: 'concentric',
+            //concentric: function( node ){
+              //return node.degree();
+            //},
+            //levelWidth: function( nodes ){
+              //return 2;
+            //}
+          //},
           // layout:{
           //   name: 'grid',
           //   columns: 6
@@ -137,10 +176,15 @@
           {
               selector: 'node',
               style: {
+              'label': 'data(genename)',
               'shape': 'ellipse',
               'background-color': '#0074D9',
-              'width': 'data(size)',
+              'width': 'data(size)',   // width from node attribute 'size'
               'height': 'data(size)',
+              'border-width': 30,
+              'border-color': '#999999',
+              'border-style': 'solid',            // optional: solid | dotted | dashed | double
+              'label': 'data(id)'
               }
           },
           {
@@ -149,9 +193,9 @@
                 "curve-style": "round-taxi",
                 'width': 'data(thickness)',
                 // "taxi-direction": "downward",
-                "taxi-turn": 20,
-                "taxi-turn-min-distance": 5,
-                "taxi-radius": 10,
+                // "taxi-turn": 20,
+                // "taxi-turn-min-distance": 5,
+                // "taxi-radius": 10,
                 'line-color': 'data(color)',
                 'target-arrow-color': 'data(color)'
               }
@@ -175,17 +219,32 @@
           }
           ]
       });
+
+      if (save_layout){
+        localStorage.clear();
+        json_cont = cy.json();
+        nodes = cy.json().elements.nodes;
+        newnodes = nodes.map(item => ({ 'id' : item.data.id, 'x' : item.position.x, 'y' : item.position.y  }))
+        const savedLayout = JSON.stringify(newnodes);
+        localStorage.setItem('savedlayout', savedLayout); 
+
+      }
+
+
       
-       const pngData = cy.png({ full: true, scale: 2 });
-       const a = document.createElement('a');
-       a.href = pngData;
-       a.download = savepath;
-       document.body.appendChild(a);  // Needed for Firefox
-       a.click();
-       a.remove();
+      //const pngData = cy.png({ full: true, scale: 2 });
+        //console.log(pngData);
+      //const a = document.createElement('a');
+      //a.href = pngData;
+      //a.download = savepath;
+      //// document.body.appendChild(a);  // Needed for Firefox
+      //a.click();
+      //a.remove();
+
       });
 
 
   </script>
 </body>
 </html>
+

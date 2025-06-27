@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NetworkX Graph in Cytoscape.js</title>
+
+  <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/elkjs@0.7.1/lib/elk.bundled.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape-elk/cytoscape-elk.min.js"></script>
+
+  <script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
+  <script src="https://unpkg.com/cytoscape-dagre@2.5.0/cytoscape-dagre.js"></script>
+
+  <!-- <script type="text/javascript" src="layout.js"></script> -->
+  <style>
+    #cy {
+      width: 100%;
+      height: 95vh;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="cy"></div>
+  <div id="toolbar"></div>
+
+  <script>
+    
+  // cytoscape.use(cytoscapeElk);
+  // cytoscape.use(cytoscapeDagre);
+  // cytoscape.use(dagre);
+  // fetchpath = 'data/combination_perturbed_third_order_time_based_150_esc_start_end_13500_14500.json'
+  // fetchpath = 'data/combination_perturbed_first_order_time_based_150_fibroblast_start_end_10000_11000.json'
+  // savepath ='data/combination_perturbed_second_order_time_based_150_fibroblast_start_end_10000_11000.png' 
+  // savepath = 'data/combination_perturbed_third_order_time_based_150_esc_start_end_13500_14500.png'
+  start = 15000
+  end = 16000
+  type = 'size'
+
+  fetchpath = '/fetch_network?start_index_x={{startindexx}}&start_index_y={{startindexy}}&end_index_x={{endindexx}}&end_index_y={{endindexy}}'
+  // fetchpath =  `graphs/fibroblast_perturbed_network${start}_${end}_${type}.json`
+  save_layout = false;
+  custom_layout = 'concentric'
+
+  // if (type == 'base'){
+  //   save_layout = true;
+  //   custom_layout = 'concentric'
+  // }
+  // else if (type == 'size'){
+  //   save_layout = false;
+  //   custom_layout = 'preset'
+  // }
+
+  const layout_dictionary = {};
+  // if (!save_layout) {
+  //   console.log('yeh')
+  //     const savedLayout = localStorage.getItem('savedlayout');
+
+  //     const loaded_layout = JSON.parse(savedLayout);
+  //     console.log(loaded_layout);
+
+
+  //     loaded_layout.forEach((eleme, index) => {
+  //       layout_dictionary[eleme.id] = {'x': eleme.x, 'y': eleme.y}; // Use index as key, element as value
+  //     });
+  //   }
+  
+
+  fetch(fetchpath)
+  // fetch('data/combination_perturbed_third_order_time_based_150_fibroblast_start_end_12000_13000.json')
+      .then(res => res.json())
+      .then(data => {
+        data.edges.forEach(edge => {
+          const sourceNode = data.nodes.find(n => n.data.id === edge.data.source);
+          const targetNode = data.nodes.find(n => n.data.id === edge.data.target);
+
+          edge.data.color = sourceNode.data.color;  // or target node color
+          if (sourceNode.data.state == 'Activated' || targetNode.data.state == 'Activated'){
+            // edge.data.color = "#fc7ebd";  // or target node color
+            edge.data.color = "#e7d1ff";
+            edge.data.thickness = 40
+          }
+          else{
+            edge.data.thickness = 3
+          }
+        });
+        const processedElements = data.nodes.map(node => {
+          // if (!save_layout){
+          //   if (layout_dictionary[node.data.id] === undefined){
+          //     layout_dictionary[node.data.id] = {'x': -1000, 'y': -1000}
+          //   }
+            var ndata = node.data
+            ndata.size = node.data.size + 50
+          //   return {
+          //     //data: data.data,
+          //     data: ndata,
+          //     position: {
+          //       x: layout_dictionary[node.data.id].x,
+          //       y: layout_dictionary[node.data.id].y
+          //     }
+          //   };
+
+          // }
+          // else {
+            return {
+              data: ndata,
+              position: {
+                x: node.data.id,
+                y: node.data.id
+              }
+            };
+          // }
+          }).concat(data.edges || []);
+
+      if (custom_layout=='preset'){
+        layout = {
+          name: 'preset'
+        }
+      }
+      else if (custom_layout=='concentric'){
+        layout =  {
+          name: 'concentric',
+          concentric: function( node ){
+            return node.degree();
+          },
+          levelWidth: function( nodes ){
+            return 2;
+          }
+        }
+
+      }
+      const cy = cytoscape({
+          container: document.getElementById('cy'),
+          elements: processedElements,
+          layout: layout,
+          // layout: {
+          //     name: 'breadthfirst',
+          //     directed: true,
+          //     padding: 10,
+          //     spacingFactor: 1.5,
+          //     animate: false,
+          //     nodeDimensionsIncludeLabels: true,
+
+          //     // Group nodes by your custom attribute
+          //     sort: function(a, b) {
+          //       return a.data('level') - b.data('level');  // sort by `level`
+          //     }
+          //   },
+          // layout: {
+          //     name: 'preset'
+          // },
+          // layout: { name: 'cose' },
+          // layout: {
+          //   name: 'dagre',  // or 'elk' if using the plugin
+          //   rankDir: 'LR'
+          // },
+          // layout: {
+          // name: 'elk',
+          // elk: {
+          //     algorithm: 'layered'
+          // },
+          // },
+          //layout: {
+            //name: 'concentric',
+            //concentric: function( node ){
+              //return node.degree();
+            //},
+            //levelWidth: function( nodes ){
+              //return 2;
+            //}
+          //},
+          // layout:{
+          //   name: 'grid',
+          //   columns: 6
+          // },
+          style: [
+          {
+              selector: 'node',
+              style: {
+              'label': 'data(genename)',
+              'shape': 'ellipse',
+              'background-color': '#0074D9',
+              'width': 'data(size)',   // width from node attribute 'size'
+              'height': 'data(size)',
+              'border-width': 10,
+              'border-color': '#999999',
+              'border-style': 'solid',            // optional: solid | dotted | dashed | double
+              'label': 'data(id)'
+              }
+          },
+          {
+              selector: 'edge',
+              style: {
+                "curve-style": "round-taxi",
+                'width': 'data(thickness)',
+                // "taxi-direction": "downward",
+                // "taxi-turn": 20,
+                // "taxi-turn-min-distance": 5,
+                // "taxi-radius": 10,
+                'line-color': 'data(color)',
+                'target-arrow-color': 'data(color)'
+              }
+              // style: {
+              // 'label': 'data(interaction)',
+              // 'width': 'mapData(weight, 1, 10, 1, 5)',
+              // 'line-color': '#aaa'
+              // }
+          },
+          {
+            selector: 'node[color]',  // only apply when color exists
+            style: {
+              'background-color': 'data(color)',
+              'label': 'data(genename)',     // optional: label the node
+              'text-valign': 'center',
+              'color': '#fff',               // text color
+              'font-size': 10,
+              'text-outline-width': 1,
+              'text-outline-color': '#333'
+            }
+          }
+          ]
+      });
+
+    highlightcolor = '#d67d09'
+    cy.on('mouseover', 'node', function(evt) {
+      console.log('ET VOILA')
+      const node = evt.target;
+      node.style({
+        width: 150,
+        height: 150,
+        'font-size': 40,
+        'background-color': highlightcolor,
+      });
+
+      node.connectedEdges().style(
+        'line-color', highlightcolor,
+        'width', 40,
+      );
+    });
+
+    cy.on('mouseout', 'node', function(evt) {
+      const node = evt.target;
+      const data = node.data();
+
+      node.style({
+        width: data.size,
+        height: data.size,
+        'font-size': 10,
+        'background-color': data.color
+      });
+
+      node.connectedEdges().forEach(edge => {
+        const edata = edge.data();
+        edge.style({
+          width: 3,
+          'line-color': edata.color
+        });
+      });
+    });
+
+      if (save_layout){
+        localStorage.clear();
+        json_cont = cy.json();
+        nodes = cy.json().elements.nodes;
+        newnodes = nodes.map(item => ({ 'id' : item.data.id, 'x' : item.position.x, 'y' : item.position.y  }))
+        const savedLayout = JSON.stringify(newnodes);
+        localStorage.setItem('savedlayout', savedLayout); 
+
+      }
+
+
+      
+      //const pngData = cy.png({ full: true, scale: 2 });
+        //console.log(pngData);
+      //const a = document.createElement('a');
+      //a.href = pngData;
+      //a.download = savepath;
+      //// document.body.appendChild(a);  // Needed for Firefox
+      //a.click();
+      //a.remove();
+
+      });
+
+
+
+  </script>
+</body>
+</html>
+
