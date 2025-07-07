@@ -75,31 +75,6 @@ def adata_to_json(adata):
         "nCols": adata.n_vars
     }
 
-@app.route("/fetch_network", methods=['GET', 'POST'])
-def index():
-    startindexx = int(request.args['start_index_x'])
-    startindexy = int(request.args['start_index_y'])
-    endindexx = int(request.args['end_index_x'])
-    endindexy = int(request.args['end_index_y'])
-    
-    print(startindexx, startindexy)
-    print(endindexx, endindexy)
-
-    ntype = 'base'
-    genes_subx = GUtils.genes[startindexx:endindexx]
-    genes_suby = GUtils.genes[startindexy:endindexy]
-
-    # full_network_G = GUtils.construct_network(genes_sub, [])
-    full_network_G = GUtils.construct_network_x_y(genes_subx, genes_suby, [])
-    
-
-    full_network_G = GUtils.add_network_props(full_network_G, ntype)
-
-    network_res = GUtils.export_graph_as_json(full_network_G)
-    network_json = json.dumps(network_res)
-
-    return network_json
-
 @app.route("/fetch_matrix")
 def fetch_matrix():
     adata = GUtils.a_matrix_adata
@@ -109,12 +84,39 @@ def fetch_matrix():
 def matrix():
     return render_template('matrix_viewer.html')
 
+
+@app.route("/fetch_network", methods=['GET', 'POST'])
+def index():
+    startindexx = int(request.args['start_index_x'])
+    startindexy = int(request.args['start_index_y'])
+    endindexx = int(request.args['end_index_x'])
+    endindexy = int(request.args['end_index_y'])
+    perturbations = list(request.args.get('perturbations','').split(';'))
+
+    ntype = 'base'
+    genes_subx = GUtils.genes[startindexx:endindexx]
+    genes_suby = GUtils.genes[startindexy:endindexy]
+
+    # full_network_G = GUtils.construct_network(genes_sub, [])
+    full_network_G = GUtils.construct_network_x_y(genes_subx, genes_suby, [])
+
+    full_network_G = GUtils.add_network_props(full_network_G, ntype)
+
+    if len(perturbations) > 0 and perturbations[0] != '':
+        full_network_G = GUtils.insert_perturbation(full_network_G, perturbations, GUtils.a_matrix_adata)
+
+    network_res = GUtils.export_graph_as_json(full_network_G)
+    network_json = json.dumps(network_res)
+
+    return network_json
+    
 @app.route("/network", methods=['GET', 'POST'])
 def network():
     startindexx = int(request.args['start_index_x'])
     endindexx = int(request.args['end_index_x'])
     startindexy = int(request.args['start_index_y'])
     endindexy = int(request.args['end_index_y'])
+    perturbations = request.args.get('perturbations', '')
 
     # startindexx = 1000
     # startindexy = 2000
@@ -122,7 +124,7 @@ def network():
     # endindexy = 2000
     print('-------------------------------')
     print(startindexx, startindexy)
-    return render_template('graph_viewer.html', startindexx=startindexx, startindexy=startindexy, endindexx=endindexx, endindexy=endindexy)
+    return render_template('graph_viewer.html', startindexx=startindexx, startindexy=startindexy, endindexx=endindexx, endindexy=endindexy, perturbations=perturbations)
 
 
 

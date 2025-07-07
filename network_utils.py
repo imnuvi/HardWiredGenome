@@ -208,6 +208,8 @@ class GeneUtils():
 
         graph_nodes = G.nodes
         graph_degree = G.degree
+        eigenvector_centrality = nx.eigenvector_centrality(G)
+        degree_centrality = nx.degree_centrality(G)
         for node in graph_nodes:
             # Basic Info
             if ntype == 'size':
@@ -215,6 +217,9 @@ class GeneUtils():
             elif ntype == 'base':
                 G.nodes[node]['size'] = 1 + 0.5 * G.degree[node]
             G.nodes[node]['genename'] = gene_id_name_map.get(node, "NA")
+            G.nodes[node]['degree'] = G.degree[node]
+            G.nodes[node]['eigenvector'] = eigenvector_centrality.get(node, 'NA')
+            G.nodes[node]['degree_centrality'] = degree_centrality.get(node, 'NA')
 
             
             # classify node
@@ -255,8 +260,10 @@ class GeneUtils():
         # first_order_color = "#fc7ebd"
         first_order_color = "#ff59c5"
 
+
         for node in activation_nodes:
             G.add_node(node)
+
             
             
             # G.nodes[node]['size'] = 15 + 1 * G.degree[node] 
@@ -268,15 +275,28 @@ class GeneUtils():
             for target in targets:
                 if target not in G.nodes:
                     continue
+
+                eigenvector_centrality = nx.eigenvector_centrality(G)
+                degree_centrality = nx.degree_centrality(G)
                     
-                G.nodes[target]['size'] = 40 + 10 * G.degree[target] 
+                # G.nodes[target]['size'] = 40 + 10 * G.degree[target] 
+                G.nodes[target]['size'] = 5 + 2 * G.degree[target] 
                 G.nodes[target]['color'] = first_order_color
+                G.nodes[target]['degree'] = G.degree[target]
                 # G.nodes[target]['state'] = 'Activated'
+                G.nodes[target]['eigenvector'] = eigenvector_centrality.get(target, 'NA')
+                G.nodes[target]['degree_centrality'] = degree_centrality.get(target, 'NA')
 
                 G.add_edge(node, target)
+
+            eigenvector_centrality = nx.eigenvector_centrality(G)
+            degree_centrality = nx.degree_centrality(G)
                 
             G.nodes[node]['state'] = 'Activated'
-            G.nodes[node]['size'] = 900
+            G.nodes[node]['size'] = 5 + 2 * G.degree[node] 
+            G.nodes[node]['degree'] = G.degree[node]
+            G.nodes[node]['eigenvector'] = eigenvector_centrality.get(node, 'NA')
+            G.nodes[node]['degree_centrality'] = degree_centrality.get(node, 'NA')
 
         return G
             
@@ -440,8 +460,8 @@ def get_gene_targets_multi(b_matrix, perturblist, nodelist):
 
     return targetlist, sourcelist
 
-def get_influencers(b_matrix, gene_target):
-    global repressorlist, activatorlist, conflictedlist, master_regulator_list
+def get_influencers(b_matrix, gene_target):    
+    repressorlist, activatorlist, conflictedlist, tf_list = get_TF_lists(log=False)
     
     # Transcription factors influencing a Gene 
     gene_index = b_matrix.var_names == gene_target
@@ -467,7 +487,7 @@ def get_influencers(b_matrix, gene_target):
     return gene_influencers, net_effect
 
 def calculate_net_effect(genelist):
-    global repressorlist, activatorlist, conflictedlist, master_regulator_list
+    repressorlist, activatorlist, conflictedlist, tf_list = get_TF_lists(log=False)
     
     net_effect = 0
     for gene in genelist:

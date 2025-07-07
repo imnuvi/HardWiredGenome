@@ -1,23 +1,25 @@
 import pandas as pd
 import numpy as np
 import anndata
-from mapping import generate_gene_id_name_map
+from mapping import generate_gene_id_name_map, get_a_matrix_threshold
 
-def fetch_genexpression_data(a_matrix_adata, celltype, cell):
+def fetch_genexpression_data(a_matrix_adata, gex_adata, marker_genes, cell):
     gene_id_name_map, gene_name_id_map = generate_gene_id_name_map()
-    gex_adata = anndata.read_h5ad('./data/Genexpression.h5ad')
-    marker_gene_df = pd.read_csv('./data/clean_marker_genes.csv')
-    
-    fibroblast_markers = marker_gene_df[marker_gene_df['cell_type'] == celltype]
-    marker_genes = list(fibroblast_markers['gene_name'])
-    
-    
-    marker_ids = [ gene_name_id_map[i] for i in marker_genes ]
+
+    marker_ids = [ ]
+    for i in marker_genes:
+        try:
+            gid = gene_name_id_map[i]
+            marker_ids.append(gid)
+        except:
+            print(f'no mapping found for {i}')
+            continue
+        
     expr_values = gex_adata.X[gex_adata.obs_names == cell].flatten()
     
     expr_series = pd.Series(expr_values, index=gex_adata.var_names)
     marker_expr = expr_series[expr_series.index.isin(marker_ids)]
-    
+
     # threshold = marker_expr.mean()
     threshold = marker_expr.median()
     high_expr = expr_series[expr_series > threshold]
@@ -28,4 +30,43 @@ def fetch_genexpression_data(a_matrix_adata, celltype, cell):
     fibroblast_adata = a_matrix_adata[a_matrix_adata.obs_names.isin(fibroblast_expressed_genes), a_matrix_adata.var_names.isin(fibroblast_expressed_genes)].copy()
     return fibroblast_adata
 
-fetch_genexpression_data(a_matrix_adata, 'fibroblasts', 'Fibroblast'
+def fetch_fibroblast_data():
+    a_matrix_adata, b_matrix_true = get_a_matrix_threshold(300)
+    
+    gex_adata = anndata.read_h5ad('./data/Genexpression.h5ad')
+    marker_gene_df = pd.read_csv('./data/clean_marker_genes.csv')
+
+    celltype = 'fibroblasts'
+    obs_name = 'Fibroblast'
+    
+    fibroblast_markers = marker_gene_df[marker_gene_df['cell_type'] == celltype]
+    marker_genes = list(fibroblast_markers['gene_name'])
+
+    fib_adata = fetch_genexpression_data(a_matrix_adata, gex_adata, marker_genes, obs_name)
+    return fib_adata
+
+def fetch_myotube_data():
+    a_matrix_adata, b_matrix_true = get_a_matrix_threshold(300)
+    gex_adata = anndata.read_h5ad('./data/Genexpression.h5ad')
+    
+    marker_gene_sets = get_marker_gene_sets()
+    myotube_markers = set(marker_gene_sets['Muscle'].tolist())
+    
+    marker_genes = list(myotube_markers)
+    if 'nan' in marker_genes:
+        marker_genes.remove('nan')
+    
+    print(myotube_markers)
+    obs_name = 'Myotube'
+    muscle_adata = fetch_genexpression_data(a_matrix_adata, gex_adata, marker_genes, obs_name)
+    return muscle_adata
+
+def get_marker_gene_sets():
+    return pd.read_csv('./data/gene_sets.tsv', sep='\t')
+
+if __name__ == '__main__':
+    # fib_adata = fetch_fibroblast_data()
+    # print(fib_adata)
+    myotube_adata = fetch_myotube_data()
+    print(myotube_adata)
+    

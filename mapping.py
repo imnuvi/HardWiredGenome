@@ -354,7 +354,7 @@ def get_sorted_gene_order():
     print(f"ordering {len(flat_col_order)} genes")
     return flat_col_order
 
-def get_TF_lists():
+def get_TF_lists(log=True):
 
     adata= anndata.read_h5ad(f'{OPERATIONS_DIRECTORY}/DSET051_B_Matrix_TFsONLY_TFTGDb_TFLink_ChEA3.h5ad')
     
@@ -368,11 +368,12 @@ def get_TF_lists():
     repressorlist = repressor.TFStableID.to_list()
     activatorlist = activator.TFStableID.to_list()
     conflictedlist = conflicted.TFStableID.to_list()
-    print(f' Total Activators : {len(activatorlist)}')
-    print(f'Total Reprossors : {len(repressorlist)}')
-    print(f'Total Conflicted : {len(conflictedlist)}')
-
-    print(f'Total Transcription Factors : {len(tflist)}')
+    if log:
+        print(f' Total Activators : {len(activatorlist)}')
+        print(f'Total Reprossors : {len(repressorlist)}')
+        print(f'Total Conflicted : {len(conflictedlist)}')
+    
+        print(f'Total Transcription Factors : {len(tflist)}')
     return repressorlist, activatorlist, conflictedlist, tflist
 
 def get_master_regulator_list():

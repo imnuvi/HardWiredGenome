@@ -11,6 +11,7 @@
   <script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
   <script src="https://unpkg.com/cytoscape-dagre@2.5.0/cytoscape-dagre.js"></script>
 
+
   <!-- <script type="text/javascript" src="layout.js"></script> -->
   <style>
     #cy {
@@ -21,11 +22,26 @@
   </style>
 </head>
 <body>
+  <button id="add-node-btn">Add MYOD/button>
+  <button id="reset-node-btn">Original Network</button>
   <div id="cy"></div>
   <div id="toolbar"></div>
+  <div id="tooltip" style="
+    position: absolute;
+    display: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    pointer-events: none;
+    z-index: 999;
+  "></div>
 
   <script>
     
+  // cytoscape.use(cytoscapeGraphTheory);
   // cytoscape.use(cytoscapeElk);
   // cytoscape.use(cytoscapeDagre);
   // cytoscape.use(dagre);
@@ -37,7 +53,8 @@
   end = 16000
   type = 'size'
 
-  fetchpath = '/fetch_network?start_index_x={{startindexx}}&start_index_y={{startindexy}}&end_index_x={{endindexx}}&end_index_y={{endindexy}}'
+  ownpath = '/network?start_index_x={{startindexx}}&start_index_y={{startindexy}}&end_index_x={{endindexx}}&end_index_y={{endindexy}}'
+  fetchpath = '/fetch_network?start_index_x={{startindexx}}&start_index_y={{startindexy}}&end_index_x={{endindexx}}&end_index_y={{endindexy}}&perturbations={{perturbations}}'
   // fetchpath =  `graphs/fibroblast_perturbed_network${start}_${end}_${type}.json`
   save_layout = false;
   custom_layout = 'concentric'
@@ -50,6 +67,8 @@
   //   save_layout = false;
   //   custom_layout = 'preset'
   // }
+
+  let cy;
 
   const layout_dictionary = {};
   // if (!save_layout) {
@@ -129,7 +148,7 @@
         }
 
       }
-      const cy = cytoscape({
+      cy = cytoscape({
           container: document.getElementById('cy'),
           elements: processedElements,
           layout: layout,
@@ -220,11 +239,16 @@
           }
           ]
       });
+    
+    // const dc = cy.degreeCentralityNormalized();
+    // const cc = cy.closenessCentralityNormalized();
+    // const bc = cy.betweennessCentrality();
 
-    highlightcolor = '#d67d09'
+
+    highlightcolor = '#00ff84'
     cy.on('mouseover', 'node', function(evt) {
-      console.log('ET VOILA')
       const node = evt.target;
+      var data = node.data();
       node.style({
         width: 150,
         height: 150,
@@ -232,10 +256,42 @@
         'background-color': highlightcolor,
       });
 
-      node.connectedEdges().style(
-        'line-color', highlightcolor,
-        'width', 40,
-      );
+      node.connectedEdges().forEach(edge => {
+        edge.style({
+          width: 40,
+          'line-color': highlightcolor
+        });
+      });
+
+      // const meta = metadata[id];
+
+      // var degree = dc.degree(node);
+      // var closeness = cc.closeness(node);
+      // var betweenness = bc.betweenness(node);
+      // var numConnectedNodes = node.connectedNodes().length;
+
+      // const meta = {name: data.genename, degree: degree, closeness: closeness.toFixed(4), betweenness: betweenness.toFixed(4), description: `Degree: ${degree}<br>Closeness: ${closeness.toFixed(4)}<br>Betweenness: ${betweenness.toFixed(4)}<br>Connected Nodes: ${numConnectedNodes}`}; 
+      const meta = {name: data.genename, degree: data.degree, degree_centrality: data.degree_centrality.toFixed(4), eigenvector: data.eigenvector.toFixed(4), description: `Degree: ${data.degree}<br>Eigenvector: ${data.eigenvector.toFixed(4)}<br>Degree Centrality: ${data.degree_centrality.toFixed(4)}`} ; 
+      // const meta = {name: data.genename, description: 'Test Description'}; 
+
+
+      if (meta) {
+        const pos = node.renderedPosition();
+        const tooltip = document.getElementById('tooltip');
+
+        tooltip.innerHTML = `
+          <strong>${meta.name}</strong><br>
+          ${meta.description}
+        `;
+        tooltip.style.left = `${pos.x + 20}px`;
+        tooltip.style.top = `${pos.y + 20}px`;
+        tooltip.style.display = 'block';
+      }
+
+      // node.connectedEdges().style(
+      //   'line-color', highlightcolor,
+      //   'width', 40,
+      // );
     });
 
     cy.on('mouseout', 'node', function(evt) {
@@ -256,6 +312,9 @@
           'line-color': edata.color
         });
       });
+
+      document.getElementById('tooltip').style.display = 'none';
+
     });
 
       if (save_layout){
@@ -281,7 +340,15 @@
 
       });
 
+  document.getElementById("add-node-btn").addEventListener("click", () => {
+    const url = `${ownpath}&perturbations=ENSG00000129152`;
+    window.location.href = url;
+  });
 
+  document.getElementById("reset-node-btn").addEventListener("click", () => {
+    const url = `${ownpath}`;
+    window.location.href = url;
+  });
 
   </script>
 </body>
