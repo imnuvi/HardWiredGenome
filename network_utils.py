@@ -4,21 +4,36 @@ import networkx as nx
 import json
 
 from mapping import  get_a_matrix_threshold, get_master_regulator_list, get_TF_lists, generate_gene_id_name_map, get_sorted_gene_order
+from genexpression_utils import fetch_fibroblast_data
 
 
 
 
 class GeneUtils():
-    def __init__(self):
-        self.a_matrix_adata, self.b_matrix = get_a_matrix_threshold(300)
+    def __init__(self, thresh=300):
+        self.net_effect_thresh = -5
+        self.a_matrix_adata, self.b_matrix = get_a_matrix_threshold(thresh)
 
         self.master_regulator_list = get_master_regulator_list()
         self.repressorlist, self.activatorlist, self.conflictedlist, tf_list = get_TF_lists()
 
         self.gene_id_name_map, self.gene_name_id_map = generate_gene_id_name_map()
-
+        
         self.genes = get_sorted_gene_order()
 
+    def print_network_metrics(self, G):
+        print(f"Number of nodes: {G.number_of_nodes()}")
+        print(f"Number of edges: {G.number_of_edges()}")
+        print(f"Is directed: {G.is_directed()}")
+        print(f"Is weighted: {'weight' in next(iter(G.edges(data=True)))[-1] if G.number_of_edges() > 0 else False}")
+        print(f"Density: {nx.density(G):.4f}")
+        print(f"Average degree: {sum(dict(G.degree()).values()) / G.number_of_nodes():.2f}")
+        print(f"Average clustering coefficient: {nx.average_clustering(G):.4f}")
+        print(f"Connected components: {nx.number_connected_components(G) if not G.is_directed() else 'N/A for directed graphs'}")
+        print(f"Diameter: {nx.diameter(G) if nx.is_connected(G) else 'Graph not connected'}")
+        print(f"Average shortest path length: {nx.average_shortest_path_length(G) if nx.is_connected(G) else 'Graph not connected'}")
+
+    
     def get_all_targets(self, matrix, perturbation):
         gene_row_index = matrix[matrix.obs_names == perturbation , :]
         gene_row = gene_row_index.X
@@ -78,7 +93,7 @@ class GeneUtils():
 
         return targetlist, sourcelist
 
-    def get_influencers(self, gene_target):
+    def get_influencers(self, gene_target, subnet=[]):
         
         # Transcription factors influencing a Gene 
         gene_index = self.b_matrix.var_names == gene_target
@@ -93,6 +108,11 @@ class GeneUtils():
         
         gene_influencers = self.b_matrix.obs_names[matching_obs_mask]
 
+        if len(subnet) > 0:
+            subset_influencers = set(gene_influencers).intersection(set(subnet))
+            gene_influencers = list(subset_influencers)
+
+        
         net_effect = 0
         for gene_influencer in gene_influencers:
             if gene_influencer in self.activatorlist:
@@ -102,6 +122,7 @@ class GeneUtils():
         
         # activations.X
         return gene_influencers, net_effect
+    
 
     def calculate_net_effect(self, genelist):
         
@@ -115,8 +136,6 @@ class GeneUtils():
 
     # get_all_targets(a_matrix_adata, 'ENSG00000129152')
     # targetset = get_gene_targets(a_matrix_adata, 'ENSG00000129152', fibroblast_expressed_genes)
-
-
 
 
     def construct_network_2d(self, subnet_x, subnet_y, HWG_subnetwork):
@@ -165,8 +184,9 @@ class GeneUtils():
         a_matrix is an anndata object which we will filter the nodes and construct network based on
         '''
         a_matrix = self.a_matrix_adata
-        if HWG_subnetwork:
+        if len(HWG_subnetwork) > 0:
             subnetwork_nodes = list(set(specific_subnet).intersection(set(HWG_subnetwork)))
+            print(len(subnetwork_nodes))
         else:
             subnetwork_nodes = specific_subnet
 
@@ -286,6 +306,7 @@ class GeneUtils():
                 # G.nodes[target]['state'] = 'Activated'
                 G.nodes[target]['eigenvector'] = eigenvector_centrality.get(target, 'NA')
                 G.nodes[target]['degree_centrality'] = degree_centrality.get(target, 'NA')
+                G.nodes[target]['active'] = True
 
                 G.add_edge(node, target)
 
@@ -297,9 +318,92 @@ class GeneUtils():
             G.nodes[node]['degree'] = G.degree[node]
             G.nodes[node]['eigenvector'] = eigenvector_centrality.get(node, 'NA')
             G.nodes[node]['degree_centrality'] = degree_centrality.get(node, 'NA')
-
+            G.nodes[node]['active'] = True
         return G
+        
+    def update_perturbation_network(self, G, subnet):
+        '''
+        This function updates the network based on the status of each node.
+        Activated nodes propagate the changes further
+        Repressed nodes stop the flow
+        inactive nodes that have net positive get activated.
+        '''
+
+        nodelist = list(G.nodes)
+        
+        for node in nodelist:
+            state = G.nodes[node]['state']
+            active = G.nodes[node]['active']
+            # pure = G.nodes[node]['pure']
+            tftype = G.nodes[node].get('tftype', 'Normal')
+
+            connected_edges = list(nx.node_connected_component(G, node))
             
+            influencers, net_effect = self.get_influencers(node, subnet=connected_edges)
+
+            
+            if net_effect > self.net_effect_thresh:
+                if active:
+                    continue
+                    
+                if state == 'Activated':
+                    G.nodes[node]['active'] = True
+                elif (state == 'Neutral' or state == 'Repressed') and not active:
+                    G.nodes[node]['active'] = True
+                    G.nodes[node]['state'] = 'Activated'
+
+                gene_targets = self.get_all_targets(self.a_matrix_adata, node)
+                for target in gene_targets:
+                    if target not in G.nodes:
+                        G.add_node(target)
+                        G.nodes[target]['state'] = 'Activated'
+                        G.nodes[target]['active'] = True
+                    G.add_edge(node, target)
+                # Here we assume that activate edges for anything that is not already active indicating newly activated nodes.
+                # We don't increase the transcription of existing activated nodes.
+        
+            elif net_effect <= self.net_effect_thresh:
+                G.nodes[node]['state'] = 'Repressed'
+                G.nodes[node]['active'] = False
+                edges_to_remove = list(G.edges(node))
+                
+                G.remove_edges_from(edges_to_remove)
+        return G
+                    
+                
+
+            
+            # if net_effect <= self.net_effect_thresh:
+                
+            #     G.nodes[node]['state'] = 'Repressed'
+            #     G.nodes[node]['active'] = False
+            #     edges_to_remove = list(G.edges(node)) 
+                
+            #     G.remove_edges_from(edges_to_remove)
+                
+            # elif net_effect > self.net_effect_thresh:
+            #     if not active and (tftype in ['Activator', 'Repressor']):
+            #         G.nodes[node]['active'] = False
+            #         G.nodes[node]['state'] = 'Activated'
+                    
+                    
+            #     if tftype == 'Activator' and not pure and active:
+            #         targetset = get_gene_targets(self.b_matrix, node, a_matrix_adata.obs_names)
+            #         for target in targetset:
+            #             G.add_edge(node, target)
+            #             G.nodes[target]['state'] = 'Activated'
+                
+                    
+            #     if pure and state == 'Activated':
+                    
+                    
+            #     if state == 'Repressed' and active:
+            #         edges_to_remove = list(G.edges(node)) 
+            #         G.remove_edges_from(edges_to_remove)
+                    
+            #         G.nodes[node]['active'] = False
+        return G        
+
         
     def activate_perturbation(self, G, activation_nodes, ref_matrix, initial=True):
         initiator_color = "#f83e56"
