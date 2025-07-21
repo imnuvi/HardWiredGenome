@@ -22,8 +22,10 @@
   </style>
 </head>
 <body>
-  <button id="add-node-btn">Add MYOD/button>
-  <button id="reset-node-btn">Original Network</button>
+  <button id="orig-network-btn">Full Network</button>
+  <button id="fetch-fibroblast">Fibroblast Network</button>
+  <button id="reset-node-btn">Remove MYOD</button>
+  <button id="add-node-btn">Add MYOD</button>
   <div id="cy"></div>
   <div id="toolbar"></div>
   <div id="tooltip" style="
@@ -53,8 +55,9 @@
   end = 16000
   type = 'size'
 
+  celltype = '{{celltype}}'
   ownpath = '/network?start_index_x={{startindexx}}&start_index_y={{startindexy}}&end_index_x={{endindexx}}&end_index_y={{endindexy}}'
-  fetchpath = '/fetch_network?start_index_x={{startindexx}}&start_index_y={{startindexy}}&end_index_x={{endindexx}}&end_index_y={{endindexy}}&perturbations={{perturbations}}'
+  fetchpath = '/fetch_network?start_index_x={{startindexx}}&start_index_y={{startindexy}}&end_index_x={{endindexx}}&end_index_y={{endindexy}}&celltype={{celltype}}&perturbations={{perturbations}}'
   // fetchpath =  `graphs/fibroblast_perturbed_network${start}_${end}_${type}.json`
   save_layout = false;
   custom_layout = 'concentric'
@@ -244,8 +247,22 @@
     // const cc = cy.closenessCentralityNormalized();
     // const bc = cy.betweennessCentrality();
 
+    cy.on('tap', 'node', function(evt) {
+	  const node = evt.target;
+	  const data = node.data();
 
-    highlightcolor = '#00ff84'
+	  const url = `https://www.ncbi.nlm.nih.gov/gene/?term=${data.genename}`;
+
+	  if (url) {
+	    window.open(url, '_blank'); // opens in new tab
+	    // or use window.location.href = url; to redirect in same tab
+	  }
+	});
+    // https://www.ncbi.nlm.nih.gov/gene/?term=MYOD1
+
+
+
+    highlightcolor = '#2e294e'
     cy.on('mouseover', 'node', function(evt) {
       const node = evt.target;
       var data = node.data();
@@ -258,7 +275,7 @@
 
       node.connectedEdges().forEach(edge => {
         edge.style({
-          width: 40,
+          width: 20,
           'line-color': highlightcolor
         });
       });
@@ -341,12 +358,22 @@
       });
 
   document.getElementById("add-node-btn").addEventListener("click", () => {
-    const url = `${ownpath}&perturbations=ENSG00000129152`;
+    const url = `${ownpath}&celltype=${celltype}&perturbations=ENSG00000129152`;
     window.location.href = url;
   });
 
   document.getElementById("reset-node-btn").addEventListener("click", () => {
-    const url = `${ownpath}`;
+    const url = `${ownpath}&celltype=${celltype}`;
+    window.location.href = url;
+  });
+
+  document.getElementById("fetch-fibroblast").addEventListener("click", () => {
+    const url = `${ownpath}&celltype=fibroblast`;
+    window.location.href = url;
+  });
+
+  document.getElementById("orig-network-btn").addEventListener("click", () => {
+    const url = `${ownpath}&celltype=population`;
     window.location.href = url;
   });
 

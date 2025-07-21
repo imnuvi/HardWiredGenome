@@ -10,7 +10,8 @@ from genexpression_utils import fetch_fibroblast_data
 
 
 class GeneUtils():
-    def __init__(self, thresh=300):
+    def __init__(self, thresh=600):
+        print(f'loading a matrix with threshold {thresh}')
         self.net_effect_thresh = -5
         self.a_matrix_adata, self.b_matrix = get_a_matrix_threshold(thresh)
 
@@ -160,11 +161,15 @@ class GeneUtils():
         G = nx.relabel_nodes(G, mapping)
         return G
 
-    def construct_network_x_y(self, specific_subnet_x, specific_subnet_y, HWG_subnetwork):
+    def construct_network_x_y(self, specific_subnet_x, specific_subnet_y, HWG_subnetx, HWG_subnety):
         '''
         a_matrix is an anndata object which we will filter the nodes and construct network based on
         '''
         a_matrix = self.a_matrix_adata
+        if len(HWG_subnetx) > 0:
+            specific_subnet_x = list(set(specific_subnet_x).intersection(set(HWG_subnetx)))
+        if len(HWG_subnety) > 0:
+            specific_subnet_y = list(set(specific_subnet_y).intersection(set(HWG_subnety)))
             
         subnetwork_adata = a_matrix[a_matrix.obs_names.isin(specific_subnet_x), a_matrix.var_names.isin(specific_subnet_y)].copy()
         G = nx.Graph()
@@ -174,6 +179,8 @@ class GeneUtils():
             target = subnetwork_adata.var_names[j]
             G.add_edge(source, target)
 
+        G.add_nodes_from(HWG_subnetx)
+        G.add_nodes_from(HWG_subnety)
         
         # mapping = dict(zip(range(len(subnetwork_adata.obs_names)), subnetwork_adata.obs_names))
         # G = nx.relabel_nodes(G, mapping)
@@ -186,7 +193,6 @@ class GeneUtils():
         a_matrix = self.a_matrix_adata
         if len(HWG_subnetwork) > 0:
             subnetwork_nodes = list(set(specific_subnet).intersection(set(HWG_subnetwork)))
-            print(len(subnetwork_nodes))
         else:
             subnetwork_nodes = specific_subnet
 
@@ -202,6 +208,39 @@ class GeneUtils():
         G = nx.relabel_nodes(G, mapping)
         return G
 
+    def get_node_props(self, node):
+        repressorlist = self.repressorlist
+        activatorlist = self.activatorlist
+        conflictedlist = self.conflictedlist
+        master_regulator_list = self.master_regulator_list
+
+        
+        g1_color = "#9055a2"
+        g2_color = "#d499b9"
+        g3_color = "#ebd8d9"
+        
+        
+        if node in master_regulator_list:
+            ntype = 'g1'
+            color = g1_color
+        elif node in repressorlist or node in activatorlist or node in conflictedlist:
+            ntype = 'g2'
+            color = g2_color
+        else:
+            ntype = 'g3'
+            color = g3_color
+
+        if node in repressorlist:
+            tftype = 'Repressor'
+        elif node in activatorlist:
+            tftype = 'Activator'
+        elif node in conflictedlist:
+            tftype = 'Conflicted'
+        else:
+            tftype = 'Normal'
+
+        return ntype, color, tftype
+        
     def add_network_props(self, G, ntype):
         
         repressorlist = self.repressorlist
@@ -220,10 +259,18 @@ class GeneUtils():
         # g1_color = '#0096c7'
         # g2_color = '#00b4d8'
         # g3_color = "#90e0ef"
-        g1_color = "#6b7fa6"
-        g2_color = "#86c9d7"
-        g3_color = "#c6d6d8"
 
+        # g1_color = "#6b7fa6"
+        # g2_color = "#86c9d7"
+        # g3_color = "#c6d6d8"
+
+        # g1_color = "#6C464F"
+        # g2_color = "#9E768F"
+        # g3_color = "#DAD7D8"
+
+        g1_color = "#9055a2"
+        g2_color = "#d499b9"
+        g3_color = "#ebd8d9"
         
 
         graph_nodes = G.nodes
@@ -243,30 +290,20 @@ class GeneUtils():
 
             
             # classify node
-            if node in master_regulator_list:
-                G.nodes[node]['type'] = 'g1'
-                G.nodes[node]['color'] = g1_color
-            elif node in repressorlist or node in activatorlist or node in conflictedlist:
-                G.nodes[node]['type'] = 'g2'
-                G.nodes[node]['color'] = g2_color
-            else:
-                G.nodes[node]['type'] = 'g3'
-                G.nodes[node]['color'] = g3_color
-
-            if node in repressorlist:
-                G.nodes[node]['tftype'] = 'Repressor'
-            elif node in activatorlist:
-                G.nodes[node]['tftype'] = 'Activator'
-            elif node in conflictedlist:
-                G.nodes[node]['tftype'] = 'Conflicted'
-            else:
-                G.nodes[node]['tftype'] = 'Normal'
+            ntype, color, tftype = self.get_node_props(node)
+            G.nodes[node]['type'] = ntype
+            G.nodes[node]['color'] = color
+            G.nodes[node]['tftype'] = tftype
+            
+            
             
             # activity of node
             if graph_degree[node] > 0:
                 G.nodes[node]['active'] = True
             else:
                 G.nodes[node]['active'] = False
+
+            G.nodes[node]['pure'] = False
 
 
             # Activated, Repressed, Neutral
@@ -284,17 +321,17 @@ class GeneUtils():
         for node in activation_nodes:
             G.add_node(node)
 
-            
-            
             # G.nodes[node]['size'] = 15 + 1 * G.degree[node] 
             G.nodes[node]['genename'] = self.gene_id_name_map.get(node, "NA")
             G.nodes[node]['color'] = initiator_color
-            targets = get_all_targets(ref_matrix, node)
+            targets = self.get_all_targets(ref_matrix, node)
             print(f'Total number of targets{len(targets)}')
+            print('total number of nodes', len(G.nodes))
                     
             for target in targets:
-                if target not in G.nodes:
-                    continue
+                G.add_node(target)
+                # if target not in G.nodes:
+                #     continue
 
                 eigenvector_centrality = nx.eigenvector_centrality(G)
                 degree_centrality = nx.degree_centrality(G)
@@ -307,6 +344,13 @@ class GeneUtils():
                 G.nodes[target]['eigenvector'] = eigenvector_centrality.get(target, 'NA')
                 G.nodes[target]['degree_centrality'] = degree_centrality.get(target, 'NA')
                 G.nodes[target]['active'] = True
+                G.nodes[target]['state'] = 'Activated'
+                G.nodes[target]['pure'] = True
+
+                ntype, color, tftype = self.get_node_props(node)
+                G.nodes[target]['type'] = ntype
+                # G.nodes[target]['color'] = color
+                G.nodes[target]['tftype'] = tftype
 
                 G.add_edge(node, target)
 
@@ -319,6 +363,13 @@ class GeneUtils():
             G.nodes[node]['eigenvector'] = eigenvector_centrality.get(node, 'NA')
             G.nodes[node]['degree_centrality'] = degree_centrality.get(node, 'NA')
             G.nodes[node]['active'] = True
+            G.nodes[node]['pure'] = False
+
+            ntype, color, tftype = self.get_node_props(node)
+            G.nodes[node]['type'] = ntype
+            # G.nodes[target]['color'] = color
+            G.nodes[node]['tftype'] = tftype
+
         return G
         
     def update_perturbation_network(self, G, subnet):
@@ -330,12 +381,17 @@ class GeneUtils():
         '''
 
         nodelist = list(G.nodes)
+        print('Number of Nodes ', len(nodelist))
+
         
+        supcount = 0
         for node in nodelist:
             state = G.nodes[node]['state']
             active = G.nodes[node]['active']
             # pure = G.nodes[node]['pure']
             tftype = G.nodes[node].get('tftype', 'Normal')
+            ntype = G.nodes[node]['type']
+            
 
             connected_edges = list(nx.node_connected_component(G, node))
             
@@ -343,9 +399,14 @@ class GeneUtils():
 
             
             if net_effect > self.net_effect_thresh:
-                if active:
-                    continue
+                if G.nodes[node]['pure']:
+                    G.nodes[node]['pure'] = False
+                    for influencer in influencers:
+                        G.add_edge(node, influencer)
                     
+                elif active:
+                    continue
+
                 if state == 'Activated':
                     G.nodes[node]['active'] = True
                 elif (state == 'Neutral' or state == 'Repressed') and not active:
@@ -353,21 +414,36 @@ class GeneUtils():
                     G.nodes[node]['state'] = 'Activated'
 
                 gene_targets = self.get_all_targets(self.a_matrix_adata, node)
+                
                 for target in gene_targets:
-                    if target not in G.nodes:
-                        G.add_node(target)
-                        G.nodes[target]['state'] = 'Activated'
-                        G.nodes[target]['active'] = True
-                    G.add_edge(node, target)
-                # Here we assume that activate edges for anything that is not already active indicating newly activated nodes.
-                # We don't increase the transcription of existing activated nodes.
-        
+                    if ntype == 'g1' or ntype == 'g2':
+                        if target not in G.nodes:
+                            G.add_node(target)
+                            G.nodes[target]['state'] = 'Activated'
+                            G.nodes[target]['active'] = True
+                            
+                            ntype, color, tftype = self.get_node_props(target)
+                            G.nodes[target]['type'] = ntype
+                            G.nodes[target]['color'] = color
+                            G.nodes[target]['tftype'] = tftype
+                        
+                        G.nodes[target]['pure'] = True
+                        G.add_edge(node, target)
+                        # Here we assume that activate edges for anything that is not already active indicating newly activated nodes.
+                        # We don't increase the transcription of existing activated nodes.
+                    elif ntype == 'g3':
+                        if target in G.nodes:
+                            G.add_edge(node, target)
+                    
+
             elif net_effect <= self.net_effect_thresh:
+                supcount += 1
                 G.nodes[node]['state'] = 'Repressed'
                 G.nodes[node]['active'] = False
                 edges_to_remove = list(G.edges(node))
                 
                 G.remove_edges_from(edges_to_remove)
+        print('Nodes suppressed', supcount)
         return G
                     
                 
@@ -402,7 +478,6 @@ class GeneUtils():
             #         G.remove_edges_from(edges_to_remove)
                     
             #         G.nodes[node]['active'] = False
-        return G        
 
         
     def activate_perturbation(self, G, activation_nodes, ref_matrix, initial=True):

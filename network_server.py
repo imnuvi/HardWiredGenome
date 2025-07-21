@@ -11,6 +11,7 @@ import json
 from flask import Flask, request, render_template
 
 from mapping import get_sorted_gene_order, generate_gene_id_name_map, get_master_regulator_list, get_TF_lists, get_a_matrix_threshold
+from genexpression_utils import fetch_hyb_nodes
 from constants import OPERATIONS_DIRECTORY
 from network_utils import  GeneUtils
 
@@ -19,6 +20,11 @@ app = Flask(__name__)
 
 
 GUtils = GeneUtils()
+hyb_fib, hyb_reprogrammed, myotube = fetch_hyb_nodes()
+
+hyb_fib_genes = hyb_fib.var_names
+hyb_reprogrammed_genes = hyb_reprogrammed.var_names
+myotube_genes = myotube.var_names
 
 # # Load Content to memory
 # a_matrix_adata, b_matrix_true = get_a_matrix_threshold(300)
@@ -92,13 +98,31 @@ def index():
     endindexx = int(request.args['end_index_x'])
     endindexy = int(request.args['end_index_y'])
     perturbations = list(request.args.get('perturbations','').split(';'))
+    celltype = request.args.get('celltype','')
+
+
 
     ntype = 'base'
     genes_subx = GUtils.genes[startindexx:endindexx]
     genes_suby = GUtils.genes[startindexy:endindexy]
+    hwg_subnetx = []
+    hwg_subnety = []
+
+    if celltype == 'fibroblast':
+
+        print('within fibroblast')
+        print(len(genes_subx), len(genes_suby))
+        hwg_subnetx = genes_subx
+        hwg_subnety = genes_suby
+        genes_subx = [gene for gene in genes_subx if gene in hyb_fib_genes]
+        genes_suby = [gene for gene in genes_suby if gene in hyb_fib_genes]
+        print(len(genes_subx), len(genes_suby))
+
+
+
 
     # full_network_G = GUtils.construct_network(genes_sub, [])
-    full_network_G = GUtils.construct_network_x_y(genes_subx, genes_suby, [])
+    full_network_G = GUtils.construct_network_x_y(genes_subx, genes_suby, hwg_subnetx, hwg_subnety)
 
     full_network_G = GUtils.add_network_props(full_network_G, ntype)
 
@@ -117,6 +141,7 @@ def network():
     startindexy = int(request.args['start_index_y'])
     endindexy = int(request.args['end_index_y'])
     perturbations = request.args.get('perturbations', '')
+    celltype = request.args.get('celltype', '')
 
     # startindexx = 1000
     # startindexy = 2000
@@ -124,7 +149,7 @@ def network():
     # endindexy = 2000
     print('-------------------------------')
     print(startindexx, startindexy)
-    return render_template('graph_viewer.html', startindexx=startindexx, startindexy=startindexy, endindexx=endindexx, endindexy=endindexy, perturbations=perturbations)
+    return render_template('graph_viewer.html', startindexx=startindexx, startindexy=startindexy, endindexx=endindexx, endindexy=endindexy, perturbations=perturbations, celltype=celltype)
 
 
 
