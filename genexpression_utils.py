@@ -63,6 +63,22 @@ def fetch_myotube_data():
     muscle_adata = fetch_genexpression_data(a_matrix_adata, gex_adata, marker_genes, obs_name)
     return muscle_adata
 
+def fetch_ipsc_data():
+    a_matrix_adata, b_matrix_true = get_a_matrix_threshold(300)
+    gex_adata = anndata.read_h5ad('./data/Genexpression.h5ad')
+    
+    marker_gene_sets = get_marker_gene_sets()
+    myotube_markers = set(marker_gene_sets['Muscle'].tolist())
+    
+    marker_genes = list(myotube_markers)
+    if 'nan' in marker_genes:
+        marker_genes.remove('nan')
+    
+    print(myotube_markers)
+    obs_name = 'Myotube'
+    muscle_adata = fetch_genexpression_data(a_matrix_adata, gex_adata, marker_genes, obs_name)
+    return muscle_adata
+
 def get_marker_gene_sets():
     return pd.read_csv('./data/gene_sets.tsv', sep='\t')
 

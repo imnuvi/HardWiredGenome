@@ -1,5 +1,7 @@
 
-BASEDIR = '/scratch/indikar_root/indikar1/shared_data/HWG'
+# BASEDIR = '/scratch/indikar_root/indikar1/shared_data/HWG'
+
+BASEDIR = '/nfs/turbo/umms-indikar/shared/projects/HWG/data/HWG'
 # BASEDIR = '/Users/ramprakash/development/lab_projects/Rajapakse_lab/data/HWG'
 
 DATA_DIRECTORY = f'{BASEDIR}/data'
@@ -45,6 +47,7 @@ HUMAN_TF_BASE_PATH = f"{DATA_DIRECTORY}/HTF"
 HUMAN_TF = 'https://humantfs.ccbr.utoronto.ca/download/v_1.01/DatabaseExtract_v_1.01.csv'
 HUMAN_TF_PATH = f"{DATA_DIRECTORY}/HTF/DatabaseExtract_v_1.01.csv"
 
+
 HUMAN_TF_IDLIST_URL = 'https://humantfs.ccbr.utoronto.ca/download/v_1.01/TFs_Ensembl_v_1.01.txt'
 HUMAN_TF_IDLIST_PATH = f"{DATA_DIRECTORY}/HTF/TFs_Ensembl_v_1.01.txt"
 
@@ -75,6 +78,34 @@ HWG_B_MATRICES = f'{OPERATIONS_DIRECTORY}/B_matrices.h5ad'
 RNASEQ_PATH = f'{DATA_DIRECTORY}/RNAseq'
 
 OPERATIONS_PATH = f'{DATA_DIRECTORY}/operations'
+
+TF_MOTIF_BASE_PATH = f'{DATA_DIRECTORY}/TF_MOTIFS'
+TF_MOTIF_PATH = f'{DATA_DIRECTORY}/TF_MOTIFS/Human_TF_MotifList_v_1.01.txt'
+
+HTF_MOTIFS_URL = 'https://humantfs.ccbr.utoronto.ca/download/v_1.01/PWMs.zip'
+HTF_MOTIFS_PATH = f'{TF_MOTIF_BASE_PATH}/PWMs.zip'
+HTF_MOTIFS_DIR = f'{TF_MOTIF_BASE_PATH}/HTF_PWMs'  # Destination folder
+
+
+# Reference genomic data URLs
+REFERENCE_GTF_HG38_URL = 'https://storage.googleapis.com/alphagenome/reference/gencode/hg38/gencode.v46.annotation.gtf.gz.feather'
+REFERENCE_DIR = f'{DATA_DIRECTORY}/REFERENCE'
+REFERENCE_GTF_HG38_PATH = f'{REFERENCE_DIR}/gencode.v46.annotation.gtf.gz.feather'
+
+REFERENCE_GENES_BED_URL = 'https://genome.ucsc.edu/cgi-bin/hgTables?hgsid=2773508654_C64YruQsla02ZUjIh3e4Q1gqq5rq&boolshad.hgta_printCustomTrackHeaders=0&hgta_ctName=tb_knownGene&hgta_ctDesc=table+browser+query+on+knownGene&hgta_ctVis=pack&hgta_ctUrl=&fbQual=whole&fbUpBases=200&fbExonBases=0&fbIntronBases=0&fbDownBases=200&hgta_doGetBed=get+BED'
+REFERENCE_GENES_BED_PATH = f'{REFERENCE_DIR}/genes.bed'
+
+REFERENCE_CHROM_SIZES_URL = 'http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.chrom.sizes'
+REFERENCE_CHROM_SIZES_PATH = f'{REFERENCE_DIR}/hg38.chrom.sizes'
+
+REFERENCE_GENOME_URL = 'https://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/latest/hg38.fa.gz'
+REFERENCE_GENOME_PATH = f'{REFERENCE_DIR}/hg38.fa'
+
+GENCODE_ANNOTATION_URL = 'https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_43/gencode.v43.annotation.gtf.gz'
+GENCODE_ANNOTATION_PATH = f'{REFERENCE_DIR}/gencode.v43.annotation.gtf.gz'
+
+
+# NOTE: CIS-BP has to be downloaded manually from here - https://cisbp.ccbr.utoronto.ca/bulk.php. Unzip and add a constant here if needed.
 
 def modify_HWG_path(suffix):
     save_path = HARD_WIRED_GENOME_A_MATRIX_PATH.strip('.csv') + f"_{suffix}.csv"

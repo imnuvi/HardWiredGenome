@@ -1,6 +1,6 @@
 from constants import DATA_DIRECTORY,  STRING_ALIAS_PATH, STRING_URL_PATH, ENSEMBL_PROTEIN_GENE_PATH, STRING_EXTRACTED_ALIAS_PATH, STRING_EXTRACTED_URL_PATH, ENSEMBL_MAPPING_PATH, UNIQUE_GENE_SET, \
     HURI_URL_PATH, HI_UNION_PATH, LIT_BM_PATH, HUMAN_TF_PATH, HARD_WIRED_GENOME_A_MATRIX_PATH, STRING_PROTEIN_GENE_PATH, STRING_UNIQUE_GENE_SET, HURI_UNIQUE_GENE_SET, HUMAN_TF_SET_PATH, \
-    HARD_WIRED_GENOME_B_MATRIX_PATH, HWG_BASE_PATH, ENSEMBL_BASE_PATH, STRING_PROTEIN_SET_FROM_LINKS, STRING_UNIQUE_PROTEIN_SET, modify_HWG_path, HUMAN_TF_SET_PATH, HUMAN_TF_IDLIST_PATH
+    HARD_WIRED_GENOME_B_MATRIX_PATH, HWG_BASE_PATH, ENSEMBL_BASE_PATH, STRING_PROTEIN_SET_FROM_LINKS, STRING_UNIQUE_PROTEIN_SET, modify_HWG_path, HUMAN_TF_SET_PATH, HUMAN_TF_IDLIST_PATH, TF_MOTIF_PATH
 from constants import HWG_BASE_PATH, HI_UNION_PATH, LIT_BM_PATH, ENSEMBL_PROTEIN_GENE_PATH, OPERATIONS_DIRECTORY, HWG_B_MATRICES, HWG_A_MATRICES
 
 import re
@@ -428,7 +428,7 @@ def binarize(mat, thresh):
 def get_a_matrix_threshold(threshold):
     repressorlist, activatorlist, conflictedlist, tf_list = get_TF_lists()
     
-    a_matrix_adata = anndata.read_h5ad('/scratch/indikar_root/indikar1/shared_data/HWG/data/HWG/A_matrix.h5ad')
+    a_matrix_adata = anndata.read_h5ad('/nfs/turbo/umms-indikar/shared/projects/HWG/data/HWG/data/HWG/A_matrix.h5ad')
     a_matrix_adata.layers['HWG_0'] = a_matrix_adata.X
     a_bin = binarize(a_matrix_adata.layers['STRING'], threshold)
     b_bin = a_matrix_adata.layers['HURI']
@@ -446,6 +446,17 @@ def get_a_matrix_threshold(threshold):
     b_matrix_true = a_matrix_adata[a_matrix_adata.obs_names.isin(tf_list)]
     return a_matrix_adata, b_matrix_true
 
+def load_htf_motifs():
+
+    filename = TF_MOTIF_PATH
+    
+    df = pd.read_csv(filename, sep='\t', engine='python', dtype=str)
+    
+    df.columns = df.columns.str.strip()
+    
+    df = df.fillna('')  # Or use `NaN` if preferred
+    
+    return df
 
 def setup():
     fetch_ensembl_mapping()
