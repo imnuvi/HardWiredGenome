@@ -1,41 +1,54 @@
-# NCBI Datasets
+# HardWiredGenome
+Gene - Gene interaction network across the human Genome
 
-https://www.ncbi.nlm.nih.gov/datasets
 
-This zip archive contains an NCBI Datasets Data Package.
+This is a Wiring circuit for the genome constructed from existing literature and databases forming a Wiring Diagram across the human genome. 
 
-NCBI Datasets Data Packages can include sequence, annotation and other data files, and metadata in one or more data report files.
-Data report files are in JSON Lines format.
 
----
-## FAQs
-### Where is the data I requested?
 
-Your data is in the subdirectory `ncbi_dataset/data/` contained within this zip archive.
 
-### I still can't find my data, can you help?
+### Databases
+We use data from the following databases. The format of each file and method to link across each is described below.
 
-We have identified a bug affecting Mac Safari users. When downloading data from the NCBI Datasets web interface, you may see only this README file after the download has completed (while other files appear to be missing).
-As a workaround to prevent this issue from recurring, we recommend disabling automatic zip archive extraction in Safari until Apple releases a bug fix.
-For more information, visit:
-https://www.ncbi.nlm.nih.gov/datasets/docs/reference-docs/mac-zip-bug/
 
-### How do I work with JSON Lines data reports?
+1. STRING - Is a protein - protein interaction network.
+2. HURI - HURI is a Protein - Protein interaction database 
+3. HI-UNION - all HuRI interactions combined with CCSB screening efforts
+4. LIT-BM - Records of High quality PPI from literature
+5. Human TF - A list of all Human Transcription Factors from literature
 
-Visit our JSON Lines data report documentation page:
-https://www.ncbi.nlm.nih.gov/datasets/docs/v2/tutorials/working-with-jsonl-data-reports/
+#### Database file formats
 
-### What is NCBI Datasets?
+```
+data
+└───STRING
+│   │   protein.aliases.v12.0.txt
+│   │   protein.links.v12.0.txt 
+│   │   protein.info.v12.0.txt 
+└───HURI
+│   │   HuRI.tsv
+│   │   HI-union.tsv
+│   │   Lit-BM.tsv   
+└───HTF
+│   │   DatabaseExtract_v_1.01.csv
+```
 
-NCBI Datasets is a resource that lets you easily gather data from across NCBI databases. Find and download gene, transcript, protein and genome sequences, annotation and metadata.
+<b>STRING</b>
+- STRING/protein.aliases.v12.0.txt - 3889207 lines + header - *string_protein_id* *alias* *source* 
+- STRING/protein.links.v12.0.txt - 13715404 lines + header - *Protein1* *Protein2* *combined_score* - Contains the interactions between proteins 
+- STRING/protein.info.v12.0.txt -  19699 lines + header - *string_protein_id*,*preferred_name* ... - Contains a list of all the proteins within the string database
 
-### Where can I find NCBI Datasets documentation?
+<b>HuRI</b>
+- HURI/HuRI.tsv - 52548 lines - *Protein1* *Protein2* - Has two proteins in each line denoting an interaction 
+- HURI/HI-union.tsv - 64006 lines - *Protein1* *Protein2* -  Has two proteins in each line denoting an interaction
+- HURI/Lit-BM.tsv - 13441 lines - *Protein1* *Protein2* - Has two proteins in each line denoting an interaction 
 
-Visit the NCBI Datasets documentation pages:
-https://www.ncbi.nlm.nih.gov/datasets/docs/
 
----
+<b>Human TF</b>
+2766 lines
+- HTF/DatabaseExtract_v_1.01.csv  - 2765 lines + header - Ensembl ID, Is TF?
 
-National Center for Biotechnology Information
-National Library of Medicine
-info@ncbi.nlm.nih.gov
+
+Total TFs: 2765
+Total present genes in A matrix: 2752
+Total missing TFs in A matrix: -13
