@@ -11,6 +11,14 @@
   <script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
   <script src="https://unpkg.com/cytoscape-dagre@2.5.0/cytoscape-dagre.js"></script>
 
+  <script src="https://unpkg.com/klayjs@0.4.1/klay.js"> </script>
+  <script src="https://cytoscape.org/cytoscape.js-klay/cytoscape-klay.js"> </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/elkjs@0.9.3/lib/elk.bundled.js"> </script>
+  <script src="https://cytoscape.org/cytoscape.js-elk/cytoscape-elk.js"> </script>
+
+  
+
 
   <!-- <script type="text/javascript" src="layout.js"></script> -->
   <style>
@@ -46,7 +54,7 @@
   // cytoscape.use(cytoscapeGraphTheory);
   // cytoscape.use(cytoscapeElk);
   // cytoscape.use(cytoscapeDagre);
-  // cytoscape.use(dagre);
+  // cytoscape.use(klay);
   // fetchpath = 'data/combination_perturbed_third_order_time_based_150_esc_start_end_13500_14500.json'
   // fetchpath = 'data/combination_perturbed_first_order_time_based_150_fibroblast_start_end_10000_11000.json'
   // savepath ='data/combination_perturbed_second_order_time_based_150_fibroblast_start_end_10000_11000.png' 
@@ -61,6 +69,7 @@
   // fetchpath =  `graphs/fibroblast_perturbed_network${start}_${end}_${type}.json`
   save_layout = false;
   custom_layout = 'concentric'
+  // custom_layout = 'hierarchical'
 
   // if (type == 'base'){
   //   save_layout = true;
@@ -103,7 +112,7 @@
             edge.data.thickness = 40
           }
           else{
-            edge.data.thickness = 3
+            edge.data.thickness = 10
           }
         });
         const processedElements = data.nodes.map(node => {
@@ -150,6 +159,23 @@
           }
         }
 
+      }
+      else if (custom_layout=='hierarchical'){
+        layout = {
+          name: 'klay',
+          name: 'elk',
+          elk: {
+            algorithm: 'layered',
+          },
+          // directed: true,
+          // padding: 10,
+          // spacingFactor: 1.5,
+          // animate: true,
+          // // Sort nodes by centrality descending to determine layer
+          // sort: function(a, b) {
+          //   return b.data('centrality') - a.data('centrality');
+          // }
+        }
       }
       cy = cytoscape({
           container: document.getElementById('cy'),
@@ -204,7 +230,7 @@
               'background-color': '#0074D9',
               'width': 'data(size)',   // width from node attribute 'size'
               'height': 'data(size)',
-              'border-width': 10,
+              'border-width': 5,
               'border-color': '#999999',
               'border-style': 'solid',            // optional: solid | dotted | dashed | double
               'label': 'data(id)'
@@ -314,10 +340,12 @@
     cy.on('mouseout', 'node', function(evt) {
       const node = evt.target;
       const data = node.data();
+      console.log('data', data);
+      console.log('Size', data.size);
 
       node.style({
-        width: data.size,
-        height: data.size,
+        'width': data.size,
+        'height': data.size,
         'font-size': 10,
         'background-color': data.color
       });

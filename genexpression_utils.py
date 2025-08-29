@@ -33,7 +33,7 @@ def fetch_genexpression_data(a_matrix_adata, gex_adata, marker_genes, cell):
     return fibroblast_adata
 
 def fetch_fibroblast_data():
-    a_matrix_adata, b_matrix_true = get_a_matrix_threshold(300)
+    a_matrix_adata, b_matrix_true, c_matrix_true = get_a_matrix_threshold(300)
     
     gex_adata = anndata.read_h5ad('./data/Genexpression.h5ad')
     marker_gene_df = pd.read_csv('./data/clean_marker_genes.csv')

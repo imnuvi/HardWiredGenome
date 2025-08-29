@@ -86,6 +86,7 @@ HTF_MOTIFS_URL = 'https://humantfs.ccbr.utoronto.ca/download/v_1.01/PWMs.zip'
 HTF_MOTIFS_PATH = f'{TF_MOTIF_BASE_PATH}/PWMs.zip'
 HTF_MOTIFS_DIR = f'{TF_MOTIF_BASE_PATH}/HTF_PWMs'  # Destination folder
 
+CISBP_MOTIFS_DIR = f'{TF_MOTIF_BASE_PATH}/Homo_sapiens_2025_07_21_6_25_pm'
 
 # Reference genomic data URLs
 REFERENCE_GTF_HG38_URL = 'https://storage.googleapis.com/alphagenome/reference/gencode/hg38/gencode.v46.annotation.gtf.gz.feather'
@@ -95,17 +96,28 @@ REFERENCE_GTF_HG38_PATH = f'{REFERENCE_DIR}/gencode.v46.annotation.gtf.gz.feathe
 REFERENCE_GENES_BED_URL = 'https://genome.ucsc.edu/cgi-bin/hgTables?hgsid=2773508654_C64YruQsla02ZUjIh3e4Q1gqq5rq&boolshad.hgta_printCustomTrackHeaders=0&hgta_ctName=tb_knownGene&hgta_ctDesc=table+browser+query+on+knownGene&hgta_ctVis=pack&hgta_ctUrl=&fbQual=whole&fbUpBases=200&fbExonBases=0&fbIntronBases=0&fbDownBases=200&hgta_doGetBed=get+BED'
 REFERENCE_GENES_BED_PATH = f'{REFERENCE_DIR}/genes.bed'
 
+REFERENCE_FNA_URL = 'https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz'
+REFERENCE_FNA_PATH = f'{REFERENCE_DIR}/GCF_000001405.40_GRCh38.p14_genomic.fna'
+
 REFERENCE_CHROM_SIZES_URL = 'http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.chrom.sizes'
 REFERENCE_CHROM_SIZES_PATH = f'{REFERENCE_DIR}/hg38.chrom.sizes'
 
 REFERENCE_GENOME_URL = 'https://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/latest/hg38.fa.gz'
 REFERENCE_GENOME_PATH = f'{REFERENCE_DIR}/hg38.fa'
 
+REFERENCE_GENOME_GENCODE_URL = 'https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/GRCh38.p14.genome.fa.gz'
+REFERENCE_GENOME_GENCODE_PATH = f'{REFERENCE_DIR}/GRCh38.p14.genome.fa'
+
 GENCODE_ANNOTATION_URL = 'https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_43/gencode.v43.annotation.gtf.gz'
 GENCODE_ANNOTATION_PATH = f'{REFERENCE_DIR}/gencode.v43.annotation.gtf.gz'
 
+# NOTE: NCBI refseq was downloaded with curl
+# curl -o ncbi_dataset.zip https://api.ncbi.nlm.nih.gov/datasets/v2/genome/accession/GCF_000001405.40/download\?include_annotation_type\=GENOME_FASTA\&include_annotation_type\=GENOME_GFF\&include_annotation_type\=RNA_FASTA\&include_annotation_type\=CDS_FASTA\&include_annotation_type\=PROT_FASTA\&include_annotation_type\=SEQUENCE_REPORT\&hydrated\=FULLY_HYDRATED
 
 # NOTE: CIS-BP has to be downloaded manually from here - https://cisbp.ccbr.utoronto.ca/bulk.php. Unzip and add a constant here if needed.
+
+
+### ALPHAGENOME
 
 def modify_HWG_path(suffix):
     save_path = HARD_WIRED_GENOME_A_MATRIX_PATH.strip('.csv') + f"_{suffix}.csv"

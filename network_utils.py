@@ -275,13 +275,20 @@ class GeneUtils():
 
         graph_nodes = G.nodes
         graph_degree = G.degree
-        eigenvector_centrality = nx.eigenvector_centrality(G)
+        try:
+            eigenvector_centrality = nx.eigenvector_centrality(G)
+        except Exception as e:
+            print('Eigenvector calculation failed', e)
+            eigenvector_centrality = {node: 0 for node in graph_nodes}
         degree_centrality = nx.degree_centrality(G)
         for node in graph_nodes:
             # Basic Info
             if ntype == 'size':
                 G.nodes[node]['size'] = 5 + 1 * G.degree[node] 
             elif ntype == 'base':
+                G.nodes[node]['size'] = 1 + 0.5 * G.degree[node]
+            else:
+                G.nodes[node]['size'] = 5 + 1 * G.degree[node] 
                 G.nodes[node]['size'] = 1 + 0.5 * G.degree[node]
             G.nodes[node]['genename'] = gene_id_name_map.get(node, "NA")
             G.nodes[node]['degree'] = G.degree[node]
@@ -749,7 +756,8 @@ def add_network_props(G, ntype):
     for node in graph_nodes:
         # Basic Info
         if ntype == 'size':
-            G.nodes[node]['size'] = 50 + 7.5 * G.degree[node] 
+            # G.nodes[node]['size'] = 50 + 7.5 * G.degree[node] 
+            G.nodes[node]['size'] = 10 + 2 * G.degree[node] 
         elif ntype == 'base':
             G.nodes[node]['size'] = 5 + 1 * G.degree[node]
         G.nodes[node]['genename'] = gene_id_name_map.get(node, "NA")
