@@ -47,9 +47,13 @@ HUMAN_TF_BASE_PATH = f"{DATA_DIRECTORY}/HTF"
 HUMAN_TF = 'https://humantfs.ccbr.utoronto.ca/download/v_1.01/DatabaseExtract_v_1.01.csv'
 HUMAN_TF_PATH = f"{DATA_DIRECTORY}/HTF/DatabaseExtract_v_1.01.csv"
 
+HUMAN_TF_INTERACTION_PATH = f"{HUMAN_TF_BASE_PATH}/TFLink_Homo_sapiens_interactions_All_simpleFormat_v1.0.tsv"
+HUMAN_TF_ACTIVITY_PATH = f"{HUMAN_TF_BASE_PATH}/trrust_rawdata.human.tsv"
 
 HUMAN_TF_IDLIST_URL = 'https://humantfs.ccbr.utoronto.ca/download/v_1.01/TFs_Ensembl_v_1.01.txt'
 HUMAN_TF_IDLIST_PATH = f"{DATA_DIRECTORY}/HTF/TFs_Ensembl_v_1.01.txt"
+
+
 
 
 HUMAN_TF_SET_PATH = f"{DATA_DIRECTORY}/HTF/human_tf_set.txt"
@@ -118,6 +122,7 @@ GENCODE_ANNOTATION_PATH = f'{REFERENCE_DIR}/gencode.v43.annotation.gtf.gz'
 
 
 ### ALPHAGENOME
+API_KEY = 'AIzaSyBbhb4MgbXw4X03M8SFe2nk-9m8TpVIWKw'
 
 def modify_HWG_path(suffix):
     save_path = HARD_WIRED_GENOME_A_MATRIX_PATH.strip('.csv') + f"_{suffix}.csv"

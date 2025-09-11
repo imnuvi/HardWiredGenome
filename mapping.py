@@ -1,6 +1,6 @@
 from constants import DATA_DIRECTORY,  STRING_ALIAS_PATH, STRING_URL_PATH, ENSEMBL_PROTEIN_GENE_PATH, STRING_EXTRACTED_ALIAS_PATH, STRING_EXTRACTED_URL_PATH, ENSEMBL_MAPPING_PATH, UNIQUE_GENE_SET, \
     HURI_URL_PATH, HI_UNION_PATH, LIT_BM_PATH, HUMAN_TF_PATH, HARD_WIRED_GENOME_A_MATRIX_PATH, STRING_PROTEIN_GENE_PATH, STRING_UNIQUE_GENE_SET, HURI_UNIQUE_GENE_SET, HUMAN_TF_SET_PATH, \
-    HARD_WIRED_GENOME_B_MATRIX_PATH, HWG_BASE_PATH, ENSEMBL_BASE_PATH, STRING_PROTEIN_SET_FROM_LINKS, STRING_UNIQUE_PROTEIN_SET, modify_HWG_path, HUMAN_TF_SET_PATH, HUMAN_TF_IDLIST_PATH, TF_MOTIF_PATH
+    HARD_WIRED_GENOME_B_MATRIX_PATH, HWG_BASE_PATH, ENSEMBL_BASE_PATH, STRING_PROTEIN_SET_FROM_LINKS, STRING_UNIQUE_PROTEIN_SET, modify_HWG_path, HUMAN_TF_SET_PATH, HUMAN_TF_IDLIST_PATH, TF_MOTIF_PATH, HUMAN_TF_INTERACTION_PATH, HUMAN_TF_ACTIVITY_PATH
 from constants import HWG_BASE_PATH, HI_UNION_PATH, LIT_BM_PATH, ENSEMBL_PROTEIN_GENE_PATH, OPERATIONS_DIRECTORY, HWG_B_MATRICES, HWG_A_MATRICES, HTF_MOTIFS_DIR, CISBP_MOTIFS_DIR
 
 import re
@@ -10,7 +10,6 @@ import pandas as pd
 import anndata
 import scipy.sparse as sp
 from anndata import AnnData
-from Bio import motifs
 
 def fetch_ensembl_mapping():
     from biomart import BiomartServer
@@ -355,6 +354,26 @@ def get_sorted_gene_order():
     print(f"ordering {len(flat_col_order)} genes")
     return flat_col_order
 
+def get_TF_activity_lists():
+
+    tflist = get_TF_set()
+    TF_activity_TRRUST = pd.read_csv(HUMAN_TF_ACTIVITY_PATH, sep='\t')
+
+    activatorlist = []
+    repressorlist = []
+    conflictedlist = []
+    print(TF_activity_TRRUST)
+    # for i in TF_activity_TRRUST:
+        
+    
+    if log:
+        print(f' Total Activators : {len(activatorlist)}')
+        print(f'Total Reprossors : {len(repressorlist)}')
+        print(f'Total Conflicted : {len(conflictedlist)}')
+    
+        print(f'Total Transcription Factors : {len(tflist)}')
+    return repressorlist, activatorlist, conflictedlist, tflist
+
 def get_TF_lists(log=True):
 
     adata= anndata.read_h5ad(f'{OPERATIONS_DIRECTORY}/DSET051_B_Matrix_TFsONLY_TFTGDb_TFLink_ChEA3.h5ad')
@@ -392,7 +411,7 @@ def get_master_regulator_list():
     ones_mask = diagonal_values == 1
     
     master_regulator_list = list(b_matrix[bobs[ones_mask]].obs['TFStableID'])
-    print(f'total master regulators {len(master_regulator_list)}')
+    print(f'total master regulators from Old list: {len(master_regulator_list)}')
     return master_regulator_list
 
 def construct_HardWiredGenome_B_Matrix(A_Matrix_path=HARD_WIRED_GENOME_A_MATRIX_PATH):
@@ -464,6 +483,27 @@ def load_htf_motifs():
     
     return df
 
+def load_master_regulators():
+    
+    gene_id_name_map, gene_name_id_map = generate_gene_id_name_map()
+    
+    tsv_tflink = pd.read_csv(HUMAN_TF_INTERACTION_PATH, sep='\t')
+    
+    tsv_tflink.head()
+    tsv_tflink_master_regulators = tsv_tflink[tsv_tflink['Name.TF'] == tsv_tflink['Name.Target']]
+    
+    master_regulator_list = tsv_tflink_master_regulators.drop_duplicates(subset=['Name.TF'])['Name.TF']
+    
+    
+    print(f'Number of Master regulators: {len(master_regulator_list)}')
+    
+    master_regulator_list_id = []
+    for i in master_regulator_list:
+        master_regulator_list_id.append(gene_name_id_map.get(i))
+
+    return master_regulator_list_id
+    
+
 from constants import TF_MOTIF_BASE_PATH
 
 
@@ -531,6 +571,8 @@ def load_consensus(gene,  scale=1000, gene_id=None, motif_source='cisbp'):
         nt: (df[nt].values * scale).astype(int).tolist()
         for nt in ["A", "C", "G", "T"]
     }
+
+    from Bio import motifs
     
     motif = motifs.Motif(counts=counts)
     motif.name = gene

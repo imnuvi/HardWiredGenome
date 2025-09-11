@@ -48,7 +48,7 @@ def fetch_fibroblast_data():
     return fib_adata
 
 def fetch_myotube_data():
-    a_matrix_adata, b_matrix_true = get_a_matrix_threshold(300)
+    a_matrix_adata, b_matrix_true, c_matrix_true = get_a_matrix_threshold(300)
     gex_adata = anndata.read_h5ad('./data/Genexpression.h5ad')
     
     marker_gene_sets = get_marker_gene_sets()
@@ -64,7 +64,7 @@ def fetch_myotube_data():
     return muscle_adata
 
 def fetch_ipsc_data():
-    a_matrix_adata, b_matrix_true = get_a_matrix_threshold(300)
+    a_matrix_adata, b_matrix_true, c_matrix_true = get_a_matrix_threshold(300)
     gex_adata = anndata.read_h5ad('./data/Genexpression.h5ad')
     
     marker_gene_sets = get_marker_gene_sets()
@@ -83,7 +83,7 @@ def get_marker_gene_sets():
     return pd.read_csv('./data/gene_sets.tsv', sep='\t')
 
 def process_gex_anndata(fibroblast, fib_marker_ids, thresh):
-    a_matrix_adata, b_matrix_true = get_a_matrix_threshold(300)
+    a_matrix_adata, b_matrix_true , c_matrix_true = get_a_matrix_threshold(300)
 
     sc.pp.normalize_total(fibroblast, target_sum=1e4)
     sc.pp.log1p(fibroblast)

@@ -23,13 +23,11 @@ from alphagenome.models import dna_client
 
 
 
-from constants import API_KEY
-
 from mapping import get_sorted_gene_order, generate_gene_id_name_map, get_master_regulator_list, get_TF_lists, get_a_matrix_threshold, load_htf_motifs, generate_gene_id_name_map, load_consensus
 
 from genome_utils import write_meme_format, parse_fasta, write_df_to_meme
 
-from constants import HTF_MOTIFS_DIR, CISBP_MOTIFS_DIR, REFERENCE_GENOME_PATH, GENCODE_ANNOTATION_PATH, REFERENCE_GTF_HG38_PATH, REFERENCE_DIR, TF_MOTIF_BASE_PATH
+from constants import API_KEY, HTF_MOTIFS_DIR, CISBP_MOTIFS_DIR, REFERENCE_GENOME_PATH, GENCODE_ANNOTATION_PATH, REFERENCE_GTF_HG38_PATH, REFERENCE_DIR, TF_MOTIF_BASE_PATH, REFERENCE_GENOME_PATH
 
 master_regulator_list = get_master_regulator_list()
 repressorlist, activatorlist, conflictedlist, tf_list = get_TF_lists()
@@ -151,32 +149,33 @@ def fetch_reference_locations():
 
     best_transcripts = transcripts.groupby("gene_id", group_keys=False).apply(pick_best_transcript, include_groups=True)
 
-    return genes, transcripts, best_transcripts
+    return genes_df, transcripts, best_transcripts
 
-def fetch_bed_files():
+def get_tss_flank(row, flank=1000):
+    if row["Strand"] == "+":
+        tss = row["Start"]
+        flank_start = max(0, tss - flank)
+        flank_end = tss + flank
+    else:
+        tss = row["End"]
+        flank_start = max(0, tss - flank)
+        flank_end = tss + flank
+    return pd.Series([flank_start, flank_end])
+
+def fetch_bed_files(flank_size=10000):
     # Get the TSS FLanking region
 
     genes, transcripts, best_transcripts = fetch_reference_locations()
 
-    bed_csv = f"{REFERENCE_DIR}/protein_coding_tss_flank_10kb.bed"
+    bed_csv = f"{REFERENCE_DIR}/protein_coding_tss_flank_{flank_size}.bed"
     one_mb_flanks = f"{REFERENCE_DIR}/protein_coding_tss_flank_1mb.bed"
     two_mb_flanks = f"{REFERENCE_DIR}/protein_coding_tss_flank_2mb.bed"
 
 
-    def get_tss_flank(row, flank=1000):
-        if row["Strand"] == "+":
-            tss = row["Start"]
-            flank_start = max(0, tss - flank)
-            flank_end = tss + flank
-        else:
-            tss = row["End"]
-            flank_start = max(0, tss - flank)
-            flank_end = tss + flank
-        return pd.Series([flank_start, flank_end])
 
 
     if not os.path.exists(bed_csv):
-        best_transcripts[["flank_start", "flank_end"]] = best_transcripts.apply(get_tss_flank, axis=1, args=(10000,))
+        best_transcripts[["flank_start", "flank_end"]] = best_transcripts.apply(get_tss_flank, axis=1, args=(flank_size,))
         
         
         
@@ -214,6 +213,8 @@ def fetch_bed_files():
         bed_two_m.to_csv(two_mb_flanks, sep="\t", header=False, index=False)
     else:
         bed_two_m= pd.read_csv(two_mb_flanks, sep="\t", header=None)
+
+    return bed_one_m, bed_two_m, bed_csv
 
 
 def call_alphagenome(sequence, chromosome, interval_start, interval_end, seqtype='generic'):
@@ -362,7 +363,6 @@ def replace_motif(raw_sequence, promoter_region, fimo_matches, original_motif, r
     return base_seq, replaced_seq, prom_start_full-(seqlen//2), prom_start_full+(seqlen//2), chromosome
 
 def replacement_runner(base_gene_id, base_tf_id, target_tf_id):
-    global base_tf, base_tf_name
 
     base_tf_name = gene_id_name_map.get(base_tf_id)
     base_tf = base_tf_id
@@ -380,7 +380,7 @@ def replacement_runner(base_gene_id, base_tf_id, target_tf_id):
     
     
     orig_consensus, orig_motif, orig_pwm = load_consensus(base_tf_name, gene_id=base_tf)
-    repl_consensus, repl_motif, repl_pwm = load_consensus(target_name, gene_id=tf_id)
+    repl_consensus, repl_motif, repl_pwm = load_consensus(target_name, gene_id=target_id)
 
     
     fimo_tsv_out = pd.read_csv(FIMO_MATCHES, sep='\t')
@@ -406,8 +406,8 @@ def replacement_runner(base_gene_id, base_tf_id, target_tf_id):
 
     
 
-    start = genes_df[genes_df['gene_name'] == gene_name].iloc[0].loc['Start']
-    end = genes_df[genes_df['gene_name'] == gene_name].iloc[0].loc['End']
+    # start = genes_df[genes_df['gene_name'] == gene_name].iloc[0].loc['Start']
+    # end = genes_df[genes_df['gene_name'] == gene_name].iloc[0].loc['End']
 
     # call_alphagenome(base_seq, chromosome, start, end, f'{gene_name}_{target_name}_{method}_raw')
     # call_alphagenome(repl_seq, chromosome, start, end, f'{gene_name}_{target_name}_{method}_repl')
@@ -424,11 +424,72 @@ def replacement_runner(base_gene_id, base_tf_id, target_tf_id):
 
 
 def run_pipeline(gene):
-    print(gene)
-    pass
+
+    genedir = f'{tempdir}/{gene}'
+    if not os.path.exists(genedir):
+        os.makedirs(genedir)
+
+    bed_one_m, bed_two_m, bed_flanks = fetch_bed_files()
+
+    gene_id = gene_name_id_map.get(gene)
+
+    gene_filtered_bed_one_m = bed_one_m[bed_one_m[3] == gene_id]
+    gene_filtered_bed_two_m = bed_two_m[bed_two_m[3] == gene_id]
+    gene_filtered_flank = bed_flanks[bed_flanks[3] == gene_id]
+
+    gene_one_m = f'{genedir}/{gene}_1mb_flank.bed'
+    gene_two_m = f'{genedir}/{gene}_2mb_flank.bed'
+    gene_filtered_flank_m = f'{genedir}/{gene}_10kb.bed'
+
+    gene_one_m_fa = f'{genedir}/{gene}_1mb_flank.fa'
+    gene_two_m_fa = f'{genedir}/{gene}_2mb_flank.fa'
+    gene_filtered_flank_m_fa = f'{genedir}/{gene}_10kb.fa'
+    
+
+    gene_filtered_bed_one_m.to_csv(gene_one_m, sep='\t', header=False, index=False)
+    gene_filtered_bed_two_m.to_csv(gene_two_m, sep='\t', header=False, index=False)
+
+    # gene_filtered_bed_two_m
+
+    genes_df, transcripts, best_transcripts = fetch_reference_locations()
+    print(genes_df, transcripts, best_transcripts)
+    print(bed_one_m, bed_two_m)
+
+    ### Running Bedtools to extract the fasta file for the target gene
+    print("Running Bedtools and writing output to : ", tempdir)
+
+    try:
+
+        # bedtools getfasta -fi REFERENCE/hg38.fa -bed U2AF2_1mb.bed > U2AF2_1mb_region.fa
+        subcommand = f'bedtools getfasta -fi {REFERENCE_GENOME_PATH} -bed {gene_one_m} > {gene_one_m_fa}' 
+        result = subprocess.run(subcommand, shell=True, capture_output=True, text=True, check=True)
+
+        subcommand = f'bedtools getfasta -fi {REFERENCE_GENOME_PATH} -bed {gene_two_m} > {gene_two_m_fa}'
+        result = subprocess.run(subcommand, shell=True, capture_output=True, text=True, check=True)
+
+        print('Done')
+
+    except Exception as e:
+        print("error occured processing bedtools: ", e)
+
+
+    from network_utils import GeneUtils
+
+
+    GUtils = GeneUtils()
+    gene_influencers = GUtils.get_influencers(gene)
+
+    print(gene_influencers)
+
+    # consensus, motif, gene_pwm = load_consensus(base_tf_name, gene_id=base_tf)
+
+    # savepath = f'{tempdir}/{base_tf}.meme'
+
+    replacement_runner(base_gene_id, base_tf_id, target_tf_id)
 
 
 
+gene_target = 'ACADM'
+gene_target_id = gene_name_id_map.get(gene_target)
+run_pipeline(gene_target_id)
 
-
-run_pipeline('htaeohu')

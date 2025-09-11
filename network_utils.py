@@ -13,7 +13,7 @@ class GeneUtils():
     def __init__(self, thresh=600):
         print(f'loading a matrix with threshold {thresh}')
         self.net_effect_thresh = -5
-        self.a_matrix_adata, self.b_matrix = get_a_matrix_threshold(thresh)
+        self.a_matrix_adata, self.b_matrix, self.c_matrix = get_a_matrix_threshold(thresh)
 
         self.master_regulator_list = get_master_regulator_list()
         self.repressorlist, self.activatorlist, self.conflictedlist, tf_list = get_TF_lists()
@@ -93,13 +93,12 @@ class GeneUtils():
             sourcelist.append(source)
 
         return targetlist, sourcelist
-
     def get_influencers(self, gene_target, subnet=[]):
         
         # Transcription factors influencing a Gene 
         gene_index = self.b_matrix.var_names == gene_target
         gene_cols = self.b_matrix.X[:, gene_index].copy()
-        
+
         if hasattr(gene_cols, "toarray"):
             gene_cols = gene_cols.toarray().ravel()
         else:
