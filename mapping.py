@@ -1,6 +1,6 @@
 from constants import DATA_DIRECTORY,  STRING_ALIAS_PATH, STRING_URL_PATH, ENSEMBL_PROTEIN_GENE_PATH, STRING_EXTRACTED_ALIAS_PATH, STRING_EXTRACTED_URL_PATH, ENSEMBL_MAPPING_PATH, UNIQUE_GENE_SET, \
     HURI_URL_PATH, HI_UNION_PATH, LIT_BM_PATH, HUMAN_TF_PATH, HARD_WIRED_GENOME_A_MATRIX_PATH, STRING_PROTEIN_GENE_PATH, STRING_UNIQUE_GENE_SET, HURI_UNIQUE_GENE_SET, HUMAN_TF_SET_PATH, \
-    HARD_WIRED_GENOME_B_MATRIX_PATH, HWG_BASE_PATH, ENSEMBL_BASE_PATH, STRING_PROTEIN_SET_FROM_LINKS, STRING_UNIQUE_PROTEIN_SET, modify_HWG_path, HUMAN_TF_SET_PATH, HUMAN_TF_IDLIST_PATH, TF_MOTIF_PATH, HUMAN_TF_INTERACTION_PATH, HUMAN_TF_ACTIVITY_PATH
+    HARD_WIRED_GENOME_B_MATRIX_PATH, HWG_BASE_PATH, ENSEMBL_BASE_PATH, STRING_PROTEIN_SET_FROM_LINKS, STRING_UNIQUE_PROTEIN_SET, modify_HWG_path, HUMAN_TF_SET_PATH, HUMAN_TF_IDLIST_PATH, TF_MOTIF_PATH, TFLINK_INTERACTION_PATH, TRRUST_ACTIVITY_PATH 
 from constants import HWG_BASE_PATH, HI_UNION_PATH, LIT_BM_PATH, ENSEMBL_PROTEIN_GENE_PATH, OPERATIONS_DIRECTORY, HWG_B_MATRICES, HWG_A_MATRICES, HTF_MOTIFS_DIR, CISBP_MOTIFS_DIR
 
 import re
@@ -354,10 +354,10 @@ def get_sorted_gene_order():
     print(f"ordering {len(flat_col_order)} genes")
     return flat_col_order
 
-def get_TF_activity_lists():
+def get_TF_activity_lists(log=True):
 
     tflist = get_TF_set()
-    TF_activity_TRRUST = pd.read_csv(HUMAN_TF_ACTIVITY_PATH, sep='\t')
+    TF_activity_TRRUST = pd.read_csv(TRRUST_ACTIVITY_PATH, sep='\t')
 
     activatorlist = []
     repressorlist = []
@@ -487,7 +487,7 @@ def load_master_regulators():
     
     gene_id_name_map, gene_name_id_map = generate_gene_id_name_map()
     
-    tsv_tflink = pd.read_csv(HUMAN_TF_INTERACTION_PATH, sep='\t')
+    tsv_tflink = pd.read_csv(TFLINK_INTERACTION_PATH, sep='\t')
     
     tsv_tflink.head()
     tsv_tflink_master_regulators = tsv_tflink[tsv_tflink['Name.TF'] == tsv_tflink['Name.Target']]
@@ -509,10 +509,7 @@ from constants import TF_MOTIF_BASE_PATH
 
 def load_cisbp_motifs():
 
-    CISBP_MOTIFS_DIR = f'{TF_MOTIF_BASE_PATH}/Homo_sapiens_2025_07_21_6_25_pm/pwms_all_motifs'
     CISBP_INFO = f'{TF_MOTIF_BASE_PATH}/Homo_sapiens_2025_07_21_6_25_pm/TF_Information_all_motifs.txt'
-    print(CISBP_MOTIFS_DIR)
-
 
     filename = CISBP_INFO
     
@@ -526,7 +523,6 @@ def load_cisbp_motifs():
     
     return df_cleaned_first
 
-    cisbp_motifs = load_cisbp_motifs()
 
 
 def load_consensus(gene,  scale=1000, gene_id=None, motif_source='cisbp'):
@@ -539,7 +535,6 @@ def load_consensus(gene,  scale=1000, gene_id=None, motif_source='cisbp'):
     if motif_source == 'htf':
         
         motif_df = load_htf_motifs()
-    
         try:
             
             gene_cisbp_id = motif_df[((motif_df['Ensembl ID'] == gene_id) & (motif_df['Best Motif(s)? (Figure 2A)'] == 'TRUE'))]['CIS-BP ID'].values[0]
@@ -553,12 +548,12 @@ def load_consensus(gene,  scale=1000, gene_id=None, motif_source='cisbp'):
         motif_df = load_cisbp_motifs()
         gene_cisbp_id = motif_df[motif_df['TF_Name'] == 'TFAP2B']['Motif_ID'].loc[0]
         
-        gene_motif_path = f'{HTF_MOTIFS_DIR}/{str(gene_cisbp_id)}.txt'
+        # gene_motif_path = f'{HTF_MOTIFS_DIR}/{str(gene_cisbp_id)}.txt'
+        
+        gene_motif_path = f'{CISBP_MOTIFS_DIR}/{str(gene_cisbp_id.split("_")[0])}_3.00.txt'
         
     
     print(f'Gene CIS-BP ID : {gene_cisbp_id}')
-    
-    gene_motif_path = f'{CISBP_MOTIFS_DIR}/{str(gene_cisbp_id.split("_")[0])}_3.00.txt'
     
     print(gene_motif_path)
     

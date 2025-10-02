@@ -43,6 +43,8 @@ def write_df_to_meme(df, filepath, motif_name="Motif1"):
     # Transpose so rows are bases, columns are positions
     ppm_df = df.T
     width = ppm_df.shape[1]
+    
+    print(f'writing meme format to {filepath}')
 
     with open(filepath, 'w') as f:
         f.write("MEME version 4\n\n")

@@ -339,7 +339,12 @@ class GeneUtils():
                 # if target not in G.nodes:
                 #     continue
 
-                eigenvector_centrality = nx.eigenvector_centrality(G)
+                try:
+                    eigenvector_centrality = nx.eigenvector_centrality(G)
+                except Exception as e:
+                    print('error occured calculating centrality')
+                    eigenvector_centrality = {}
+
                 degree_centrality = nx.degree_centrality(G)
                     
                 # G.nodes[target]['size'] = 40 + 10 * G.degree[target] 

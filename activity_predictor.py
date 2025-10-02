@@ -176,12 +176,8 @@ def fetch_bed_files(flank_size=10000):
 
     if not os.path.exists(bed_csv):
         best_transcripts[["flank_start", "flank_end"]] = best_transcripts.apply(get_tss_flank, axis=1, args=(flank_size,))
-        
-        
-        
         bed = best_transcripts[["Chromosome", "flank_start", "flank_end", "gene_id", "Strand", "Score"]].copy()
         bed = bed[["Chromosome", "flank_start", "flank_end", "gene_id", "Score", "Strand"]]
-        
         bed.to_csv(bed_csv, sep="\t", header=False, index=False)
     else:
         bed = pd.read_csv(bed_csv, sep="\t")
@@ -256,9 +252,12 @@ def call_alphagenome(sequence, chromosome, interval_start, interval_end, seqtype
     
     # plt.show()
     plt.savefig(f'figures/B_prime/{seqtype}.png', dpi=300, bbox_inches = 'tight')
+
+def compare_output_expression():
+    pass
     
 
-def replace_motif(raw_sequence, promoter_region, fimo_matches, original_motif, replacement_motif, seqlen=1000000, method='group'):
+def replace_motif(raw_sequence, promoter_region, fimo_matches, original_motif, replacement_motif, seqlen=1000000, method='group', replacement_counts=None):
     """
     Keeps the TSS as the centre of the window and performs replacement along the sides. Each replacement can have, length differences. 
     inputs:
@@ -289,6 +288,10 @@ def replace_motif(raw_sequence, promoter_region, fimo_matches, original_motif, r
     print('TSS of promoter seq', tss_index_promoter)
 
     fimo_matches.sort_values(by='start')
+
+    if replacement_counts:
+        fimo_matches = fimo_matches[:1]
+        
     new_prom = ''
     temp_pointer = 0
 
@@ -296,6 +299,7 @@ def replace_motif(raw_sequence, promoter_region, fimo_matches, original_motif, r
 
     print(fimo_matches)
     print('Length of fimo matches', len(fimo_matches))
+
     
     for index, match in fimo_matches.iterrows():
         if math.isnan(match.start) or math.isnan(match.stop):
@@ -351,7 +355,6 @@ def replace_motif(raw_sequence, promoter_region, fimo_matches, original_motif, r
     
     print('%%%%%%%%%%%%%%')
 
-    
     # print(prom_start, raw_start)
 
     
@@ -485,11 +488,20 @@ def run_pipeline(gene):
 
     # savepath = f'{tempdir}/{base_tf}.meme'
 
-    replacement_runner(base_gene_id, base_tf_id, target_tf_id)
+    gene_id = 'ENSG00000063244'
+
+    repressorlist, activatorlist, conflictedlist, tf_list = get_TF_lists()
+    
+    # base_tf = ''
+    # target_tf = ''
+    # gene_name_id_map.get('')
+
+
+    # replacement_runner(gene_id, base_tf_id, target_tf_id)
 
 
 
-gene_target = 'ACADM'
-gene_target_id = gene_name_id_map.get(gene_target)
-run_pipeline(gene_target_id)
+# gene_target = 'ACADM'
+# gene_target_id = gene_name_id_map.get(gene_target)
+# run_pipeline(gene_target_id)
 
