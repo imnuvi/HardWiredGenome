@@ -66,7 +66,7 @@ class GeneUtils():
         
         matching_var_mask = var_node_mask & (gene_row == 1) 
         targets = matrix.var_names[matching_var_mask]
-        print(targets)
+        print('Targets: ', targets)
         
         return targets
 
@@ -206,6 +206,19 @@ class GeneUtils():
         mapping = dict(zip(range(len(subnetwork_adata.obs_names)), subnetwork_adata.obs_names))
         G = nx.relabel_nodes(G, mapping)
         return G
+
+    def construct_a_network(self):
+        '''
+        Construct the full A matrix from scratch
+        '''
+        a_matrix = self.a_matrix_adata
+
+        G = nx.from_numpy_array(a_matrix.X, create_using=nx.Graph())
+        
+        mapping = dict(zip(range(len(a_matrix.obs_names)), a_matrix.obs_names))
+        G = nx.relabel_nodes(G, mapping)
+        return G
+
 
     def get_node_props(self, node):
         repressorlist = self.repressorlist

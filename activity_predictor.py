@@ -170,6 +170,7 @@ def fetch_bed_files(flank_size=10000):
     bed_csv = f"{REFERENCE_DIR}/protein_coding_tss_flank_{flank_size}.bed"
     one_mb_flanks = f"{REFERENCE_DIR}/protein_coding_tss_flank_1mb.bed"
     two_mb_flanks = f"{REFERENCE_DIR}/protein_coding_tss_flank_2mb.bed"
+    fifty_kb_flanks = f"{REFERENCE_DIR}/protein_coding_tss_flank_50kb.bed"
 
 
 
@@ -180,7 +181,22 @@ def fetch_bed_files(flank_size=10000):
         bed = bed[["Chromosome", "flank_start", "flank_end", "gene_id", "Score", "Strand"]]
         bed.to_csv(bed_csv, sep="\t", header=False, index=False)
     else:
-        bed = pd.read_csv(bed_csv, sep="\t")
+        bed = pd.read_csv(bed_csv, sep="\t", header=None)
+
+
+    if not os.path.exists(fifty_kb_flanks):
+        best_transcripts[["flank_start", "flank_end"]] = best_transcripts.apply(get_tss_flank, axis=1, args=(25000,))
+        
+        
+        
+        bed_fifty_k = best_transcripts[["Chromosome", "flank_start", "flank_end", "gene_id", "Strand", "Score"]].copy()
+        bed_fifty_k = bed_fifty_k[["Chromosome", "flank_start", "flank_end", "gene_id", "Score", "Strand"]]
+        print("processed fifty kb flank region")
+        
+        bed_fifty_k.to_csv(fifty_kb_flanks, sep="\t", header=False, index=False)
+    else:
+        bed_fifty_k = pd.read_csv(fifty_kb_flanks, sep="\t", header=None)
+
 
 
 
@@ -210,8 +226,25 @@ def fetch_bed_files(flank_size=10000):
     else:
         bed_two_m= pd.read_csv(two_mb_flanks, sep="\t", header=None)
 
-    return bed_one_m, bed_two_m, bed_csv
+    return bed_one_m, bed_two_m, bed
 
+def fetch_fasta_for_gene_id(gene_id, flank_size='10kb'):
+    from Bio import SeqIO
+
+
+    flank_fasta = f"{REFERENCE_DIR}/protein_coding_tss_flank_{flank_size}.fa"
+    fifty_kb_fasta = f"{REFERENCE_DIR}/protein_coding_tss_flank_50kb.fa"
+
+    records = next(
+        rec for rec in SeqIO.parse(flank_fasta, "fasta")
+        if rec.id.split("::")[0] == gene_id
+    )
+
+    records_50kb = next(
+        rec for rec in SeqIO.parse(fifty_kb_fasta, "fasta")
+        if rec.id.split("::")[0] == gene_id
+    )
+    return records, records_50kb
 
 def call_alphagenome(sequence, chromosome, interval_start, interval_end, seqtype='generic'):
     
@@ -253,9 +286,66 @@ def call_alphagenome(sequence, chromosome, interval_start, interval_end, seqtype
     # plt.show()
     plt.savefig(f'figures/B_prime/{seqtype}.png', dpi=300, bbox_inches = 'tight')
 
-def compare_output_expression():
+def compare_output_expression(motif):
     pass
+
+def scramble_string(s):
+
+    import random
+    # we don't want this running forever for similar strings
+    maxiter = 50
+    scrambled = s
+
+    if len(s) < 2:
+        return s 
     
+
+    iterations = 0
+    while scrambled == s or iterations == maxiter:
+        # this ensures we have atleast some variability from the original sequence
+        i, j = random.sample(range(len(s)), 2)
+        s_list = list(s)
+        s_list[i], s_list[j] = s_list[j], s_list[i]
+        scrambled = ''.join(s_list)
+        iterations += 1
+    return scrambled
+
+def scramble_motif(gene, tf, matches):
+    fasta, fasta_50kb = fetch_fasta_for_gene_id(gene, flank_size='10kb')
+
+    original_motif, orig_consensus, orig_pwm = load_consensus(tf, gene_id=tf)
+    
+    for index, match in matches.iterrows():
+        if math.isnan(match.start) or math.isnan(match.stop):
+            continue
+        index_start = int(match.start - prom_start)
+        index_end = int(match.stop - prom_start)
+
+        ### CURRENT ALGORITHM
+        ## in case of overlap, replace the first occurance till the next occurance and then replace only the non overlaps, without caring for the other overlaps.
+        # This part is plug and play. Experimenting with this.
+
+        if method == 'group':
+            if index_start > temp_pointer:
+                new_prom += promoter_seq[temp_pointer:index_start]
+                temp_pointer = index_end
+                new_prom += replacement_motif
+            else:
+                continue
+        elif method == 'full':
+            new_prom += replacement_motif
+
+        # print(match.motif_id)
+
+        # To check the replacements if needed
+
+    
+        # print(new_prom[index_start-5:index_start], new_prom[index_start:index_end], new_prom[index_end:index_end+5])
+        # print(promoter_seq[index_start-5:index_start], promoter_seq[index_start:index_end], promoter_seq[index_end:index_end+5])
+
+
+
+    pass
 
 def replace_motif(raw_sequence, promoter_region, fimo_matches, original_motif, replacement_motif, seqlen=1000000, method='group', replacement_counts=None):
     """
@@ -340,28 +430,7 @@ def replace_motif(raw_sequence, promoter_region, fimo_matches, original_motif, r
     repl_end_index = repl_start_index + (seqlen//2) - len(new_prom)
     print(repl_start_index, repl_end_index, repl_start_index + repl_end_index)
 
-    print(len(new_prom))
-    print('---------------------')
-    
     replaced_seq = raw_seq[prom_start_full-(seqlen//2):prom_start_full] + new_prom + raw_seq[repl_start_index:repl_end_index]
-
-    # print('*****************************')
-    # print(str(base_seq[:100]))
-    # print(replaced_seq[:100])
-
-    print('%%%%%%%%%%%%%%')
-    print(len(base_seq))
-    print(len(replaced_seq))
-    
-    print('%%%%%%%%%%%%%%')
-
-    # print(prom_start, raw_start)
-
-    
-    # print(len(new_prom), len(promoter_seq))
-    # print('#$$$$$$$$$$$$$$$$$$$$$$$$$$')
-    # print(original_motif)
-    # print(replacement_motif)
     
     return base_seq, replaced_seq, prom_start_full-(seqlen//2), prom_start_full+(seqlen//2), chromosome
 

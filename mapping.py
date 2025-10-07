@@ -354,28 +354,52 @@ def get_sorted_gene_order():
     print(f"ordering {len(flat_col_order)} genes")
     return flat_col_order
 
+# Function to classify based on counts
+def classify_effect(group):
+    counts = group["Effect"].value_counts()
+    activ = counts.get("Activation", 0)
+    reprs = counts.get("Repression", 0)
+    unkn  = counts.get("Unknown", 0)
+
+    if activ > reprs:
+        return "Activator"
+    elif reprs > activ:
+        return "Repressor"
+    elif activ == reprs and (activ > 0 or reprs > 0):
+        return "Conflicted"
+    else:
+        # Let's also make unknowns as conflicted.
+        return "Conflicted"
+
+
 def get_TF_activity_lists(log=True):
 
     tflist = get_TF_set()
-    TF_activity_TRRUST = pd.read_csv(TRRUST_ACTIVITY_PATH, sep='\t')
+    gene_id_name_map, gene_name_id_map = generate_gene_id_name_map() 
 
-    activatorlist = []
-    repressorlist = []
-    conflictedlist = []
-    print(TF_activity_TRRUST)
-    # for i in TF_activity_TRRUST:
-        
+    TF_activity_TRRUST = pd.read_csv(TRRUST_ACTIVITY_PATH, sep='\t', header=None,  names=["TF","Target","Effect","PMID"])
+
+    TF_activity_TRRUST["Effect"] = TF_activity_TRRUST["Effect"].astype(str).str.strip().str.capitalize()
+    classification = TF_activity_TRRUST.groupby("TF").apply(classify_effect).reset_index(name="Class")
+
+
+    activators = [str(gene_name_id_map.get(i)) for i in classification.loc[classification["Class"]=="Activator", "TF"].tolist()]
+    repressors = [str(gene_name_id_map.get(i)) for i in classification.loc[classification["Class"]=="Repressor", "TF"].tolist()]
+    conflicted = [str(gene_name_id_map.get(i)) for i in classification.loc[classification["Class"]=="Conflicted", "TF"].tolist()]
+    unknowns   = [str(gene_name_id_map.get(i)) for i in classification.loc[classification["Class"]=="Unknown", "TF"].tolist()]
     
     if log:
-        print(f' Total Activators : {len(activatorlist)}')
-        print(f'Total Reprossors : {len(repressorlist)}')
-        print(f'Total Conflicted : {len(conflictedlist)}')
+        print(f' Total Activators : {len(activators)}')
+        print(f'Total Reprossors : {len(repressors)}')
+        print(f'Total Conflicted : {len(conflicted)}')
     
         print(f'Total Transcription Factors : {len(tflist)}')
-    return repressorlist, activatorlist, conflictedlist, tflist
+    return repressors, activators, conflicted, tflist
 
 def get_TF_lists(log=True):
+    import warnings
 
+    warnings.warn("Deprecated function, use get_TF_activity_lists instead")
     adata= anndata.read_h5ad(f'{OPERATIONS_DIRECTORY}/DSET051_B_Matrix_TFsONLY_TFTGDb_TFLink_ChEA3.h5ad')
     
     tfs = adata.obs
@@ -446,7 +470,7 @@ def binarize(mat, thresh):
         return (mat > thresh).astype(np.int8)
 
 def get_a_matrix_threshold(threshold):
-    repressorlist, activatorlist, conflictedlist, tf_list = get_TF_lists()
+    repressorlist, activatorlist, conflictedlist, tf_list = get_TF_activity_lists()
     
     a_matrix_adata = anndata.read_h5ad('/nfs/turbo/umms-indikar/shared/projects/HWG/data/HWG/data/HWG/A_matrix.h5ad')
     a_matrix_adata.layers['HWG_0'] = a_matrix_adata.X
@@ -467,7 +491,7 @@ def get_a_matrix_threshold(threshold):
 
     # c_matrix_true = a_matrix_adata[a_matrix_adata.obs_names.isin(tf_list), a_matrix_adata.var_names.isin(tf_list)]
 
-    c_matrix_true = a_matrix_adata[tf_list, tf_list]
+    c_matrix_true = a_matrix_adata[b_matrix_true.var_names.isin(tf_list)]
     
     return a_matrix_adata, b_matrix_true, c_matrix_true
 
@@ -527,6 +551,7 @@ def load_cisbp_motifs():
 
 def load_consensus(gene,  scale=1000, gene_id=None, motif_source='cisbp'):
 
+    print('running motif find for gene: ', gene)
     if gene_id == None:
         gene_id_name_map, gene_name_id_map = generate_gene_id_name_map()
     
@@ -546,18 +571,21 @@ def load_consensus(gene,  scale=1000, gene_id=None, motif_source='cisbp'):
             
     elif motif_source == 'cisbp':
         motif_df = load_cisbp_motifs()
-        gene_cisbp_id = motif_df[motif_df['TF_Name'] == 'TFAP2B']['Motif_ID'].loc[0]
+        
+        gene_cisbp_id = motif_df[motif_df['TF_Name'] == gene]['Motif_ID'].iloc[0]
         
         # gene_motif_path = f'{HTF_MOTIFS_DIR}/{str(gene_cisbp_id)}.txt'
         
         gene_motif_path = f'{CISBP_MOTIFS_DIR}/{str(gene_cisbp_id.split("_")[0])}_3.00.txt'
-        
+
     
     print(f'Gene CIS-BP ID : {gene_cisbp_id}')
     
-    print(gene_motif_path)
-    
+    print('reading motif from: ', gene_motif_path)
+
     gene_pwm = pd.read_csv(gene_motif_path, sep='\t')
+    
+        
     
     # NOTE: THese vales are probabilites so PPM matrices where each column adds up to one
     
